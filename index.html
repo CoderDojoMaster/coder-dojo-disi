@@ -1,12 +1,14 @@
-<html>
+<html ng-app="coderdojo">
 
 <head>
-
     <!-- LIB -->
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
     <script src="lib/jquery-2.1.4.min.js"></script>
     <script src="lib/modernizr.js"></script>
 
     <!-- JAVASCRIPT -->
+    <script src="js/app.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/text-animation.js"></script>
 
@@ -23,24 +25,21 @@
 
         <div class="centered-logo">
             <h4>
-                   <a href="#" class="center-align white-text medium">Coder Dojo Disi</a>
-               </h4>
+                <a href="#home" class="center-align black-text medium">Coder Dojo Disi</a>
+            </h4>
         </div>
 
-        <div class="row valign">
-            <div class="white-text center-align row">
-                <h1 class="cd-headline letters type">
-                        <span class="thin">Let's code</span>
-                        <span class="cd-words-wrapper">
-                        	<b class="is-visible">the web</b>
-                        	<b>games</b>
-                        	<b>in python</b>
-                        	<b>together</b>
-                        </span>
-    	            </h1>
-            </div>
-        </div>
+        <!-- PAGE MAIN CONTENT -->
+       <main>
+           <div ng-view></div>
+       </main>
+       
+        <div class="nav-button">
+            <img src="img/ying-yang.svg" class="responsive-img">
+        </div>           
+    
     </div>
+    
 </body>
 
 </html>
