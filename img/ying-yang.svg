@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="720"
+   height="720"
+   id="svg2">
+  <defs
+     id="defs4" />
+  <g
+     id="layer1">
+    <path
+       d="M 360,0 L 360,720 C 558.72,720 720,558.72 720,360 C 720,161.28 558.72,-7.102941e-14 360,0 z"
+       id="path2413"
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-opacity:1" />
+    <path
+       d="M 360,720 L 360,0 C 161.28,0 0,161.28 0,360 C 0,558.72 161.28,720 360,720 z"
+       id="path2466"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-opacity:1" />
+    <path
+       d="M 0,225 A 45,45 0 1 1 -90,225 A 45,45 0 1 1 0,225 z"
+       transform="matrix(4,0,0,4,540,-720)"
+       id="path2468"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-opacity:1" />
+    <path
+       d="M 0,225 A 45,45 0 1 1 -90,225 A 45,45 0 1 1 0,225 z"
+       transform="matrix(4,0,0,4,540,-360)"
+       id="path2470"
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-opacity:1" />
+    <path
+       d="M 0,225 A 45,45 0 1 1 -90,225 A 45,45 0 1 1 0,225 z"
+       transform="translate(405,-45)"
+       id="path2472"
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-opacity:1" />
+    <path
+       d="M 0,225 A 45,45 0 1 1 -90,225 A 45,45 0 1 1 0,225 z"
+       transform="translate(405,315)"
+       id="path2474"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-opacity:1" />
+  </g>
+</svg>
