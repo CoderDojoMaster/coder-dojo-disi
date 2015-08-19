@@ -6,15 +6,30 @@
     left: 0;
     right: 0;
     bottom: 0;
-    /* Background da cambiare*/
-    background-image: url("../img/wallpaper.png");
 }
 
 .centered-logo {
     position: absolute;
-    top: 0%;
+    top: 0;
     width: 100%;
     vertical-align: middle;
     text-align: center;
     
+}
+
+.nav-button {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+}
+
+.nav-button img {
+    text-align: center;
+    height: 42px;
+    width: 42px;
+}
+
+main {
+width: 100%
 }
