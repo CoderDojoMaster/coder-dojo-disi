@@ -9,7 +9,7 @@ angular.module('coderdojo', ['ngRoute', 'homeModule'])
     $routeProvider.when('/', {
         redirectTo: '/home'
     }).when('/home', {
-        templateUrl: '../partials/home.html',
+        templateUrl: 'partials/home.html',
         controller: 'homeController'
     }).when ('/web/', {
         templateUrl: '../partials/web.html',
