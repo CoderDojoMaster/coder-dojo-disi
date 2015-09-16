@@ -11,8 +11,8 @@ angular.module('coderdojo', ['ngRoute', 'homeModule'])
     }).when('/home', {
         templateUrl: 'partials/home.html',
         controller: 'homeController'
-    }).when ('/web', {
-        templateUrl: '../partials/web.html',
+    }).when ('/courses', {
+        templateUrl: '../partials/courses.html',
         controller: 'webController'
     }).otherwise({
         redirectTo: '/error'
