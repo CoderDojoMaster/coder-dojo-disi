@@ -1,5 +1,5 @@
 /* modulo principale dell'applicazione con relative dipendenze */
-angular.module('coderdojo', ['ngRoute', 'homeModule'])
+angular.module('coderdojo', ['ngRoute'])
 
 
 /* routing e navigazione nelle pagine del sito */
@@ -7,13 +7,13 @@ angular.module('coderdojo', ['ngRoute', 'homeModule'])
 
     /* routing of the site */
     $routeProvider.when('/', {
-        redirectTo: '/home'
+        redirectTo: 'home'
     }).when('/home', {
-        templateUrl: 'partials/home.html',
-        controller: 'homeController'
+        templateUrl: '../partials/home.html',
+
     }).when ('/courses', {
         templateUrl: '../partials/courses.html',
-        controller: 'webController'
+
     }).otherwise({
         redirectTo: '/error'
     });
