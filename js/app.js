@@ -11,7 +11,7 @@ angular.module('coderdojo', ['ngRoute', 'homeModule'])
     }).when('/home', {
         templateUrl: 'partials/home.html',
         controller: 'homeController'
-    }).when ('/web/', {
+    }).when ('/web', {
         templateUrl: '../partials/web.html',
         controller: 'webController'
     }).otherwise({
