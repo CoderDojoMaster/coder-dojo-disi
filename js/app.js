@@ -7,11 +7,13 @@ angular.module('coderdojo', ['ngRoute'])
 
     /* routing of the site */
     $routeProvider.when('/', {
-        redirectTo: '/home'
+        redirectTo: 'home'
     }).when('/home', {
-        templateUrl: '../partials/home.html'
-    }).when ('/web', {
-        templateUrl: '../partials/web.html'
+        templateUrl: '../partials/home.html',
+
+    }).when ('/courses', {
+        templateUrl: '../partials/courses.html',
+
     }).otherwise({
         redirectTo: '/error'
     });
