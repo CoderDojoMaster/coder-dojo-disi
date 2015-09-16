@@ -11,11 +11,13 @@
     <script src="js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
     <script src="js/my.js"></script>
+    <script src="js/menu.js"></script>
 
     <!-- STYLE -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
 
 </head>
 
@@ -30,7 +32,7 @@
                 <img class="coder-dojo-logo" src="img/ying-yang.svg">
             </a>
             <div class="nav-right valign-wrapper">
-                <a href="" class="button-collapse valign white-text hide-on-large-only"><i class="material-icons medium">menu</i></a>
+                <a href="" class="button-collapse valign white-text hide-on-large-only" id="cd-cart-trigger"><i class="material-icons medium">menu</i></a>
                 <ul class="nav-list hide-on-med-and-down">
                     <li><a class="white-text" href="#courses"><h4>Corsi</h4></a></li>
                     <li><a class="white-text" href=""><h4>Tutorial</h4></a></li>
@@ -41,14 +43,22 @@
 
     </div>
 
-        <!-- PAGE MAIN CONTENT -->
-       <main>
-           <div ng-view></div>
-       </main>
-       
+    <!-- PAGE MAIN CONTENT -->
+    <main>
+        <div ng-view></div>
+    </main>
 
+    <div id="cd-shadow-layer"></div>
+
+    <div id="cd-cart">
+        <h2>Menu</h2>
+        <ul>
+            <li><a class="mobile-menu-link" href="#courses">Corsi</a></li>
+            <li><a class="mobile-menu-link" href="#tutorials">Tutorial</a></li>
+            <li><a class="mobile-menu-link" href="#events">Eventi</a></li>
+        </ul>
     </div>
-
+    <!-- cd-cart -->
 </body>
 
 </html>
