@@ -7,6 +7,7 @@ jQuery(document).ready(function($){
 		$lateral_cart = $('#cd-cart'),
 		$shadow_layer = $('#cd-shadow-layer');
         $mobile_menu_link = $('.mobile-menu-link');
+        $close_menu_button = $('#close-menu-button');
 
 	//open lateral menu on mobile
 	$hamburger_icon.on('click', function(event){
@@ -25,6 +26,22 @@ jQuery(document).ready(function($){
 	});
     
     $mobile_menu_link.on('click', function () {
+        $shadow_layer.removeClass('is-visible');
+        
+        if( $lateral_cart.hasClass('speed-in') ) {
+			$lateral_cart.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$menu_navigation.removeClass('speed-in');
+		} else {
+			$menu_navigation.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$lateral_cart.removeClass('speed-in');
+		}  
+    });
+    
+    $close_menu_button.on('click', function () {
         $shadow_layer.removeClass('is-visible');
         
         if( $lateral_cart.hasClass('speed-in') ) {
