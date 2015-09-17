@@ -90,3 +90,15 @@ Timeline style
     margin-bottom: -50%;
     transform: (0, -50%);
 }
+
+/*
+    cards style
+*/
+#logo {
+        max-height: 150px;
+        max-width: auto;
+    }
+
+    h4 {
+        text-align: center;
+    }
