@@ -50,7 +50,43 @@ Navbar style
 Every page style
 */
 
-.container {
+.con {
     
     margin-top: 50px;
+}
+
+/*
+Timeline style
+*/
+
+.central-line {
+    
+    background-color: gainsboro;
+    position: absolute;
+    width: 2px;
+    height: 70%;
+    top: 150px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+}
+
+/*.centered-pallozzo {
+
+    position: relative;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+}*/
+
+.line {
+
+    z-index: 1;
+    height: 4px;
+    width: 200px;
+    background-color: gray;
+    position: relative;
+    top: 50%;
+    margin-bottom: -50%;
+    transform: (0, -50%);
 }
