@@ -9,16 +9,16 @@ angular.module('coderdojo', ['ngRoute'])
     $routeProvider.when('/', {
         redirectTo: 'home'
     }).when('/home', {
-        templateUrl: '../partials/home.html',
+        templateUrl: '/partials/home.html',
 
     }).when ('/courses', {
-        templateUrl: '../partials/courses.html',
+        templateUrl: '/partials/courses.html',
 
     }).when ('/events', {
-        templateUrl: '../partials/events.html',
+        templateUrl: '/partials/events.html',
         
     }).when ('/tutorials', {
-        templateUrl: '../partials/tutorials.html',
+        templateUrl: '/partials/tutorials.html',
         
     }).otherwise({
         redirectTo: '/error'
