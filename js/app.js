@@ -14,6 +14,12 @@ angular.module('coderdojo', ['ngRoute'])
     }).when ('/courses', {
         templateUrl: '../partials/courses.html',
 
+    }).when ('/events', {
+        templateUrl: '../partials/events.html',
+        
+    }).when ('/tutorials', {
+        templateUrl: '../partials/tutorials.html',
+        
     }).otherwise({
         redirectTo: '/error'
     });
