@@ -6,7 +6,7 @@ var state = true;
 $(document).ready(function(){
 
     $("h4").hover(function(){
-        $("h4").fadeOut();
+        $("h4").fadeTo();
 
     });
 
