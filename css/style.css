@@ -102,3 +102,19 @@ Timeline style
     h4 {
         text-align: center;
     }
+/*
+    profile style
+*/
+
+#profile_pic{
+   min-height: 75px;
+   min-width: 75px;
+}
+#about_back_first{
+    margin-left: 25px;
+    margin-right: 25px;
+    background: url("../img/povo.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+}

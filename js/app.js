@@ -17,6 +17,9 @@ angular.module('coderdojo', ['ngRoute'])
     }).when ('/events', {
         templateUrl: '/partials/events.html',
         
+    }).when ('/about', {
+        templateUrl: '/partials/about.html',
+
     }).when ('/tutorials', {
         templateUrl: '/partials/tutorials.html',
         
