@@ -107,10 +107,10 @@ Timeline style
 */
 
 #profile_pic{
-   min-height: 75px;
+   height: 75px;
    min-width: 75px;
 }
-#about_back_first{
+#about_back_firs{
     margin-left: 25px;
     margin-right: 25px;
     background: url("../img/povo.png");
