@@ -109,8 +109,8 @@ Timeline style
 */
 
 #profile_pic{
-   height: 75px;
-   min-width: 75px;
+   max-height: 150px;
+   max-width: 150px;
 }
 #about_back_firs{
     margin-left: 25px;
