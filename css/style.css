@@ -42,8 +42,9 @@ Navbar style
 }
 
 .button-collapse {
-    position: relative;
-    left: 80%;
+    position: absolute;
+    right: 20px;
+    top:20px;
 }
 
 /*
