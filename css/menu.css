@@ -85,7 +85,7 @@ xheader
     transform: translate(0, 50%);
 }*/
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 992px) {
     .menu-list li {
         margin-top: 100px;
     }

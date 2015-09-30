@@ -39,13 +39,11 @@ Navbar style
 }
 
 .coder-dojo-logo {
+    position: relative;
+}
 
-    position: absolute;
-    height: 144px;
-    width: auto;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, 0);
+.coder-dojo-logo:hover{
+   transform: scale(1.1);
 }
 
 .nav-list {
@@ -64,6 +62,50 @@ Navbar style
     top:20px;
 }
 
+.wrap {
+    position: absolute;
+    height: 144px;
+    width: 144px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+}
+
+/* Bounce In */
+.hvr-bounce-in {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+
+.navbar-menu {
+    position: relative;
+    left: 100px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.navbar-menu li {
+    margin-right: 2em;
+}
+
+.navbar-menu li span {
+    font-size: 1.5em;
+}
+
+.navbar-menu li span:hover {
+    color: #757575;
+}
+
 /*
 Every page style
 */
@@ -71,7 +113,7 @@ Every page style
 .con {
     
     margin-top: 50px;
-    height: 100%;
+    height: auto;
     width: 100%;
 }
 
@@ -81,7 +123,7 @@ Timeline style
 
 .central-line {
     
-    background-color: gainsboro;
+    background-color: #e0e0e0;
     position: absolute;
     width: 4px;
     height: 100%;
@@ -104,7 +146,7 @@ Timeline style
     z-index: 1;
     height: 4px;
     width: 100%;
-    background-color: gray;
+    background-color: #757575;
     position: relative;
     top: 50%;
     margin-bottom: -50%;
