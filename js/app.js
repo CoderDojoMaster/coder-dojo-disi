@@ -50,6 +50,11 @@ angular.module('coderdojo', ['ngRoute'])
 .controller ('homeController', function () {
 
     clear_navigation();
+    $('.slider').slider();
+    var window_height = $(window).height();
+    console.log(window_height);
+    $('.slider').height(window_height-96);
+    $('.slides').css({height: window_height-136});
 })
 
 .controller('coursesController', function () {
