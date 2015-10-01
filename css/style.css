@@ -1,23 +1,11 @@
-/*body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-main {
-    flex: 1 0 auto;
-  }
-
-#footer {
-    background-color: rgba(255, 255, 255, 0.1);
-}*/
-.page-footer{
+.page-footer {
     background-color: white;
 }
 
 /*
 Navbar style
 */
+
 .navbar {
     background-color: transparent;
     top: 0;
@@ -25,29 +13,19 @@ Navbar style
     width: 100%;
     display: inline-flex;
 }
-
 .nav-left {
     width: 50%;
     height: 100%;
     background-color: white;
 }
-
 .nav-right {
     width: 50%;
     height: 100%;
     background-color: black;
 }
-
 .coder-dojo-logo {
-
-    position: absolute;
-    height: 144px;
-    width: auto;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, 0);
+    position: relative;
 }
-
 .nav-list {
     position: absolute;
     right: 50px;
@@ -57,22 +35,74 @@ Navbar style
 .nav-list li {
     margin-left: 50px;
 }
-
 .button-collapse {
     position: absolute;
     right: 20px;
-    top:20px;
+    top: 20px;
+}
+.wrap {
+    z-index: 999;
+    position: absolute;
+    height: 144px;
+    width: 144px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+}
+@media only screen and (min-width: 993px) {
+    /* Bounce In */
+    .hvr-bounce-in {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+    }
+    .hvr-bounce-in:hover,
+    .hvr-bounce-in:focus,
+    .hvr-bounce-in:active {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+        transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    }
+}
+.navbar-menu {
+    position: relative;
+    left: 100px;
+    display: flex;
+    flex-direction: row;
+}
+.navbar-menu li {
+    margin-right: 2em;
+}
+.navbar-menu li span {
+    font-size: 1.5em;
+}
+.navbar-menu li span:hover {
+    color: #757575;
+}
+.page-active {
+    text-decoration: underline;
+}
+.black-background {
+    background-color: black;
 }
 
 /*
 Every page style
 */
 
+main {
+    z-index: 1;
+}
 .con {
-    
     margin-top: 50px;
-    height: 100%;
+    height: auto;
     width: 100%;
+}
+p {
+    text-align: justify;
 }
 
 /*
@@ -80,12 +110,11 @@ Timeline style
 */
 
 .central-line {
-    
-    background-color: gainsboro;
+    background-color: #e0e0e0;
     position: absolute;
     width: 4px;
     height: 100%;
-    top: 150px;
+    top: 210px;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, 0);
@@ -100,11 +129,10 @@ Timeline style
 }*/
 
 .line {
-
     z-index: 1;
     height: 4px;
     width: 100%;
-    background-color: gray;
+    background-color: #757575;
     position: relative;
     top: 50%;
     margin-bottom: -50%;
@@ -114,31 +142,46 @@ Timeline style
 /*
     cards style
 */
-#logo {
-        max-height: 150px;
-        max-width: auto;
-    }
 
-    h4 {
-        text-align: center;
-    }
+#logo {
+    max-height: 150px;
+    max-width: auto;
+}
+h4 {
+    text-align: center;
+}
+
 /*
     profile style
 */
 
-#profile_pic{
-   max-height: 150px;
-   max-width: 150px;
+#profile_pic {
+    max-height: 150px;
+    max-width: 150px;
 }
-#about_back_firs{
+#about_back_firs {
     margin-left: 25px;
     margin-right: 25px;
     background: url("../img/povo.png");
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 /*
-    Home page style
+    Error page style
 */
+
+.centered {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%; 
+    margin-bottom: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.error-img {
+    border-radius: 50%;
+}

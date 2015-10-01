@@ -7,40 +7,43 @@
     <script src="js/angular-route.js"></script>
     <script src="lib/jquery-2.1.4.min.js"></script>
 
-
-
-
     <!-- JAVASCRIPT -->
     <script src="js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
-    <script src="js/my.js"></script>
     <script src="js/menu.js"></script>
 
     <!-- STYLE -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">-->
+    <link rel="stylesheet" href="css/materialize.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/flip.css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 </head>
 
 <body>
-    <main>
-
     <div class="col s12 m12 l12">
 
-        <div class="navbar z-depth-1">
+        <div class="navbar">
             <div class="nav-left">
                 <h3 class="center-align hide-on-med-and-down">CoderDojo DISI</h3>
             </div>
-            <a href="#home">
-                <img class="coder-dojo-logo" src="img/cubeYang3.svg">
-            </a>
+            <div class="wrap">
+                <a class="coder-dojo-logo-a" href="#home">
+                    <img class="coder-dojo-logo hvr-bounce-in" src="img/cubeYang3.svg">
+                </a>
+            </div>
             <div class="nav-right valign-wrapper">
-                <a href="" class="button-collapse white-text valign" id="cd-cart-trigger"><i class="material-icons medium">menu</i></a>
+                <a href="" class="button-collapse white-text valign hide-on-large-only" id="cd-cart-trigger"><i class="material-icons medium">menu</i></a>
+                <ul class="navbar-menu hide-on-med-and-down">
+                    <li><a class="white-text navbar-menu-item" id="courses-link" href="#courses"><span>Corsi</span></a></li>
+                    <li><a class="white-text navbar-menu-item" id="tutorial-link" href="#tutorials"><span>Tutorial</span></a></li>
+                    <li><a class="white-text navbar-menu-item" id="events-link" href="#events"><span>Eventi</span></a></li>
+                    <li><a class="white-text navbar-menu-item" id="about-link" href="#about"><span>Chi siamo</span></a></li>
+                </ul>
             </div>
         </div>
 
@@ -60,13 +63,12 @@
         </div>
         <h1 class="center-align thin">Menu</h1>
         <ul class="center-align menu-list">
-            <li><a class="mobile-menu-link black-text " href="#courses"><h3>Corsi</h3></a></li>
+            <li><a class="mobile-menu-link black-text" href="#courses"><h3>Corsi</h3></a></li>
             <li><a class="mobile-menu-link black-text" href="#tutorials"><h3>Tutorial</h3></a></li>
             <li><a class="mobile-menu-link black-text" href="#events"><h3>Eventi</h3></a></li>
             <li><a class="mobile-menu-link black-text" href="#about"><h3>Chi siamo</h3></a></li>
         </ul>
     </div>
-</main>
     <!-- footer -->
 
 
