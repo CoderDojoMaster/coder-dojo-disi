@@ -25,6 +25,23 @@ jQuery(document).ready(function($){
 		toggle_panel_visibility($lateral_cart, $shadow_layer, $('body'));
 	});
     
+    $('.coder-dojo-logo').on('click', function () {
+    
+        $shadow_layer.removeClass('is-visible');
+        
+        if( $lateral_cart.hasClass('speed-in') ) {
+			$lateral_cart.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$menu_navigation.removeClass('speed-in');
+		} else {
+			$menu_navigation.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$lateral_cart.removeClass('speed-in');
+		}  
+    });
+    
     $mobile_menu_link.on('click', function () {
         $shadow_layer.removeClass('is-visible');
         
