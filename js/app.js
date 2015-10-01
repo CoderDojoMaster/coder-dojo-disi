@@ -7,9 +7,11 @@ angular.module('coderdojo', ['ngRoute'])
 
     /* routing of the site */
     $routeProvider.when('/', {
-        redirectTo: 'home'
+        redirectTo: '/home'
     }).when('/home', {
         templateUrl: '/partials/home.html',
+        controller: 'homeController',
+        controllerAs: 'ctrl'
 
     }).when('/courses', {
         templateUrl: '/partials/courses.html',
@@ -31,48 +33,49 @@ angular.module('coderdojo', ['ngRoute'])
         controller: 'tutorialController',
         controllerAs: 'ctrl'
 
+    }).when('/error', {
+        templateUrl: '/partials/error.html'
     }).otherwise({
         redirectTo: '/error'
     });
 
+    this.clear_navigation = function () {
+        $('.navbar-menu-item').each(function () {
+
+            $(this).removeClass("page-active");
+        });
+    }
 }])
+
+.controller ('homeController', function () {
+
+    clear_navigation();
+})
 
 .controller('coursesController', function () {
 
-    $('.navbar-menu-item').each(function () {
+    clear_navigation();
 
-        $(this).removeClass("page-active");
-    });
-    
     $('#courses-link').addClass("page-active");
 })
 
 .controller('eventsController', function () {
 
-    $('.navbar-menu-item').each(function () {
+    clear_navigation();
 
-        $(this).removeClass("page-active");
-    });
-    
     $('#events-link').addClass("page-active");
 })
 
 .controller('aboutController', function () {
 
-    $('.navbar-menu-item').each(function () {
+    clear_navigation();
 
-        $(this).removeClass("page-active");
-    });
-    
     $('#about-link').addClass("page-active");
 })
 
 .controller('tutorialController', function () {
 
-    $('.navbar-menu-item').each(function () {
+    clear_navigation();
 
-        $(this).removeClass("page-active");
-    });
-    
     $('#tutorial-link').addClass("page-active");
 })
