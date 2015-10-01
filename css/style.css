@@ -11,13 +11,15 @@ main {
 #footer {
     background-color: rgba(255, 255, 255, 0.1);
 }*/
-.page-footer{
+
+.page-footer {
     background-color: white;
 }
 
 /*
 Navbar style
 */
+
 .navbar {
     background-color: transparent;
     top: 0;
@@ -25,27 +27,19 @@ Navbar style
     width: 100%;
     display: inline-flex;
 }
-
 .nav-left {
     width: 50%;
     height: 100%;
     background-color: white;
 }
-
 .nav-right {
     width: 50%;
     height: 100%;
     background-color: black;
 }
-
 .coder-dojo-logo {
     position: relative;
 }
-
-.coder-dojo-logo:hover{
-   transform: scale(1.1);
-}
-
 .nav-list {
     position: absolute;
     right: 50px;
@@ -55,13 +49,11 @@ Navbar style
 .nav-list li {
     margin-left: 50px;
 }
-
 .button-collapse {
     position: absolute;
     right: 20px;
-    top:20px;
+    top: 20px;
 }
-
 .wrap {
     position: absolute;
     height: 144px;
@@ -70,45 +62,42 @@ Navbar style
     margin-right: -50%;
     transform: translate(-50%, 0);
 }
-
-/* Bounce In */
-.hvr-bounce-in {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+@media only screen and (min-width: 993px) {
+    /* Bounce In */
+    .hvr-bounce-in {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+    }
+    .hvr-bounce-in:hover,
+    .hvr-bounce-in:focus,
+    .hvr-bounce-in:active {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+        transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    }
 }
-.hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-}
-
 .navbar-menu {
     position: relative;
     left: 100px;
     display: flex;
     flex-direction: row;
-    
 }
-
 .navbar-menu li {
     margin-right: 2em;
 }
-
 .navbar-menu li span {
     font-size: 1.5em;
 }
-
 .navbar-menu li span:hover {
     color: #757575;
 }
-
 .page-active {
-
     color: #757575;
+    text-decoration: underline;
 }
 
 /*
@@ -116,7 +105,6 @@ Every page style
 */
 
 .con {
-    
     margin-top: 50px;
     height: auto;
     width: 100%;
@@ -127,7 +115,6 @@ Timeline style
 */
 
 .central-line {
-    
     background-color: #e0e0e0;
     position: absolute;
     width: 4px;
@@ -147,7 +134,6 @@ Timeline style
 }*/
 
 .line {
-
     z-index: 1;
     height: 4px;
     width: 100%;
@@ -161,27 +147,28 @@ Timeline style
 /*
     cards style
 */
-#logo {
-        max-height: 150px;
-        max-width: auto;
-    }
 
-    h4 {
-        text-align: center;
-    }
+#logo {
+    max-height: 150px;
+    max-width: auto;
+}
+h4 {
+    text-align: center;
+}
+
 /*
     profile style
 */
 
-#profile_pic{
-   max-height: 150px;
-   max-width: 150px;
+#profile_pic {
+    max-height: 150px;
+    max-width: 150px;
 }
-#about_back_firs{
+#about_back_firs {
     margin-left: 25px;
     margin-right: 25px;
     background: url("../img/povo.png");
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }

@@ -27,13 +27,3 @@ angular.module('coderdojo', ['ngRoute'])
         redirectTo: '/error'
     });
 }])
-
-.directive('loading', function () {
-    return {
-        restrict: 'E',
-        templateUrl: '../partials/directives/loading.html',
-        scope: {
-            loading: '=loading'
-        }
-    }
-})
