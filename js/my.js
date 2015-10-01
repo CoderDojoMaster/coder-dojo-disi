@@ -4,7 +4,7 @@ $(document).ready(function () {
         return false;
     });
 
-    $('.navbar-menu-item').click(function () {
+   /* $('.navbar-menu-item').click(function () {
         $('.navbar-menu-item').each(function () {
 
             $(this).removeClass("grey-text page-active");
@@ -30,7 +30,7 @@ $(document).ready(function () {
             }
         });
 
-    });
+    });*/
 
     $('.coder-dojo-logo-a').click(function () {
 
