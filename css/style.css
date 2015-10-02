@@ -185,3 +185,12 @@ h4 {
 .error-img {
     border-radius: 50%;
 }
+
+@media only screen and (max-height: 800px) {
+
+    .error-img {
+        margin-top: 60px;
+        width: 150px;
+        height: auto;
+    }
+}
