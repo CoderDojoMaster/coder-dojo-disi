@@ -72,7 +72,11 @@ angular.module('coderdojo', ['ngRoute'])
     $('#events-link').addClass("page-active");
 
     var rows = $(".row").length - 1;
-    $('.central-line').height(180 + 293 * rows);
+    if (rows == 1) {
+        $('.central-line').height(180 + 293 * 2);
+    } else {
+        $('.central-line').height(180 + 293 * rows);
+    }
 
 })
 
