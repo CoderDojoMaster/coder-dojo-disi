@@ -105,12 +105,17 @@ p {
     text-align: justify;
 }
 
+.facebook-btn {
+
+    background-color: #4E69A2;
+}
+
 /*
 Timeline style
 */
 
 .central-line {
-    background-color: #e0e0e0;
+    background: linear-gradient(#ffffff 0%, #e0e0e0 10%,#e0e0e0 90%, #ffffff 100%);
     position: absolute;
     width: 4px;
     top: 210px;
