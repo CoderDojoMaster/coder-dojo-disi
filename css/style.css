@@ -90,7 +90,7 @@ Navbar style
 }
 
 /*
-Every page style
+    Every page style
 */
 
 main {
@@ -111,7 +111,7 @@ p {
 }
 
 /*
-Timeline style
+    Event page style
 */
 
 .central-line {
@@ -124,14 +124,6 @@ Timeline style
     transform: translate(-50%, 0);
 }
 
-/*.centered-pallozzo {
-
-    position: relative;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, 0);
-}*/
-
 .line {
     z-index: 1;
     height: 4px;
@@ -141,6 +133,15 @@ Timeline style
     top: 50%;
     margin-bottom: -50%;
     transform: (0, -50%);
+}
+
+/*
+    Home page style
+*/
+
+.slides li img {
+
+    opacity: 0.30;
 }
 
 /*
