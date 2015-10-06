@@ -1,0 +1,9 @@
+Sull'importanza del programmare: writing software is about expression, creativity - and practical application
+
+Software is the language of our world
+
+L'essenza della programmazione: Computational thinking teaches you how to tackle large problems by breaking them down into a sequence of smaller, more manageable problems. It allows you to tackle complex problems in efficient ways that operate at huge scale. It involves creating models of the real world with a suitable level of abstraction, and focus on the most pertinent aspects. It helps you go from specific solutions to general ones.
+
+Learning coding isn’t just about learning a programming language.
+
+CoderDojo gives the opportunity to discover and understand the technology which shapes the world we live in.
