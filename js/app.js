@@ -33,6 +33,11 @@ angular.module('coderdojo', ['ngRoute'])
         controller: 'tutorialController',
         controllerAs: 'ctrl'
 
+    }).when('/faq', {
+        templateUrl: '/partials/faq.html',
+        controller: 'faqController',
+        controllerAs: 'ctrl'
+
     }).when('/error', {
         templateUrl: '/partials/error.html'
     }).otherwise({
@@ -92,4 +97,11 @@ angular.module('coderdojo', ['ngRoute'])
     clear_navigation();
 
     $('#tutorial-link').addClass("page-active");
+})
+
+.controller('faqController', function () {
+
+    clear_navigation();
+
+    $('#faq-link').addClass("page-active");
 })
