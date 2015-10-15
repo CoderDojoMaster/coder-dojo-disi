@@ -3,12 +3,10 @@ angular.module('coderdojo', ['ngRoute'])
 
 
 /* routing e navigazione nelle pagine del sito */
-.config(['$routeProvider', function ($routeProvider) {
+.config(function ($routeProvider, $locationProvider) {
 
     /* routing of the site */
     $routeProvider.when('/', {
-        redirectTo: '/home'
-    }).when('/home', {
         templateUrl: '/partials/home.html',
         controller: 'homeController',
         controllerAs: 'ctrl'
@@ -43,6 +41,7 @@ angular.module('coderdojo', ['ngRoute'])
     }).otherwise({
         redirectTo: '/error'
     });
+    $locationProvider.html5Mode(true);
 
     this.clear_navigation = function () {
         $('.navbar-menu-item').each(function () {
@@ -50,7 +49,7 @@ angular.module('coderdojo', ['ngRoute'])
             $(this).removeClass("page-active");
         });
     }
-}])
+})
 
 .controller('homeController', function () {
 
@@ -77,7 +76,7 @@ angular.module('coderdojo', ['ngRoute'])
     $('#events-link').addClass("page-active");
 
     var rows = $(".row").length;
-    
+
     $('.central-line').height(180 + 293 * rows);
 
 
