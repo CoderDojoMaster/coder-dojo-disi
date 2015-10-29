@@ -1,5 +1,5 @@
 /* modulo principale dell'applicazione con relative dipendenze */
-angular.module('coderdojo', ['ngRoute'])
+angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'eventsModule', 'coursesModule', 'mentorModule', 'faqModule'])
 
 
 /* routing e navigazione nelle pagine del sito */
@@ -9,37 +9,37 @@ angular.module('coderdojo', ['ngRoute'])
     $routeProvider.when('/', {
         redirectTo: '/home'
     }).when('/home', {
-        templateUrl: '/partials/home.html',
+        templateUrl: '/static/partials/home.html',
         controller: 'homeController',
         controllerAs: 'ctrl'
 
     }).when('/courses', {
-        templateUrl: '/partials/courses.html',
+        templateUrl: '/static/partials/courses.html',
         controller: 'coursesController',
         controllerAs: 'ctrl'
 
     }).when('/events', {
-        templateUrl: '/partials/events.html',
+        templateUrl: '/static/partials/events.html',
         controller: 'eventsController',
         controllerAs: 'ctrl'
 
     }).when('/about', {
-        templateUrl: '/partials/about.html',
+        templateUrl: '/static/partials/about.html',
         controller: 'aboutController',
         controllerAs: 'ctrl'
 
     }).when('/tutorials', {
-        templateUrl: '/partials/tutorials.html',
+        templateUrl: '/static/partials/tutorials.html',
         controller: 'tutorialController',
         controllerAs: 'ctrl'
 
     }).when('/faq', {
-        templateUrl: '/partials/faq.html',
+        templateUrl: '/static/partials/faq.html',
         controller: 'faqController',
         controllerAs: 'ctrl'
 
     }).when('/error', {
-        templateUrl: '/partials/error.html'
+        templateUrl: '/static/partials/error.html'
     }).otherwise({
         redirectTo: '/error'
     });
@@ -63,14 +63,14 @@ angular.module('coderdojo', ['ngRoute'])
     });
 })
 
-.controller('coursesController', function () {
+.controller('coursesController', ['Courses', function (Courses) {
 
     clear_navigation();
 
     $('#courses-link').addClass("page-active");
-})
+}])
 
-.controller('eventsController', function () {
+.controller('eventsController', ['Events', function (Events) {
 
     clear_navigation();
 
@@ -81,25 +81,26 @@ angular.module('coderdojo', ['ngRoute'])
     $('.central-line').height(180 + 293 * rows);
 
 
-})
+}])
 
-.controller('aboutController', function () {
+.controller('aboutController', ['Mentor', function (Mentor) {
 
     clear_navigation();
 
     $('#about-link').addClass("page-active");
-})
+}])
 
-.controller('tutorialController', function () {
+.controller('tutorialController', ['Tutorial' ,function (Tutorial) {
 
     clear_navigation();
 
     $('#tutorial-link').addClass("page-active");
-})
+}])
 
-.controller('faqController', function () {
+.controller('faqController', ['FAQ', function (FAQ) {
 
+    FAQ.get();
     clear_navigation();
 
     $('#faq-link').addClass("page-active");
-})
+}])
