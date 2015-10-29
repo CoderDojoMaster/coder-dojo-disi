@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 sudo -u vagrant mkdir -p config
 sudo -u vagrant mkdir -p /project/log
 
