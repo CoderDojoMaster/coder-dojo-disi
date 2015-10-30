@@ -98,7 +98,6 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
 .controller('faqController', ['FAQ', function (FAQ) {
 
-    FAQ.get();
     clear_navigation();
 
     $('#faq-link').addClass("page-active");
