@@ -7,8 +7,6 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
     /* routing of the site */
     $routeProvider.when('/', {
-        redirectTo: '/home'
-    }).when('/home', {
         templateUrl: '/static/partials/home.html',
         controller: 'homeController',
         controllerAs: 'ctrl'
