@@ -84,6 +84,7 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
 .controller('aboutController', ['Mentor', function (Mentor) {
 
+    Mentor.get();
     clear_navigation();
 
     $('#about-link').addClass("page-active");
