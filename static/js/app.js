@@ -66,27 +66,51 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
 .controller('coursesController', ['Courses', function (Courses) {
 
-    clear_navigation();
+        var courses = [];
 
-    $('#courses-link').addClass("page-active");
+        Courses.query().$promise.then(
+            function (data){
+                //success
+                courses = data;
+            }, function (error) {
+                //error
+            }, function () {
+                //loading
+            }
+        );
+
+        clear_navigation();
+
+        $('#courses-link').addClass("page-active");
 }])
 
 .controller('eventsController', ['Events', function (Events) {
 
-    clear_navigation();
+        var events = [];
 
-    $('#events-link').addClass("page-active");
+        Events.query().$promise.then(
+            function (data) {
+                events = data;
+            }, function (error) {
+                //error
+            }, function () {
+                //loading
+            }
+        );
 
-    var rows = $(".row").length;
+        clear_navigation();
 
-    $('.central-line').height(180 + 293 * rows);
+        $('#events-link').addClass("page-active");
+
+        var rows = $(".row").length;
+
+        $('.central-line').height(253 * rows);
 
 
 }])
 
 .controller('aboutController', ['Mentor', function (Mentor) {
 
-    Mentor.get();
     clear_navigation();
 
     $('#about-link').addClass("page-active");
@@ -94,14 +118,39 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
 .controller('tutorialController', ['Tutorial' ,function (Tutorial) {
 
-    clear_navigation();
+        var tutorials = [];
 
-    $('#tutorial-link').addClass("page-active");
+        Tutorial.query().$promise.then(
+            function (data) {
+                tutorials = data;
+            }, function (error) {
+                //error
+            }, function () {
+                //loading
+            }
+        );
+
+        clear_navigation();
+
+        $('#tutorial-link').addClass("page-active");
 }])
 
 .controller('faqController', ['FAQ', function (FAQ) {
 
-    clear_navigation();
+        var faqs = [];
 
-    $('#faq-link').addClass("page-active");
+        FAQ.query().$promise.then(
+            function (data){
+                //success
+                faqs = data;
+            }, function (error) {
+                //error
+            }, function () {
+                //loading
+            }
+        );
+
+        clear_navigation();
+
+        $('#faq-link').addClass("page-active");
 }])

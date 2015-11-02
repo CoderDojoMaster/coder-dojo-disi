@@ -3,7 +3,14 @@
     <div class="row">
         <h2 class="center-align">Tutorial</h2>
     </div>
-    
+
+    <div class="row" ng-repeat="tutorial in ctrl.tutorials">
+        <div class="col s10 m10 l10 offset-l1 offset-m1 offset-s1">
+            <h4>{{tutorial.title}}</h4>
+            <p>{{tutorial.description}}</p>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col s10 m10 l10 offset-l1 offset-m1 offset-s1">
             <h4>Introduzione alla programmazione: PYTHON</h4>

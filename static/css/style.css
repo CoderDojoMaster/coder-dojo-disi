@@ -153,9 +153,8 @@ p {
     cards style
 */
 
-#logo {
+.course-logo {
     max-height: 150px;
-    max-width: auto;
 }
 h4 {
     text-align: center;
