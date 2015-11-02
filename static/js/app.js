@@ -38,6 +38,8 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
     }).when('/error', {
         templateUrl: '/static/partials/error.html'
+    }).when('/index.html', {
+        redirectTo: '/'
     }).otherwise({
         redirectTo: '/error'
     });
