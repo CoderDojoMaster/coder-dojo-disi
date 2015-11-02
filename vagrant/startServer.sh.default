@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-sudo service supervisor stop
+
+#Server for API is activated by deafult. To deactivate change "restart" in "stop"
+sudo service supervisor start
 
 sudo service nginx restart

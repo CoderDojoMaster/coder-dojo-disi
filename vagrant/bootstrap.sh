@@ -13,4 +13,4 @@ sudo apt-get install -y mongodb-org
 sudo service mongod start
 
 echo "MongoDB setup"
-mongo /vagrant/mongoSetup.js
+mongo /vagrant/mongoDB/mongoSetup.js
