@@ -82,5 +82,4 @@ crashlytics-build.properties
 log/
 
 .vagrant/
-
-
+vagrant/startServer.sh
