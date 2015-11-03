@@ -164,7 +164,7 @@ h4 {
     profile style
 */
 
-#profile_pic {
+.profile_pic {
     max-height: 150px;
     max-width: 150px;
 }

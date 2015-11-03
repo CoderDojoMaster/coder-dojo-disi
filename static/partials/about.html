@@ -3,14 +3,32 @@
  <div class="row">
      <h2 class="center-align">I nostri collaboratori:</h2>
  </div>
+
+    <div class="col s12 l5 offset-l1 m8 offset-m2" ng-repeat="mentor in ctrl.mentors">
+        <div class="card small hoverable fade">
+            <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                <img class="activator responsive-img" ng-src="{{mentor.imgUrl}}">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{mentor.firstname}} {{mentor.lastname}}<i class="material-icons right">info</i></span>
+                <p>{{mentor.role}}</p>
+
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">{{mentor.firstname}} {{mentor.lastname}}<i class="material-icons right">close</i></span>
+                <p>{{mentor.description}}</p>
+
+            </div>
+        </div>
+    </div>
   
    <!-- First row -->
     <div class="row" id="about_back_first" >
      <div class="row">
      <div class="col s12 l5 offset-l1 m8 offset-m2 ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/giacomelli_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/giacomelli_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Samuel Giacomelli<i class="material-icons right">info</i></span>
@@ -34,8 +52,8 @@
       </div>
       <div class="col s12 l5  m8 offset-m2  ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/romani_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/romani_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Michele Romani<i class="material-icons right">info</i></span>
@@ -62,8 +80,8 @@ Sono uno studente di Informatica ed appasionato di tecnologia,in particolare ado
      <div class="row">
      <div class="col s12 l5 offset-l1 m8 offset-m2 ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/guerrieri_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/guerrieri_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Alessio Guerrieri<i class="material-icons right">info</i></span>
@@ -85,8 +103,8 @@ Nella vita vera ricerca metodi per utilizzare tanti computer in cluster per trov
       </div>
       <div class="col s12 l5  m8 offset-m2  ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/bacchiega_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/bacchiega_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Alessandro Bacchiega<i class="material-icons right">info</i></span>
@@ -111,8 +129,8 @@ Nella vita vera ricerca metodi per utilizzare tanti computer in cluster per trov
      <div class="row">
      <div class="col s12 l5 offset-l1 m8 offset-m2 ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/tovo_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/tovo_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Alessia Tovo<i class="material-icons right">info</i></span>
@@ -134,8 +152,8 @@ Nel mio tempo libero mi piace correre, guardare film e leggere libri definiti �
       </div>
       <div class="col s12 l5  m8 offset-m2  ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/chist%C3%A8_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/chist%C3%A8_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Paolo Chistè<i class="material-icons right">info</i></span>
@@ -159,8 +177,8 @@ Sono uno studente di informatica, ho appena iniziato il terzo anno di universit�
      <div class="row">
      <div class="col s12 l5 offset-l1 m8 offset-m2 ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/natale_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/natale_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Maria Pia Natale<i class="material-icons right">info</i></span>
@@ -182,8 +200,8 @@ Il mio scopo, come Mentor, è quello di provare a trasmettere questa passione an
       </div>
       <div class="col s12 l5  m8 offset-m2  ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/peserico_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/peserico_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Umberto Peserico<i class="material-icons right">info</i></span>
@@ -208,8 +226,8 @@ Il mio scopo, come Mentor, è quello di provare a trasmettere questa passione an
  <div class="row">
      <div class="col s12 l5 offset-l1 m8 offset-m2 ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/bianchi_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/bianchi_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Michele "Jazzinghen" Bianchi<i class="material-icons right">info</i></span>
@@ -237,8 +255,8 @@ Twitter: @Jazzinghen
       </div>
       <div class="col s12 l5  m8 offset-m2  ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/detoni_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/detoni_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Giovanni De Toni<i class="material-icons right">info</i></span>
@@ -262,8 +280,8 @@ Twitter: @Jazzinghen
      <div class="row">
      <div class="col s12 l5 offset-l1 m8 offset-m2 ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/fabio_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/fabio_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Fabio Da Rolt<i class="material-icons right">info</i></span>
@@ -284,8 +302,8 @@ Ho cominciato a studiare informatica perchè sono sempre stato appassionato di v
       </div>
       <div class="col s12 l5  m8 offset-m2  ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/balliu_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/balliu_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Elda Balliu<i class="material-icons right">info</i></span>
@@ -313,8 +331,8 @@ Being in a band is always a compromise. Provided that the balance is good, what 
      <div class="row">
      <div class="col s12 l5 offset-l1 m8 offset-m2 ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/zara_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/zara_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Giacomo Zara<i class="material-icons right">info</i></span>
@@ -335,8 +353,8 @@ Ho avuto il primo contatto con l’informatica alle superiori, attraverso alcuni
       </div>
       <div class="col s12 l5  m8 offset-m2  ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/berlato_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/berlato_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Stefano Berlato<i class="material-icons right">info</i></span>
@@ -360,8 +378,8 @@ Ho avuto il primo contatto con l’informatica alle superiori, attraverso alcuni
      <div class="row">
      <div class="col s12 l5 offset-l1 m8 offset-m2 ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/aidoo_profile.JPG" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/aidoo_profile.JPG">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">“Perwise” Michael Aidoo<i class="material-icons right">info</i></span>
@@ -387,8 +405,8 @@ you can’t do. -
       </div>
       <div class="col s12 l5  m8 offset-m2  ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/bosotti_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/bosotti_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">"James" Luca Bosotti<i class="material-icons right">info</i></span>
@@ -413,8 +431,8 @@ you can’t do. -
      <div class="row">
      <div class="col s12 l5 offset-l1 m8 offset-m2 ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/lorenzinew_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/lorenzinew_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Sabina Lorenzi<i class="material-icons right">info</i></span>
@@ -438,8 +456,8 @@ Ho cominciato ad interessarmi al soggetto alle superiori per pura curiosità e o
       </div>
       <div class="col s12 l5  m8 offset-m2  ">
      <div class="card small hoverable"   class="fade">
-                <div class="card-image circle waves-effect waves-block waves-light" id="profile_pic">
-                    <img class="activator responsive-img" src="../static/img/Profile_pic/kalonew_profile.jpg" id="logo">
+                <div class="card-image circle waves-effect waves-block waves-light profile_pic">
+                    <img class="activator responsive-img" src="../static/img/Profile_pic/kalonew_profile.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Sara Kalo<i class="material-icons right">info</i></span>

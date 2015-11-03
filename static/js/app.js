@@ -53,20 +53,25 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
     }
 })
 
-.controller('homeController', function () {
+.controller('homeController', ['Page', function (Page) {
 
-    clear_navigation();
-    $('.slider').slider();
-    var window_height = $(window).height();
-    $('.slider').height(window_height - 96);
-    $('.slides').css({
-        height: window_height - 136
-    });
-})
+        Page.setTitle("CoderDojoMaster");
 
-.controller('coursesController', ['Courses', function (Courses) {
+        clear_navigation();
+        $('.slider').slider();
+        var window_height = $(window).height();
+        $('.slider').height(window_height - 96);
 
-        var courses = [];
+        $('.slides').css({
+            height: window_height - 136
+        });
+}])
+
+.controller('coursesController', ['Courses', 'Page', function (Courses, Page) {
+
+        Page.setTitle("CoderDojoMaster Corsi");
+
+        this.courses = [];
 
         Courses.query().$promise.then(
             function (data){
@@ -84,13 +89,15 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
         $('#courses-link').addClass("page-active");
 }])
 
-.controller('eventsController', ['Events', function (Events) {
+.controller('eventsController', ['Events', 'Page', function (Events, Page) {
 
-        var events = [];
+        Page.setTitle("CoderDojoMaster Eventi");
+
+        this.events = [];
 
         Events.query().$promise.then(
             function (data) {
-                events = data;
+                ctrl.events = data;
             }, function (error) {
                 //error
             }, function () {
@@ -104,25 +111,41 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
         var rows = $(".row").length;
 
-        $('.central-line').height(253 * rows);
+        $('.central-line').height(283 * rows);
 
 
 }])
 
-.controller('aboutController', ['Mentor', function (Mentor) {
+.controller('aboutController', ['Mentor', 'Page', function (Mentor, Page) {
+
+        Page.setTitle("CoderDojoMaster Mentori");
+
+        this.mentors = [];
+
+        Mentor.query().$promise.then(
+            function (data) {
+                ctrl.mentors = data;
+            }, function (error) {
+                //error
+            }, function () {
+                //loading
+            }
+        );
 
     clear_navigation();
 
     $('#about-link').addClass("page-active");
 }])
 
-.controller('tutorialController', ['Tutorial' ,function (Tutorial) {
+.controller('tutorialController', ['Tutorial', 'Page' ,function (Tutorial, Page) {
 
-        var tutorials = [];
+        Page.setTitle("CoderDojoMaster Tutorial");
+
+        this.tutorials = [];
 
         Tutorial.query().$promise.then(
             function (data) {
-                tutorials = data;
+                ctrl.tutorials = data;
             }, function (error) {
                 //error
             }, function () {
@@ -135,14 +158,16 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
         $('#tutorial-link').addClass("page-active");
 }])
 
-.controller('faqController', ['FAQ', function (FAQ) {
+.controller('faqController', ['FAQ', 'Page', function (FAQ, Page) {
 
-        var faqs = [];
+        Page.setTitle("CoderDojoMaster FAQ");
+
+        this.faqs = [];
 
         FAQ.query().$promise.then(
             function (data){
                 //success
-                faqs = data;
+                ctrl.faqs = data;
             }, function (error) {
                 //error
             }, function () {
@@ -154,3 +179,11 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
         $('#faq-link').addClass("page-active");
 }])
+
+.factory('Page', function(){
+    var title = 'default';
+    return {
+        title: function() { return title; },
+        setTitle: function(newTitle) { title = newTitle; }
+    };
+});
