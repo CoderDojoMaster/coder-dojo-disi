@@ -1,14 +1,41 @@
 conn = new Mongo();
 db = conn.getDB("development");
 
-db.counters.insert(
+db.counters.save(
     {
         _id: "faq",
         seq: 0
     }
 );
 
+db.counters.save(
+    {
+        _id:"events",
+        seq:0
+    }
+);
+db.counters.save(
+    {
+        _id:"mentors",
+        seq:0
+    }
+);
+db.counters.save(
+    {
+        _id:"courses",
+        seq:0
+    }
+);
+db.counters.save(
+    {
+        _id:"tutorials",
+        seq:0
+    }
+);
+
+
 function getNextSequence(name) {
+
     var ret = db.counters.findAndModify(
         {
             query: {_id: name},
@@ -20,7 +47,8 @@ function getNextSequence(name) {
 }
 
 function addID(elem) {
-    elem._id = getNextSequence(String(this));
+
+    elem._id = getNextSequence(this.name);
 }
 
 var faqs = [
@@ -30,6 +58,51 @@ var faqs = [
     }
 ];
 
-faqs.forEach(addID, "faq");
+var events = [
+    {
+        title:"",
+        description:"",
+        urls:{
+            googleForm:"",
+            facebook:""
+        }
+    }
+];
+
+var mentors = [
+    {
+        firstname:"",
+        lastname:"",
+        roles:[],
+        imgUrl:"",
+        descriptio:""
+    }
+];
+
+var courses = [
+    {
+        title:"",
+        description:"",
+        type:"",
+        imgUrl:""
+    }
+];
+
+var tutorials = [
+    {
+        title:"",
+        description:""
+    }
+];
+
+faqs.forEach(addID, {name:"faq"});
+events.forEach(addID, {name:"events"});
+mentors.forEach(addID, {name:"mentors"});
+courses.forEach(addID, {name:"courses"});
+tutorials.forEach(addID, {name:"tutorials"});
 
 db.faq.insert(faqs);
+db.events.insert(events);
+db.mentors.insert(mentors);
+db.courses.insert(courses);
+db.tutorials.insert(tutorials);
