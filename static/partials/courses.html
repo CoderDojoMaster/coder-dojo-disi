@@ -4,7 +4,15 @@
         <h2 class="center-align">Corsi</h2>
     </div>
 
-    <div class="row" ng-repeat="course in ctrl.courses">
+    <div class="col s12 m12 l12" ng-show="ctrl.error">
+        <h4 class="center-align red-text">{{ctrl.message}}</h4>
+    </div>
+
+    <div class="col s12 m12 l12" ng-show="ctrl.loading">
+        <h4 class="center-align">Caricamento</h4>
+    </div>
+
+    <div class="row" ng-repeat="course in ctrl.courses" ng-hide="ctrl.loading">
         <div class="col s12 m8 l8 offset-m2 offset-l2">
             <div class="card small hoverable" class="fade">
                 <div class="card-image waves-effect waves-block waves-light">
@@ -24,111 +32,4 @@
 
     </div>
 
-    <!--row del basic development   -->
-    <div class="row">
-        <!--<h4>Introduzione alla programmazione: PYTHON</h4>-->
-        <div class="col s12 m8 l8 offset-m2 offset-l2">
-            <div class="card small hoverable" class="fade">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator responsive-img course-logo" src="../static/img/python-logo-generic.svg">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Development basis:<i class="material-icons right">more_vert</i></span>
-                    <p>PYTHON</p>
-                    <p><a href="#">Vai al tutorial</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Python<i class="material-icons right">close</i></span>
-                    <p>Che le lingue siano importanti ai giorni d’oggi, questo è risaputo da tutti. Ma oltre all’inglese, al tedesco, al giapponese, all’arabo e alle altre lingue parlate in tutto il mondo, ci sono linguaggi che ci permettono di comunicare con i computers e sono davvero tantissimi! C, C++, Java, Ruby, ect, … Con Python vedrete dapprima la programmazione base partendo dall'utilizzo di variabili e strutture di controllo (if, for, while). In seguito si sperimenteranno tecniche più avanzate, utili anche negli altri percorsi come l'utilizzo di librerie, la programmazione ad oggetti e la programmazione multi-threaded.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!--row del web development-->
-    <div class="row">
-        <!--<h4>Web development: HTML, CSS & JS</h4> -->
-        <div class="col s12 m8 l8 offset-m2 offset-l2">
-            <div class="card small hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator responsive-img course-logo" src="../static/img/html5-css-javascript-logos.svg">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Web development:<i class="material-icons right">more_vert</i></span>
-                    <p>HTML5, CSS3 E JAVASCRIPT</p>
-                    <p><a href="#">Vai al tutorial</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">HTML5 e CSS3<i class="material-icons right">close</i></span>
-                    <p>In ogni istante vengono visualizzate nel mondo milioni di pagine Web. Ma la maggior parte delle persone che utilizzano Internet conosce davvero come sono realizzate? Qual è la struttura di base di un sito? Cosa c’è dietro ad un link, cosa si utilizza per rendere un sito accattivante? HTML, CSS e JS sono tre linguaggi che consentono di implementare una pagina Web. Con il primo si scrivono le istruzioni che compongono lo scheletro ed il contenuto di un sito, con il CSS è possibile definire a piacere l’aspetto, mentre JavaScript permette di gestire gli effetti dinamici interattivi.
-
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!--    <div class="col s12 m5 ">
-            <div class="card small hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator responsive-img " src="../img/js.svg" id="logo">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">JavaScript<i class="material-icons right">more_vert</i>
-             </span>
-                    <p>Crea potenti animazioni per i tuoi siti con JS</p>
-                    <p><a href="#">Vai al tutorial</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">JavaScript<i class="material-icons right">close</i></span>
-                    <p>
-                        In informatica JavaScript è un linguaggio di scripting orientato agli oggetti e agli eventi,comunemente utilizzato nella programmazione Web per la creazione di effetti dinamici interattivi tramite funzioni di script invocate da eventi innescati a loro volta in vari modi dall'utente sulla pagina web in uso (mouse, tastiera ecc...).A differenza di altri linguaggi, quali il C o il C++, che permettono la scrittura di programmi completamente stand-alone, JavaScript viene utilizzato soprattutto in quanto linguaggio di scripting, integrato, quindi, all'interno di un altro programma.
-                    </p>
-                </div>
-            </div>
-        </div> -->
-
-    </div>
-
-    <!--row del game development   -->
-    <div class="row">
-        <!--<h4>Game Development 2D e 3D</h4>-->
-        <div class="col s12 m8 l8 offset-m2 offset-l2">
-            <div class="card small hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator responsive-img course-logo" src="../static/img/construct2unity.svg">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Game Development:<i class="material-icons right">more_vert</i></span>
-                    <p>CONSTRUCT2 E UNITY</p>
-                    <p><a href="#">Vai al tutorial</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Construct2<i class="material-icons right">close</i></span>
-                    <p>Quante volte, giocando all'ultima versione del nostro videogame preferito, ci capita di pensare a quanto ci piacerebbe poter essere dalla parte di chi il gioco lo crea, piuttosto che di chi si limita a giocarci? Esistono moltissimi strumenti che permettono di vivere questa particolare esperienza, tra cui Unity e Construct. Construct e Unity sono due motori grafici, che ci forniscono strumenti di base per consentirci di sviluppare videogiochi in 2D e in 3D. Vedremo insieme come creare un progetto, gestire comportamenti e fisica di gioco, suono, grafica e tutti i componenti, tutto questo al fine di creare un semplice gioco.
-
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!--<div class="col s12 m5 ">
-            <div class="card small hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator responsive-img " src="../img/Official_unity_logo.png" id="logo">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Unity<i class="material-icons right">more_vert</i>
-             </span>
-                    <p>Sviluppa giochi 3D con Unity</p>
-                    <p><a href="#">Vai al tutorial</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Unity<i class="material-icons right">close</i></span>
-                    <p>
-                        Unity e' uno strumento di sviluppo multiplatform finalizzato alla creazione di videogiochi 3D o altri contenuti 3D, quali visualizzazioni architettoniche o animazioni in tempo reale. E' richiesta conoscenza di programmazione a oggetti.
-                    </p>
-                </div>
-            </div>
-        </div>-->
-    </div>
 </div>

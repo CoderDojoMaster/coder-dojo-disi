@@ -4,32 +4,18 @@
         <h2 class="center-align">Tutorial</h2>
     </div>
 
+    <div class="col s12 m12 l12" ng-show="ctrl.error">
+        <h4 class="center-align red-text">{{ctrl.message}}</h4>
+    </div>
+
+    <div class="col s12 m12 l12" ng-show="ctrl.loading">
+        <h4 class="center-align">Caricamento</h4>
+    </div>
+
     <div class="row" ng-repeat="tutorial in ctrl.tutorials">
         <div class="col s10 m10 l10 offset-l1 offset-m1 offset-s1">
             <h4>{{tutorial.title}}</h4>
             <p>{{tutorial.description}}</p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col s10 m10 l10 offset-l1 offset-m1 offset-s1">
-            <h4>Introduzione alla programmazione: PYTHON</h4>
-            <p>Che le lingue siano importanti ai giorni d’oggi, questo è risaputo da tutti. Ma oltre all’inglese, al tedesco, al giapponese, all’arabo e alle altre lingue parlate in tutto il mondo, ci sono linguaggi che ci permettono di comunicare con i computers e sono davvero tantissimi! C, C++, Java, Ruby, ect, … Con Python vedrete dapprima la programmazione base partendo dall'utilizzo di variabili e strutture di controllo (if, for, while). In seguito si sperimenteranno tecniche più avanzate, utili anche negli altri percorsi come l'utilizzo di librerie, la programmazione ad oggetti e la programmazione multi-threaded</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s10 m10 l10 offset-l1 offset-m1 offset-s1">
-            <h4>Web development: HTML, CSS & JS</h4>
-            <p>In ogni istante vengono visualizzate nel mondo milioni di pagine Web. Ma la maggior parte delle persone che utilizzano Internet conosce davvero come sono realizzate? Qual è la struttura di base di un sito? Cosa c’è dietro ad un link, cosa si utilizza per rendere un sito accattivante? HTML, CSS e JS sono tre linguaggi che consentono di implementare una pagina Web. Con il primo si scrivono le istruzioni che compongono lo scheletro ed il contenuto di un sito, con il CSS è possibile definire a piacere l’aspetto, mentre JavaScript permette di gestire gli effetti dinamici interattivi.
-            </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s10 m10 l10 offset-l1 offset-m1 offset-s1">
-            <h4>Game Development 2D e 3D</h4>
-            <p>Quante volte, giocando all'ultima versione del nostro videogame preferito, ci capita di pensare a quanto ci piacerebbe poter essere dalla parte di chi il gioco lo crea, piuttosto che di chi si limita a giocarci? Esistono moltissimi strumenti che permettono di vivere questa particolare esperienza, tra cui Unity e Construct. Construct e Unity sono due motori grafici, che ci forniscono strumenti di base per consentirci di sviluppare videogiochi in 2D e in 3D. Vedremo insieme come creare un progetto, gestire comportamenti e fisica di gioco, suono, grafica e tutti i componenti, tutto questo al fine di creare un semplice gioco.
-            </p>
-
         </div>
     </div>
 </div>
