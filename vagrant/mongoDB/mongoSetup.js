@@ -1,6 +1,6 @@
 conn = new Mongo();
 db = conn.getDB("development");
-if (db.getUsers().lenght == 0) {
+if (db.getUsers().length == 0) {
 db.createUser(
     {
         user: "admin",
