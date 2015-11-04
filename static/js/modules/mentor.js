@@ -5,15 +5,13 @@
     angular.module('mentorModule', ['ngResource'])
 
         .factory('Mentor', ['$resource', function ($resource) {
-            
+
             return $resource('/api/mentor/:mid', {}, {
                 query: {method:'GET', isArray:true}
             });
         }])
 
-    .controller('aboutController', ['Mentor', 'Page', function (Mentor, Page) {
-
-        Page.setTitle("CoderDojoMaster Mentori");
+    .controller('aboutController', ['Mentor', function (Mentor) {
 
         var ctrl = this;
         this.error = false;

@@ -5,15 +5,13 @@
     angular.module('faqModule', ['ngResource'])
 
         .factory('FAQ', ['$resource', function ($resource) {
-            
+
             return $resource('/api/faq/:fid', {}, {
                 query: {method:'GET', isArray:true}
             });
         }])
 
-        .controller('faqController', ['FAQ', 'Page', function (FAQ, Page) {
-
-            Page.setTitle("CoderDojoMaster FAQ");
+        .controller('faqController', ['FAQ', function (FAQ) {
 
             var ctrl = this;
             this.error = false;
@@ -41,7 +39,7 @@
                         //loading
                     }
                 );
-            };
+            }
 
             clear_navigation();
 

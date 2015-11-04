@@ -5,16 +5,14 @@
     angular.module('coursesModule', ['ngResource'])
 
         .factory('Courses', ['$resource', function ($resource) {
-            
+
             return $resource('/api/courses/:cid', {}, {
                 query: {method:'GET', isArray:true}
             });
-            
+
         }])
 
-        .controller('coursesController', ['Courses', 'Page', function (Courses, Page) {
-
-            Page.setTitle("CoderDojoMaster Corsi");
+        .controller('coursesController', ['Courses', function (Courses) {
 
             var ctrl = this;
             this.error = false;
@@ -28,6 +26,7 @@
                 Courses.get( function (data) {
                         //success
                         ctrl.courses = data._items;
+                        console.log(ctrl.courses);
                         ctrl.loading = false;
                     }, function (error) {
                         //error

@@ -7,36 +7,43 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
     /* routing of the site */
     $routeProvider.when('/', {
+        title: 'CoderDojoMaster',
         templateUrl: '/static/partials/home.html',
         controller: 'homeController',
         controllerAs: 'ctrl'
 
     }).when('/courses', {
+        title: 'CoderDojoMaster Corsi',
         templateUrl: '/static/partials/courses.html',
         controller: 'coursesController',
         controllerAs: 'ctrl'
 
     }).when('/events', {
+        title: 'CoderDojoMaster Eventi',
         templateUrl: '/static/partials/events.html',
         controller: 'eventsController',
         controllerAs: 'ctrl'
 
     }).when('/about', {
+        title: 'CoderDojoMaster Mentori',
         templateUrl: '/static/partials/about.html',
         controller: 'aboutController',
         controllerAs: 'ctrl'
 
     }).when('/tutorials', {
+        title: 'CoderDojoMaster Tutorial',
         templateUrl: '/static/partials/tutorials.html',
         controller: 'tutorialController',
         controllerAs: 'ctrl'
 
     }).when('/faq', {
+        title: 'CoderDojoMaster FAQ',
         templateUrl: '/static/partials/faq.html',
         controller: 'faqController',
         controllerAs: 'ctrl'
 
     }).when('/error', {
+        title: 'CoderDojoMaster',
         templateUrl: '/static/partials/error.html'
     }).when('/index.html', {
         redirectTo: '/'
@@ -50,12 +57,16 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
             $(this).removeClass("page-active");
         });
-    }
+    };
 })
 
-.controller('homeController', ['Page', function (Page) {
+.run(['$rootScope', function($rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+       $rootScope.title = current.$$route.title;
+   });
+}])
 
-        Page.setTitle("CoderDojoMaster");
+.controller('homeController', function () {
 
         clear_navigation();
         $('.slider').slider();
@@ -65,13 +76,4 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
         $('.slides').css({
             height: window_height - 136
         });
-}])
-
-
-.factory('Page', function(){
-    var title = 'default';
-    return {
-        title: function() { return title; },
-        setTitle: function(newTitle) { title = newTitle; }
-    };
 });

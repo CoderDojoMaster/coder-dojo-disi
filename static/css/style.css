@@ -108,11 +108,13 @@ p {
 .facebook-btn {
 
     background-color: #4E69A2;
+    margin: 0.2em;
 }
 
 .form-btn {
-    
+
     background-color: #61c;
+    margin: 0.2em;
 }
 
 /*
@@ -186,7 +188,7 @@ h4 {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-right: -50%; 
+    margin-right: -50%;
     margin-bottom: -50%;
     transform: translate(-50%, -50%);
 }

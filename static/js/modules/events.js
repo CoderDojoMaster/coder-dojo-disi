@@ -5,15 +5,13 @@
     angular.module('eventsModule', ['ngResource'])
 
         .factory('Events', ['$resource', function ($resource) {
-            
+
             return $resource('/api/events/:eid', {}, {
                 query: {method:'GET', isArray:true}
             });
         }])
 
-        .controller('eventsController', ['Events', 'Page', function (Events, Page) {
-
-            Page.setTitle("CoderDojoMaster Eventi");
+        .controller('eventsController', ['Events', function (Events) {
 
             var ctrl = this;
             this.error = false;

@@ -5,15 +5,13 @@
     angular.module('tutorialsModule', ['ngResource'])
 
         .factory('Tutorial', ['$resource', function ($resource) {
-            
+
             return $resource('/api/tutorials/:tid', {}, {
                 query: {method:'GET', isArray:true}
             });
         }])
 
-        .controller('tutorialController', ['Tutorial', 'Page' ,function (Tutorial, Page) {
-
-            Page.setTitle("CoderDojoMaster Tutorial");
+        .controller('tutorialController', ['Tutorial' ,function (Tutorial) {
 
             var ctrl = this;
             this.error = false;
@@ -41,7 +39,7 @@
                         //loading
                     }
                 );
-            };
+            }
 
             clear_navigation();
 
