@@ -6,7 +6,7 @@
 
         .factory('Mentor', ['$resource', function ($resource) {
 
-            return $resource('/api/mentor/:mid', {}, {
+            return $resource('/api/mentors/:mid', {}, {
                 query: {method:'GET', isArray:true}
             });
         }])

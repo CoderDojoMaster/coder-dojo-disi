@@ -24,7 +24,6 @@
                 Courses.get( function (data) {
                         //success
                         ctrl.courses = data._items;
-                        console.log(ctrl.courses);
                         ctrl.loading = false;
                     }, function (error) {
                         //error

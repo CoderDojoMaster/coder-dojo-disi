@@ -42,6 +42,9 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
         controller: 'faqController',
         controllerAs: 'ctrl'
 
+    }).when ('/loading', {
+        templateUrl:'static/partials/loadingDojo.html'
+
     }).when('/error', {
         title: 'CoderDojoMaster',
     }).when ('/loading', {
@@ -49,8 +52,10 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
     })
         .when('/error', {
         templateUrl: '/static/partials/error.html'
+
     }).when('/index.html', {
         redirectTo: '/'
+
     }).otherwise({
         redirectTo: '/error'
     });
@@ -66,18 +71,18 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
 .run(['$rootScope', function($rootScope) {
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-       $rootScope.title = current.$$route.title;
-   });
+        $rootScope.title = current.$$route.title;
+    });
 }])
 
 .controller('homeController', function () {
 
-        clear_navigation();
-        $('.slider').slider();
-        var window_height = $(window).height();
-        $('.slider').height(window_height - 96);
+    clear_navigation();
+    $('.slider').slider();
+    var window_height = $(window).height();
+    $('.slider').height(window_height - 96);
 
-        $('.slides').css({
-            height: window_height - 136
-        });
+    $('.slides').css({
+        height: window_height - 136
+    });
 });
