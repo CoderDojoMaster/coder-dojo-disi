@@ -44,6 +44,10 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
     }).when('/error', {
         title: 'CoderDojoMaster',
+    }).when ('/loading', {
+        templateUrl:'static/partials/loadingDojo.html'
+    })
+        .when('/error', {
         templateUrl: '/static/partials/error.html'
     }).when('/index.html', {
         redirectTo: '/'

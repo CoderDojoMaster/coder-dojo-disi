@@ -15,8 +15,6 @@
         .controller('coursesController', ['Courses', function (Courses) {
 
             var ctrl = this;
-            this.error = false;
-            this.message = "";
             this.courses = [];
             this.loading = true;
 
@@ -31,11 +29,10 @@
                     }, function (error) {
                         //error
                         ctrl.loading = false;
-                        ctrl.error = true;
                         if (error.status == 404) {
-                            ctrl.message = "Contenuto non trovato";
+                            Materialize.toast("Content not found", 3000, 'red-text white');
                         } else if (error.satus == 500) {
-                            ctrl.message = "Errore del server";
+                            Materialize.toast("Server error", 3000, 'red-text white');
                         }
                     }, function () {
                         //loading
