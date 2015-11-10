@@ -17,7 +17,7 @@
     <div class="col s12 l5 offset-l1 m8 offset-m2" ng-repeat="mentor in ctrl.mentors" ng-hide="ctrl.loading">
         <div class="card small hoverable fade">
             <div class="card-image circle waves-effect waves-block waves-light profile_pic">
-                <img class="activator responsive-img" ng-src="{{mentor.imgUrl}}">
+                <img class="activator responsive-img" data-ng-src="data:{{mentor.img.content_type}};base64,{{mentor.img.file}}">
             </div>
             <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">{{mentor.firstname}} {{mentor.lastname}}<i class="material-icons right">info</i></span>

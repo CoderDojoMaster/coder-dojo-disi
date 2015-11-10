@@ -6,7 +6,7 @@
 
         .factory('Mentor', ['$resource', function ($resource) {
 
-            return $resource('/api/mentor/:mid', {}, {
+            return $resource('/api/mentors/:mid', {}, {
                 query: {method:'GET', isArray:true}
             });
         }])
@@ -24,6 +24,7 @@
                     //success
                     ctrl.mentors = data._items;
                     ctrl.loading = false;
+                    console.log(ctrl.mentors);
                 }, function (error) {
                     //error
                     ctrl.loading = false;
