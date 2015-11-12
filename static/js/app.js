@@ -69,7 +69,10 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
     };
 })
 
-.run(['$rootScope', function($rootScope) {
+.run(['$rootScope', '$http', function($rootScope,$http) {
+
+        $http.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+        $http.defaults.headers.common['Authorisation'] = 'Bearer fuffa';
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
         $rootScope.title = current.$$route.title;
     });

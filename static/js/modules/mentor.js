@@ -22,6 +22,7 @@
                     //success
                     ctrl.mentors = data._items;
                     ctrl.loading = false;
+                    console.log(ctrl.mentors);
                 }, function (error) {
                     //error
                     ctrl.loading = false;
