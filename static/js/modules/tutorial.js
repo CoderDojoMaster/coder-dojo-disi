@@ -17,9 +17,9 @@
             this.tutorials = [];
             this.loading = true;
 
-            loadTutorials();
 
-            function loadTutorials () {
+
+            this.loadTutorials = function () {
                 Tutorial.get(function (data) {
                         //success
                         ctrl.tutorials = data._items;
@@ -36,7 +36,9 @@
                         //loading
                     }
                 );
-            }
+            };
+
+            this.loadTutorials();
 
             clear_navigation();
 

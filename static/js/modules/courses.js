@@ -18,9 +18,7 @@
             this.courses = [];
             this.loading = true;
 
-            loadCourses();
-
-            function loadCourses () {
+            this.loadCourses = function () {
                 Courses.get( function (data) {
                         //success
                         ctrl.courses = data._items;
@@ -37,7 +35,9 @@
                         //loading
                     }
                 );
-            }
+            };
+
+            this.loadCourses();
 
             clear_navigation();
 

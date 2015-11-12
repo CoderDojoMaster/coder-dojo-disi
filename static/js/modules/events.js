@@ -16,10 +16,9 @@
             var ctrl = this;
             this.events = [];
             this.loading = true;
+            this.editing = false;
 
-            loadEvents();
-
-            function loadEvents () {
+            this.loadEvents = function () {
                 Events.get( function (data) {
                         //success
                         ctrl.events = data._items;
@@ -37,7 +36,20 @@
                         //loading
                     }
                 );
-            }
+            };
+
+            this.enableEditing = function () {
+
+                ctrl.editing = true;
+                $('.materialize-textarea').trigger('autoresize');
+            };
+
+            this.disableEditing = function () {
+
+                ctrl.editing = false;
+            };
+
+            this.loadEvents();
 
             clear_navigation();
 

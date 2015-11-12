@@ -17,9 +17,7 @@
             this.faqs = [];
             this.loading = true;
 
-            loadFaqs();
-
-            function loadFaqs () {
+            this.loadFaqs = function () {
                 FAQ.get(function (data) {
                         //success
                         ctrl.faqs = data._items;
@@ -36,7 +34,9 @@
                         //loading
                     }
                 );
-            }
+            };
+
+            this.loadFaqs();
 
             clear_navigation();
 

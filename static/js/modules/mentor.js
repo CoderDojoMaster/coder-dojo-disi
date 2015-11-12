@@ -17,9 +17,7 @@
         this.mentors = [];
         this.loading = true;
 
-        loadMentors();
-
-        function loadMentors () {
+        this.loadMentors = function () {
             Mentor.get(function (data) {
                     //success
                     ctrl.mentors = data._items;
@@ -37,9 +35,12 @@
                     //loading
                 }
             );
-        }
+        };
 
-        clear_navigation();
+            this.loadMentors();
+
+
+            clear_navigation();
 
         $('#about-link').addClass("page-active");
     }]);
