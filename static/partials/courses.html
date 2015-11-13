@@ -4,15 +4,8 @@
         <h2 class="center-align">Corsi</h2>
     </div>
 
-    <div class="col s12 m12 l12 center-align centered" ng-show="ctrl.loading">
-        <!--<img class="loading-img" src="/static/img/cubeYing.svg">-->7
-        <div class='tetrominos'>
-            <div class='tetromino box1'></div>
-            <div class='tetromino box2'></div>
-            <div class='tetromino box3'></div>
-            <div class='tetromino box4'></div>
-        </div>
-    </div>
+    <!-- loading template visible only when ctrl.loading == true -->
+    <div tetrominoloading></div>
 
     <div class="row" ng-repeat="course in ctrl.courses" ng-hide="ctrl.loading">
         <div class="col s12 m8 l8 offset-m2 offset-l2">
@@ -23,7 +16,7 @@
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">info</i>{{course.type}}:</span>
                     <p>{{course.title}}</p>
-                    <p><a class="btn-flat waves-effect waves-teal" ng-href="{{course.tutorialUrl}}"><i class="material-icons right">chevron_right</i>Vai al tutorial</a></p>
+                    <p><a class="btn-flat waves-effect waves-teal right" ng-href="{{course.tutorialUrl}}"><i class="material-icons right">chevron_right</i>Vai al tutorial</a></p>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{course.title}}</span>
@@ -31,7 +24,5 @@
                 </div>
             </div>
         </div>
-
     </div>
-
 </div>

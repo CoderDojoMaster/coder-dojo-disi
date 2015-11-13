@@ -3,15 +3,8 @@
         <h2 class="center-align">Eventi</h2>
     </div>
 
-    <div class="col s12 m12 l12 center-align centered" ng-show="ctrl.loading">
-        <!--<img class="loading-img" src="/static/img/cubeYing.svg">-->7
-        <div class='tetrominos'>
-            <div class='tetromino box1'></div>
-            <div class='tetromino box2'></div>
-            <div class='tetromino box3'></div>
-            <div class='tetromino box4'></div>
-        </div>
-    </div>
+    <!-- loading template visible only when ctrl.loading == true -->
+    <div tetrominoloading></div>
 
     <div class="row valign-wrapper"  ng-repeat-start="event in ctrl.events track by $index" ng-hide="ctrl.loading || $odd ">
         <div class="col s9 m5 l4 offset-m1 offset-l1">
@@ -26,8 +19,8 @@
                     <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{event.title}}</span>
                     <p>{{event.description}}</p>
                     <div class="center-align">
-                        <a class="waves-effect waves-light btn form-btn white-text" target="_blank" ng-href=""><i class="material-icons right">description</i>Google form</a>
-                        <a class="waves-effect waves-light btn facebook-btn white-text" target="_blank" ng-href=""><i class="material-icons right">event</i>Evento Facebook</a>
+                        <a class="waves-effect waves-light btn event-btn form-btn white-text" target="_blank" ng-href=""><i class="material-icons right">description</i>Google form</a>
+                        <a class="waves-effect waves-light btn event-btn facebook-btn white-text" target="_blank" ng-href=""><i class="material-icons right">event</i>Evento Facebook</a>
                     </div>
                 </div>
             </div>
@@ -71,8 +64,8 @@
                     <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{event.title}}</span>
                     <p>{{event.description}}</p>
                     <div class="center-align">
-                       <a class="waves-effect waves-light btn form-btn white-text" target="_blank" ng-href=""><i class="material-icons right">description</i>Google form</a>
-                        <a class="waves-effect waves-light btn facebook-btn white-text" target="_blank" ng-href=""><i class="material-icons right">event</i>Evento Facebook</a>
+                        <a class="waves-effect waves-light btn event-btn form-btn white-text" target="_blank" ng-href=""><i class="material-icons right">description</i>Google form</a>
+                        <a class="waves-effect waves-light btn event-btn facebook-btn white-text" target="_blank" ng-href=""><i class="material-icons right">event</i>Evento Facebook</a>
                     </div>
                 </div>
             </div>

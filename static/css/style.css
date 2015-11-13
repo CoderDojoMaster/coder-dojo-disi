@@ -105,14 +105,27 @@ p {
     text-align: justify;
 }
 
+.event-btn {
+
+	width: 65%;
+	margin: 0.2em;
+}
+
+@media only screen and (max-width: 600px) {
+
+	.event-btn {
+		width: 100%;
+	}
+}
+
 .facebook-btn {
 
-    background-color: #4E69A2;
+	background-color: #4E69A2;
 }
 
 .form-btn {
-    
-    background-color: #61c;
+
+	background-color: #61c;
 }
 
 .loading-img {
@@ -171,6 +184,7 @@ h4 {
 .profile_pic {
     max-height: 150px;
     max-width: 150px;
+    margin: 1.2em;
 }
 #about_back_firs {
     margin-left: 25px;
@@ -190,7 +204,7 @@ h4 {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-right: -50%; 
+    margin-right: -50%;
     margin-bottom: -50%;
     transform: translate(-50%, -50%);
 }
