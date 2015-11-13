@@ -16,21 +16,28 @@
         var ctrl = this;
         this.mentors = [];
         this.loading = true;
+            this.page = 1;
 
-        this.loadMentors = function () {
-            Mentor.get(function (data) {
+        this.loadMentors = function (page) {
+            Mentor.get({"max_results":"6","page":page},function (data) {
                     //success
-                    ctrl.mentors = data._items;
+                    console.log(data._items.length);
+                    if (data._items.length != 0) {
+                        for(var i = 0; i < data._items.length; i++) {
+                        ctrl.mentors.push(data._items[i]);
+                        console.log(data._items[i]);
+                    }
+                        ctrl.loadMentors(++ctrl.page);
+                    }
                     ctrl.loading = false;
-                    console.log(ctrl.mentors);
                 }, function (error) {
                     //error
                     ctrl.loading = false;
                     ctrl.error = true;
                     if (error.status == 404) {
-                        Materialize.toast("Content not found", 3000, 'red-text white');
+                        Materialize.toast("Content not found", 3000, 'red white-text');
                     } else if (error.satus == 500) {
-                        Materialize.toast("Server error", 3000, 'red-text white');
+                        Materialize.toast("Server error", 3000, 'red white-text');
                     }
                 }, function () {
                     //loading
@@ -38,7 +45,7 @@
             );
         };
 
-            this.loadMentors();
+            this.loadMentors(ctrl.page);
 
 
             clear_navigation();
