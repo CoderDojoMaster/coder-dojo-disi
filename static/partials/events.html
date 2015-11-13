@@ -3,8 +3,10 @@
         <h2 class="center-align">Eventi</h2>
     </div>
 
-    <!-- loading template visible only when ctrl.loading == true -->
-    <div tetrominoloading></div>
+    <div ng-show="ctrl.loading">
+        <!-- loading template -->
+        <div tetrominoloading></div>
+    </div>
 
     <div class="row valign-wrapper"  ng-repeat-start="event in ctrl.events track by $index" ng-hide="ctrl.loading || $odd ">
         <div class="col s9 m5 l4 offset-m1 offset-l1">

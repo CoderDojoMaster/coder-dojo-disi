@@ -4,8 +4,10 @@
         <h2 class="center-align">Corsi</h2>
     </div>
 
-    <!-- loading template visible only when ctrl.loading == true -->
-    <div tetrominoloading></div>
+    <div ng-show="ctrl.loading">
+        <!-- loading template -->
+        <div tetrominoloading></div>
+    </div>
 
     <div class="row" ng-repeat="course in ctrl.courses" ng-hide="ctrl.loading">
         <div class="col s12 m8 l8 offset-m2 offset-l2">
