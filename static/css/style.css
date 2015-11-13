@@ -223,15 +223,14 @@ h4 {
 }
 
 .tetrominos {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-112px, -96px);
+    transform: translate(-112px, 30px);
 }
 
 .tetromino {
     width: 96px;
     height: 112px;
     position: absolute;
+    left: 50%;
     transition: all ease .3s;
     background-image: url("/static/img/cubeYing.png");
     background-size: cover;
