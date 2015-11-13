@@ -47,10 +47,6 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
     }).when('/error', {
         title: 'CoderDojoMaster',
-    }).when ('/loading', {
-        templateUrl:'static/partials/loadingDojo.html'
-    })
-        .when('/error', {
         templateUrl: '/static/partials/error.html'
 
     }).when('/index.html', {
@@ -71,12 +67,25 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
 .run(['$rootScope', '$http', function($rootScope,$http) {
 
-        $http.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-        $http.defaults.headers.common['Authorisation'] = 'Bearer fuffa';
+    $http.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+    $http.defaults.headers.common['Authorisation'] = 'Bearer fuffa';
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-        $rootScope.title = current.$$route.title;
+        if (current.$$route !== undefined) {
+            $rootScope.title = current.$$route.title;
+        }
     });
 }])
+
+/* template che renderizza l'animazione di caricamento nelle pagine
+    tag html: <div tetrominoloading></div>
+*/
+.directive('tetrominoloading', function() {
+  return {
+    templateUrl: function(elem, attr){
+      return 'static/partials/loadingDojo.html';
+    }
+  };
+})
 
 .controller('homeController', function () {
 
