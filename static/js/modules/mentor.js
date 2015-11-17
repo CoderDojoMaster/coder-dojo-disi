@@ -21,10 +21,11 @@
         this.loadMentors = function (page) {
             Mentor.get({"max_results":"6","page":page},function (data) {
                 //success
-                if (data._items.length !== 0) {
                     ctrl.mentors = ctrl.mentors.concat(data._items);
-                    ctrl.loadMentors(++ctrl.page);
-                }
+                    if (6*page < data._meta.total) {
+                        ctrl.loadMentors(++ctrl.page);
+                    }
+
                 ctrl.loading = false;
             }, function (error) {
                 //error
