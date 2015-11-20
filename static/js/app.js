@@ -7,46 +7,47 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 
     /* routing of the site */
     $routeProvider.when('/', {
-        title: 'CoderDojoMaster',
+        title: 'Home',
         templateUrl: '/static/partials/home.html',
         controller: 'homeController',
         controllerAs: 'ctrl'
 
     }).when('/courses', {
-        title: 'CoderDojoMaster Corsi',
+        title: 'Corsi',
         templateUrl: '/static/partials/courses.html',
         controller: 'coursesController',
         controllerAs: 'ctrl'
 
     }).when('/events', {
-        title: 'CoderDojoMaster Eventi',
+        title: 'Eventi',
         templateUrl: '/static/partials/events.html',
         controller: 'eventsController',
         controllerAs: 'ctrl'
 
     }).when('/about', {
-        title: 'CoderDojoMaster Mentori',
+        title: 'Mentori',
         templateUrl: '/static/partials/about.html',
         controller: 'aboutController',
         controllerAs: 'ctrl'
 
     }).when('/tutorials', {
-        title: 'CoderDojoMaster Tutorial',
+        title: 'Tutorial',
         templateUrl: '/static/partials/tutorials.html',
         controller: 'tutorialController',
         controllerAs: 'ctrl'
 
     }).when('/faq', {
-        title: 'CoderDojoMaster FAQ',
+        title: 'FAQ',
         templateUrl: '/static/partials/faq.html',
         controller: 'faqController',
         controllerAs: 'ctrl'
 
     }).when ('/loading', {
+    	title: 'Loading',
         templateUrl:'static/partials/loadingDojo.html'
 
     }).when('/error', {
-        title: 'CoderDojoMaster',
+        title: 'Errore',
         templateUrl: '/static/partials/error.html'
 
     }).when('/index.html', {
@@ -70,8 +71,10 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
     $http.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
     $http.defaults.headers.common['Authorisation'] = 'Bearer fuffa';
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-        if (current.$$route !== undefined) {
-            $rootScope.title = current.$$route.title;
+        if (current.title !== undefined) {
+            $rootScope.title = "CoderDojo | " + current.title;
+        } else {
+        	$rootScope.title = "CoderDojoMaster";
         }
     });
 }])

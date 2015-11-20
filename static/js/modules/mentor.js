@@ -19,10 +19,11 @@
         this.page = 1;
 
         this.loadMentors = function (page) {
-            Mentor.get({"max_results":"6","page":page},function (data) {
+            var max_results = 6;
+            Mentor.get({"max_results":max_results,"page":page},function (data) {
                 //success
                     ctrl.mentors = ctrl.mentors.concat(data._items);
-                    if (6*page < data._meta.total) {
+                    if (max_results*page < data._meta.total) {
                         ctrl.loadMentors(++ctrl.page);
                     }
 
