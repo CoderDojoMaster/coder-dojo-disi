@@ -222,6 +222,30 @@ h4 {
     }
 }
 
+/*
+    Work in progress image
+*/
+
+@media only screen and (min-height: 801px) {
+    .work-in-progress {
+
+        width: 400px;
+        height: auto;
+    }
+}
+
+@media only screen and (max-height: 800px) {
+
+    .work-in-progress {
+        margin-top: 150px;
+        width: 250px;
+        height: auto;
+    }
+}
+
+/*
+    Loading animation
+*/
 .tetrominos {
     transform: translate(-112px, 30px);
 }
