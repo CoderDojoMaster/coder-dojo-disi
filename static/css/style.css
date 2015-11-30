@@ -243,7 +243,6 @@ h4 {
 @media only screen and (max-height: 800px) {
 
     .work-in-progress {
-        margin-top: 150px;
         width: 250px;
         height: auto;
     }
