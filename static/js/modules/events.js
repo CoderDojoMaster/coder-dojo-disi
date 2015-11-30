@@ -17,6 +17,15 @@
             this.events = [];
             this.loading = true;
             this.editing = false;
+            this.date = new Date();
+
+            this.checkDate = function (d) {
+                var date = new Date(d);
+                if (date <= ctrl.date) {
+                    return true;
+                }
+                return false;
+            };
 
             this.loadEvents = function () {
                 Events.get( function (data) {

@@ -105,6 +105,12 @@ p {
     text-align: justify;
 }
 
+.old {
+    -webkit-filter: grayscale(75%);
+    filter: grayscale(75%);
+    opacity: 0.8;
+}
+
 .event-btn {
 
 	width: 65%;
