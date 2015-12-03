@@ -146,7 +146,7 @@ p {
     background: linear-gradient(#ffffff 0%, #e0e0e0 10%,#e0e0e0 90%, #ffffff 100%);
     position: absolute;
     width: 4px;
-    top: 210px;
+    top: 240px;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, 0);
