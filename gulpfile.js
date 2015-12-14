@@ -25,13 +25,19 @@ var paths = {
     // Sass will check these folders for files when you use @import.
     sass: [
         'client/assets/scss',
-        'node_modules/foundation-apps/scss/vendor',
-        'node_modules/angular-material'
+        'node_modules/materialize-css/sass/'
     ],
     // These files include Foundation for Apps and its dependencies
     angularJS: [
         'node_modules/jquery/dist/jquery.js',
         'node_modules/angular/angular.js',
+        'node_modules/angular-resource/angular-resource.js',
+        'node_modules/angular-route/angular-route.js',
+        'node_modules/materialize-css/dist/js/materialize.js'
+    ],
+    fonts: [
+        'node_modules/materialize-css/dist/font/material-design-icons/*',
+        'node_modules/materialize-css/dist/font/roboto/*'
     ],
     // These files are for your app's JavaScript
     appJS: [
@@ -65,12 +71,16 @@ gulp.task('clean:test', function (cb) {
 });
 
 // Copies everything in the client folder except templates, Sass, and JS
-gulp.task('copy', function () {
+gulp.task('copy:fonts', function () {
+    return gulp.src(paths.fonts, {base: 'node_modules/materialize-css/dist'})
+        .pipe(gulp.dest(buildDir + "/assets"))
+});
+
+gulp.task('copy', ['copy:fonts'], function () {
     return gulp.src(paths.assets, {
             base: './client/'
         })
-        .pipe(gulp.dest(buildDir))
-        ;
+        .pipe(gulp.dest(buildDir));
 });
 
 // Copies your app's page templates and generates URLs for them

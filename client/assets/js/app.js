@@ -8,47 +8,47 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
     /* routing of the site */
     $routeProvider.when('/', {
         title: 'Home',
-        templateUrl: '/static/partials/home.html',
+        templateUrl: '/templates/home.html',
         controller: 'homeController',
         controllerAs: 'ctrl'
 
     }).when('/courses', {
         title: 'Corsi',
-        templateUrl: '/static/partials/courses.html',
+        templateUrl: '/templates/courses.html',
         controller: 'coursesController',
         controllerAs: 'ctrl'
 
     }).when('/events', {
         title: 'Eventi',
-        templateUrl: '/static/partials/events.html',
+        templateUrl: '/templates/events.html',
         controller: 'eventsController',
         controllerAs: 'ctrl'
 
     }).when('/about', {
         title: 'Mentori',
-        templateUrl: '/static/partials/about.html',
+        templateUrl: '/templates/about.html',
         controller: 'aboutController',
         controllerAs: 'ctrl'
 
     }).when('/tutorials', {
         title: 'Tutorial',
-        templateUrl: '/static/partials/tutorials.html',
+        templateUrl: '/templates/tutorials.html',
         controller: 'tutorialController',
         controllerAs: 'ctrl'
 
     }).when('/faq', {
         title: 'FAQ',
-        templateUrl: '/static/partials/faq.html',
+        templateUrl: '/templates/faq.html',
         controller: 'faqController',
         controllerAs: 'ctrl'
 
     }).when ('/loading', {
     	title: 'Loading',
-        templateUrl:'static/partials/loadingDojo.html'
+        templateUrl: '/templates/loadingDojo.html'
 
     }).when('/error', {
         title: 'Errore',
-        templateUrl: '/static/partials/error.html'
+        templateUrl: '/templates/error.html'
 
     }).when('/index.html', {
         redirectTo: '/'
@@ -85,7 +85,7 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
 .directive('tetrominoloading', function() {
   return {
     templateUrl: function(elem, attr){
-      return 'static/partials/loadingDojo.html';
+        return '/templates/loadingDojo.html';
     }
   };
 })
