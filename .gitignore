@@ -144,3 +144,6 @@ docs/_build/
 # PyBuilder
 target/
 
+# NPM
+.npm/
+node_modules/

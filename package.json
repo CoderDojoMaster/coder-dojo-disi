@@ -1,0 +1,27 @@
+{
+  "name": "coder-dojo-master",
+  "version": "1.0.0",
+  "scripts": {
+    "prestart": "npm install --no-bin-links",
+    "start": "gulp"
+  },
+  "devDependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4",
+    "angular-resource": "~1.4",
+    "angular-route": "~1.4",
+    "materialize-css": "~0.97",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-if": "^1.2.5",
+    "gulp-load-plugins": "1.0.0-rc.1",
+    "gulp-ng-html2js": "^0.2.0",
+    "gulp-sass": "^2.0.3",
+    "gulp-uglify": "^1.2.0",
+    "rimraf": "^2.4.1",
+    "run-sequence": "^1.1.1",
+    "yargs": "^3.15.0"
+  },
+  "private": true
+}

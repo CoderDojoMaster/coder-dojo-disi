@@ -1,0 +1,32 @@
+nginx:
+  image: nginx:1.9.6
+  volumes:
+    - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+  ports:
+    - "80:8000"
+  volumes_from:
+    - frontend
+
+mongo:
+  image: mongo:3.2
+  volumes:
+    - mongoDBCoderDojo:/data/db
+
+api_server:
+  build: ./pythonDocker
+  command: python apiServer.py
+  volumes:
+    - ./api:/usr/src/app
+  environment:
+    MONGO_HOST: "coderdojodisi_mongo_1"
+    MONGO_USERNAME: ""
+    MONGO_PASSWORD: ""
+    MONGO_DBNAME: "development"
+    DEVELOPMENT: "true"
+
+frontend:
+  build: ./frontendDocker
+  command: npm start
+  working_dir: /data
+  volumes:
+    - ./:/data
