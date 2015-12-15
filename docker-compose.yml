@@ -14,7 +14,7 @@ mongo:
 
 api_server:
   build: ./pythonDocker
-  command: python apiServer.py
+  command: python -u apiServer.py
   volumes:
     - ./api:/usr/src/app
   environment:
