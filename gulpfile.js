@@ -6,6 +6,7 @@ var argv = require('yargs').argv;
 var gulp = require('gulp');
 var rimraf = require('rimraf');
 var sequence = require('run-sequence');
+var browserSync = require('browser-sync').create();
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -87,6 +88,7 @@ gulp.task('copy', ['copy:fonts'], function () {
 gulp.task('copy:templates', function () {
     return gulp.src('./client/templates/**/*.html')
         .pipe(gulp.dest(buildDir + '/templates'))
+        .pipe(browserSync.stream())
         ;
 });
 
@@ -102,6 +104,7 @@ gulp.task('sass', function () {
             browsers: ['last 2 versions', 'ie 10']
         }))
         .pipe(gulp.dest(buildDir + '/assets/css/'))
+        .pipe(browserSync.stream())
         ;
 });
 
@@ -131,6 +134,7 @@ gulp.task('uglify:app', function () {
         //.pipe(uglify)
         .pipe($.concat('app.js'))
         .pipe(gulp.dest(buildDir + '/assets/js/'))
+        .pipe(browserSync.stream())
         ;
 });
 
@@ -182,7 +186,7 @@ gulp.task('buildTest', function () {
 
 // Default task: builds your app, starts a server, and recompiles assets when they change
 gulp.task('default', ['build'], function () {
-    // Watch Sass
+    //Watch Sass
     gulp.watch(['./client/assets/scss/**/*', './scss/**/*'], ['sass']);
 
     // Watch JavaScript
@@ -194,5 +198,7 @@ gulp.task('default', ['build'], function () {
     // Watch app templates
     gulp.watch(['./client/templates/**/*.html'], ['copy:templates']);
 
-    gulp.watch(['./spec/*'], ['appTest']);
+    browserSync.init({
+        proxy: "coderdojodisi_nginx_1:8000"
+    });
 });
