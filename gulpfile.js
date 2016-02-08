@@ -4,7 +4,7 @@
 var $ = require('gulp-load-plugins')();
 var argv = require('yargs').argv;
 var gulp = require('gulp');
-var rimraf = require('rimraf');
+var del = require('del');
 var sequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 
@@ -63,12 +63,18 @@ var paths = {
 // - - - - - - - - - - - - - - -
 
 // Cleans the build directory
-gulp.task('clean:build', function (cb) {
-    rimraf(buildDir, cb);
+gulp.task('clean:build', function () {
+    return del([
+        buildDir + "/**/*",
+        "!" + buildDir
+    ])
 });
 
-gulp.task('clean:test', function (cb) {
-    rimraf(testDir, cb);
+gulp.task('clean:test', function () {
+    return del([
+        testDir + "/**/*",
+        "!" + testDir
+    ])
 });
 
 // Copies everything in the client folder except templates, Sass, and JS
@@ -187,6 +193,7 @@ gulp.task('buildTest', function () {
 // Default task: builds your app, starts a server, and recompiles assets when they change
 gulp.task('default', ['build'], function () {
     //Watch Sass
+    //Watch the quick brown fox
     gulp.watch(['./client/assets/scss/**/*', './scss/**/*'], ['sass']);
 
     // Watch JavaScript

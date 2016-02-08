@@ -5,13 +5,13 @@
     "prestart": "npm install --no-bin-links",
     "start": "gulp"
   },
-  "devDependencies": {
-    "browser-sync": "~2.10",
+  "dependencies": {
     "jquery": "~2.1.4",
     "angular": "~1.4",
     "angular-resource": "~1.4",
     "angular-route": "~1.4",
     "materialize-css": "~0.97",
+    "del": "~2.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-concat": "^2.6.0",
@@ -20,9 +20,11 @@
     "gulp-ng-html2js": "^0.2.0",
     "gulp-sass": "^2.0.3",
     "gulp-uglify": "^1.2.0",
-    "rimraf": "^2.4.1",
     "run-sequence": "^1.1.1",
     "yargs": "^3.15.0"
+  },
+  "devDependencies": {
+    "browser-sync": "~2.10"
   },
   "private": true
 }
