@@ -87,7 +87,8 @@ gulp.task('copy', ['copy:fonts'], function () {
     return gulp.src(paths.assets, {
             base: './client/'
         })
-        .pipe(gulp.dest(buildDir));
+        .pipe(gulp.dest(buildDir))
+        .pipe(browserSync.stream());
 });
 
 // Copies your app's page templates and generates URLs for them

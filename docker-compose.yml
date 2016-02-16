@@ -1,35 +1,39 @@
-nginx:
-  image: nginx:1.9.6
-  volumes:
-    - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-  ports:
-    - "80:8000"
-  volumes_from:
-    - frontend
+version: '2'
+services:
+  nginx:
+    image: nginx:1.9.6
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:8000"
+    volumes_from:
+      - frontend
 
-mongo:
-  image: mongo:3.2
-  volumes:
-    - mongoDBCoderDojo:/data/db
+  mongo:
+    image: mongo:3.2
+    volumes:
+      - mongoDB:/data/db
 
-api_server:
-  build: ./pythonDocker
-  command: python -u apiServer.py
-  volumes:
-    - ./api:/usr/src/app
-  environment:
-    MONGO_HOST: "coderdojodisi_mongo_1"
-    MONGO_USERNAME: ""
-    MONGO_PASSWORD: ""
-    MONGO_DBNAME: "development"
-    DEVELOPMENT: "true"
+  api_server:
+    build: ./pythonDocker
+    command: python -u apiServer.py
+    volumes:
+      - ./api:/usr/src/app
+    environment:
+      MONGO_HOST: "coderdojodisi_mongo_1"
+      MONGO_USERNAME: ""
+      MONGO_PASSWORD: ""
+      MONGO_DBNAME: "development"
+      DEVELOPMENT: "true"
 
-frontend:
-  build: ./frontendDocker
-  command: npm start
-  working_dir: /data
-  ports:
-    - "3000:3000"
-    - "3001:3001"
-  volumes:
-    - ./:/data
+  frontend:
+    build: ./frontendDocker
+    command: gulp
+    working_dir: /data
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    volumes:
+      - ./:/data
+volumes:
+  mongoDB: {}
