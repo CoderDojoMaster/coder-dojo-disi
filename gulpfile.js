@@ -2,14 +2,10 @@
 // - - - - - - - - - - - - - - -
 
 var $ = require('gulp-load-plugins')();
-var argv = require('yargs').argv;
 var gulp = require('gulp');
 var del = require('del');
 var sequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
-
-// Check for --production flag
-var isProduction = !!(argv.production);
 
 // 2. FILE PATHS
 // - - - - - - - - - - - - - - -
@@ -70,13 +66,6 @@ gulp.task('clean:build', function () {
     ])
 });
 
-gulp.task('clean:test', function () {
-    return del([
-        testDir + "/**/*",
-        "!" + testDir
-    ])
-});
-
 // Copies everything in the client folder except templates, Sass, and JS
 gulp.task('copy:fonts', function () {
     return gulp.src(paths.fonts, {base: 'node_modules/materialize-css/dist'})
@@ -91,7 +80,7 @@ gulp.task('copy', ['copy:fonts'], function () {
         .pipe(browserSync.stream());
 });
 
-// Copies your app's page templates and generates URLs for them
+// Copies app's HTML templates
 gulp.task('copy:templates', function () {
     return gulp.src('./client/templates/**/*.html')
         .pipe(gulp.dest(buildDir + '/templates'))
@@ -104,7 +93,6 @@ gulp.task('sass', function () {
     return gulp.src('client/assets/scss/app.scss')
         .pipe($.sass({
             includePaths: paths.sass,
-            outputStyle: (isProduction ? 'compressed' : 'nested'),
             errLogToConsole: true
         }))
         .pipe($.autoprefixer({
@@ -116,79 +104,28 @@ gulp.task('sass', function () {
 });
 
 // Compiles and copies the Foundation for Apps JavaScript, as well as your app's custom JS
-gulp.task('uglify', ['uglify:angular', 'uglify:app']);
+gulp.task('js', ['js:angular', 'js:app']);
 
-gulp.task('uglify:angular', function (cb) {
-    var uglify = $.if(isProduction, $.uglify()
-        .on('error', function (e) {
-            console.log(e);
-        }));
+gulp.task('js:angular', function (cb) {
 
     return gulp.src(paths.angularJS)
-        //.pipe(uglify)
         .pipe($.concat('angular.js'))
         .pipe(gulp.dest(buildDir + '/assets/js/'))
         ;
 });
 
-gulp.task('uglify:app', function () {
-    var uglify = $.if(isProduction, $.uglify()
-        .on('error', function (e) {
-            console.log(e);
-        }));
+gulp.task('js:app', function () {
 
     return gulp.src(paths.appJS)
-        //.pipe(uglify)
         .pipe($.concat('app.js'))
         .pipe(gulp.dest(buildDir + '/assets/js/'))
         .pipe(browserSync.stream())
         ;
 });
 
-// Starts a test server, which you can view at http://localhost:8079
-gulp.task('server', ['build'], function () {
-    gulp.src(buildDir)
-        .pipe($.webserver({
-            port: 8079,
-            host: 'localhost',
-            fallback: 'index.html',
-            livereload: true
-        }))
-    ;
-});
-
 // Builds your entire app once, without starting a server
 gulp.task('build', function (cb) {
-    sequence('clean:build', ['copy', 'sass', 'uglify'], 'copy:templates', cb);
-});
-
-gulp.task('appTest', function (cb) {
-    gulp.src(paths.appTest)
-        .pipe($.concat('app.js'))
-        .pipe(gulp.dest(testDir))
-    ;
-    gulp.src('./spec/*.js')
-        .pipe($.concat('spec.js'))
-        .pipe(gulp.dest(testDir))
-    ;
-    gulp.src('./spec/SpecRunner.html')
-        .pipe(gulp.dest(testDir))
-    ;
-    cb();
-});
-
-gulp.task('angularTest', function (cb) {
-    gulp.src(paths.angularTest, {})
-        .pipe($.concat('angular.js'))
-        .pipe(gulp.dest(testDir));
-    gulp.src('./node_modules/jasmine-core/lib/jasmine-core/jasmine.css')
-        .pipe(gulp.dest(testDir))
-    ;
-    cb();
-});
-
-gulp.task('buildTest', function () {
-    sequence('clean:test', ['angularTest', 'appTest'])
+    sequence('clean:build', ['copy', 'sass', 'js'], 'copy:templates', cb);
 });
 
 // Default task: builds your app, starts a server, and recompiles assets when they change
@@ -198,7 +135,7 @@ gulp.task('default', ['build'], function () {
     gulp.watch(['./client/assets/scss/**/*', './scss/**/*'], ['sass']);
 
     // Watch JavaScript
-    gulp.watch(['./client/assets/js/**/*', './js/**/*'], ['uglify:app']);
+    gulp.watch(['./client/assets/js/**/*', './js/**/*'], ['js:app']);
 
     // Watch static files
     gulp.watch(['./client/**/*.*', '!./client/templates/**/*.*', '!./client/assets/{scss,js}/**/*.*'], ['copy']);
