@@ -8,19 +8,18 @@ services:
       - "80:8000"
     volumes_from:
       - frontend
+    depends_on:
+      - backend
 
   mongo:
     image: mongo:3.2
     volumes:
       - mongoDB:/data/db
 
-  api_server:
-    build: ./pythonDocker
-    command: python -u apiServer.py
-    volumes:
-      - ./api:/usr/src/app
+  backend:
+    image: coderdojomaster/backend
     environment:
-      MONGO_HOST: "coderdojodisi_mongo_1"
+      MONGO_HOST: "mongo"
       MONGO_USERNAME: ""
       MONGO_PASSWORD: ""
       MONGO_DBNAME: "development"
