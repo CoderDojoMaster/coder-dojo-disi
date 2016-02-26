@@ -1,0 +1,18 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - docker info
+  override:
+    - npm install --production
+    - gulp build
+
+deployment:
+  hub:
+    branch: dev
+    commands:
+      - docker build -t coderdojomaster/frontendangular .
+      - docker login -u $HUB_USER -e $HUB_EMAIL -p $HUB_PASSWORD
+      - docker push coderdojomaster/frontendangular
