@@ -17,9 +17,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-load-plugins": "1.0.0-rc.1",
     "gulp-sass": "^2.0.3",
-    "run-sequence": "^1.1.1"
-  },
-  "devDependencies": {
+    "run-sequence": "^1.1.1",
     "browser-sync": "~2.10"
   },
   "private": true

@@ -6,12 +6,13 @@ dependencies:
   pre:
     - docker info
   override:
+    - npm install -g gulp
     - npm install --production
     - gulp build
 
 deployment:
   hub:
-    branch: dev
+    branch: master
     commands:
       - docker build -t coderdojomaster/frontendangular .
       - docker login -u $HUB_USER -e $HUB_EMAIL -p $HUB_PASSWORD
