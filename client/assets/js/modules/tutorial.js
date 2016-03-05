@@ -28,9 +28,15 @@
                         //error
                         ctrl.loading = false;
                         if (error.status == 404) {
-                            Materialize.toast("Content not found", 3000, 'red-text white');
+                            $mdToast.show({
+                                template: '<md-toast><span flex style="color: #F44336;">Contenuto non trovato</span></md-toast>',
+                                hideDelay: 3000
+                            });
                         } else if (error.satus == 500) {
-                            Materialize.toast("Server error", 3000, 'red-text white');
+                            $mdToast.show({
+                                template: '<md-toast><span flex style="color: #F44336;">Errore del Server</span></md-toast>',
+                                hideDelay: 3000
+                            });
                         }
                     }, function () {
                         //loading

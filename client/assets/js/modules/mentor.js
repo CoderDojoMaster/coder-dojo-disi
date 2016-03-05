@@ -22,6 +22,11 @@
             var max_results = 6;
             Mentor.get({"max_results":max_results,"page":page},function (data) {
                 //success
+
+                    for (var i = 0; i < data._items.length; i++) {
+                        data._items[i].showDescription = false;
+                    }
+
                     ctrl.mentors = ctrl.mentors.concat(data._items);
                     if (max_results*page < data._meta.total) {
                         ctrl.loadMentors(++ctrl.page);
@@ -33,9 +38,15 @@
                 ctrl.loading = false;
                 ctrl.error = true;
                 if (error.status == 404) {
-                    Materialize.toast("Content not found", 3000, 'red white-text');
+                    $mdToast.show({
+                        template: '<md-toast><span flex style="color: #F44336;">Contenuto non trovato</span></md-toast>',
+                        hideDelay: 3000
+                    });
                 } else if (error.satus == 500) {
-                    Materialize.toast("Server error", 3000, 'red white-text');
+                    $mdToast.show({
+                        template: '<md-toast><span flex style="color: #F44336;">Errore del Server</span></md-toast>',
+                        hideDelay: 3000
+                    });
                 }
             }, function () {
                 //loading
@@ -47,6 +58,12 @@
 
 
     clear_navigation();
+
+
+    this.toggleDescription = function (index) {
+        ctrl.mentors[index].showDescription = !(ctrl.mentors[index].showDescription);
+    };
+
 
     $('#about-link').addClass("page-active");
 }]);

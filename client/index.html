@@ -9,61 +9,122 @@
 
     <!-- JAVASCRIPT -->
     <script src="/assets/js/angular.js"></script>
+    <!-- <script src="/assets/js/angular-material.js"></script> -->
     <script src="/assets/js/app.js"></script>
+
 
     <!-- STYLE -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/css/angular-material.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
 
 </head>
 
 <body>
-    <div class="col s12 m12 l12">
-
-        <div class="navbar">
-            <div class="nav-left">
-            </div>
-            <div class="wrap">
-                <a class="coder-dojo-logo-a" href="/">
-                    <img class="coder-dojo-logo hvr-bounce-in" src="/img/cubeYang3.svg">
-                </a>
-            </div>
-            <div class="nav-right valign-wrapper">
-                <a href="" class="button-collapse white-text valign hide-on-large-only" id="cd-cart-trigger"><i class="material-icons medium">menu</i></a>
-                <ul class="navbar-menu hide-on-med-and-down">
-                    <li><a class="white-text navbar-menu-item" id="courses-link" href="courses"><span>Corsi</span></a></li>
-                    <li><a class="white-text navbar-menu-item" id="events-link" href="events"><span>Eventi</span></a></li>
-                    <li><a class="white-text navbar-menu-item" id="tutorial-link" href="tutorials"><span>Tutorial</span></a></li>
-                    <li><a class="white-text navbar-menu-item" id="about-link" href="about"><span>Team</span></a></li>
-                    <li><a class="white-text navbar-menu-item" id="faq-link" href="faq"><span>FAQ</span></a></li>
-                </ul>
-            </div>
+    <md-toolbar class="md-medium-tall" layout-align="center center" layout="row">
+        <div class="md-toolbar-tools" flex style="max-height: none; height:100%; background-color: #FAFAFA; color: #212121;">
+            <md-button class="md-icon-button" ng-click="toggleSideNav()" aria-label="SidenavToggler" hide-gt-sm>
+                <i class="material-icons" style="color: #212121;">menu</i>
+            </md-button>
+            <h2>
+                <span hide-xs>Coder Dojo Master</span>
+            </h2>
+            <span flex="20"></span>
         </div>
-
     </div>
-
-
-    <!-- PAGE MAIN CONTENT -->
-    <main>
-        <div ng-view></div>
-    </main>
-
-    <div id="cd-shadow-layer"></div>
-
-    <div id="cd-cart">
-        <div class="mobile-menu-row">
-            <a href="" class="black-text" id="close-menu-button"><i class="material-icons medium">close</i></a>
-        </div>
-        <h2 class="center-align thin">Menu</h2>
-        <ul class="center-align menu-list">
-            <li><a class="mobile-menu-link black-text" href="courses"><h3>Corsi</h3></a></li>
-            <li><a class="mobile-menu-link black-text" href="events"><h3>Eventi</h3></a></li>
-            <li><a class="mobile-menu-link black-text" href="tutorials"><h3>Tutorial</h3></a></li>
-            <li><a class="mobile-menu-link black-text" href="about"><h3>Team</h3></a></li>
-            <li><a class="mobile-menu-link black-text" href="faq"><h3>FAQ</h3></a></li>
-        </ul>
+    <div class="wrap">
+        <a class="coder-dojo-logo-a" href="/">
+            <img class="coder-dojo-logo hvr-bounce-in" src="/img/cubeYang3.svg">
+        </a>
     </div>
-    <!-- footer -->
+    <div class="md-toolbar-tools" flex style="max-height: none; height:100%; background-color: #212121;" layout="row" layout-align-xs="space-around center" layout-align-sm="space-around center">
+        <span flex="20"></span>
+        <md-tabs flex md-stretch-tabs="always" hide-sm hide-xs>
+            <md-tab>
+                <md-tab-label>
+                    <a href="courses">
+                        <h3 style="color: white;">Corsi</h3>
+                    </a>
+                </md-tab-label>
+            </md-tab>
+            <md-tab>
+                <md-tab-label>
+                    <a href="events">
+                        <h3 style="color: white;">Eventi</h3>
+                    </a>
+                </md-tab-label>
+            </md-tab>
+            <md-tab>
+                <md-tab-label>
+                    <a href="tutorials">
+                        <h3 style="color: white;">Tutorial</h3>
+                    </a>
+                </md-tab-label>
+            </md-tab>
+            <md-tab>
+                <md-tab-label>
+                    <a href="about">
+                        <h3 style="color: white;">Team</h3>
+                    </a>
+                </md-tab-label>
+            </md-tab>
+            <md-tab>
+                <md-tab-label>
+                    <a href="faq">
+                        <h3 style="color: white;">FAQ</h3>
+                    </a>
+                </md-tab-label>
+            </md-tab>
+        </md-tabs>
+        <md-button class="md-icon-button" aria-label="facebook" href="https://www.facebook.com/coderdojodisi">
+            <md-icon md-svg-src="img/icons/facebook.svg" aria-label="facebook"></md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="sidenav">
+    <md-list>
+        <md-list-item md-ink-ripple="#757575" href="courses" ng-click="closeSideNav()">
+            <p> Corsi </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item md-ink-ripple="#757575" href="events" ng-click="closeSideNav()">
+            <p> Eventi </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item md-ink-ripple="#757575" href="tutorials" ng-click="closeSideNav()">
+            <p> Tutorial </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item md-ink-ripple="#757575" href="about" ng-click="closeSideNav()">
+            <p> Team </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item md-ink-ripple="#757575" href="faq" ng-click="closeSideNav()">
+            <p> FAQ </p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item md-ink-ripple="#757575" href="https://www.facebook.com/coderdojodisi" ng-click="closeSideNav()">
+            <p> Facebook Page </p>
+        </md-list-item>
+        <md-divider></md-divider>
+
+    </md-list>
+</md-sidenav>
+
+
+
+<!-- PAGE MAIN CONTENT -->
+<main>
+    <div ng-view></div>
+</main>
+
+<div id="cd-shadow-layer"></div>
+
+<!-- footer -->
 
 
 </body>

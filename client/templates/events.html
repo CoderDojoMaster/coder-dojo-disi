@@ -1,80 +1,100 @@
-<div class="con">
-    <div class="row">
-        <div class="col s12 m12 l12">
-            <h2 class="center-align">Eventi</h2>
-        </div>
+<div layout="column" layout-align="center center" layout-padding>
+    <!-- Description -->
+    <div class="separator">
     </div>
+    <h1>Eventi</h1>
 
     <div ng-show="ctrl.loading">
         <!-- loading template -->
         <div tetrominoloading></div>
     </div>
+    <div class="central-line" hide-xs hide-sm ng-hide="ctrl.loading"></div>
 
-    <div class="row valign-wrapper"  ng-repeat-start="event in ctrl.events | orderBy:'-date' track by $index" ng-hide="ctrl.loading || $odd ">
-        <div class="col s9 m5 l4 offset-m1 offset-l1">
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img ng-class="{old: ctrl.checkDate(event.date)}" class="activator responsive-img" ng-src="/img/povo.png">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">info</i>{{event.title}}</span>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{event.title}}</span>
+    <div layout="row" style="width: 100%" ng-repeat-start="event in ctrl.events | orderBy:'-date' track by $index" ng-hide="ctrl.loading || $odd ">
+        <div flex>
+            <md-card class="card">
+                <img ng-class="{old: ctrl.checkDate(event.date)}" ng-src="/img/povo.png" class="md-card-image" alt="Immagine">
+                <md-card-title>
+                    <md-card-title-text layout="row">
+                        <div flex layout="column">
+                            <span class="md-headline">{{event.title}}</span>
+                            <span class="md-subheader" hide-md hide-lg hide-xl>{{event.date | date : 'd MMM'}}</span>
+                        </div>
+                        <div layout-align="center center" layout="row">
+                            <md-button class="md-icon-button" ng-click="ctrl.toggleDescription($index)">
+                                <i class="material-icons">info</i>
+                            </md-button>
+                        </div>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content ng-show="event.showDescription" class="animate-show double-interline">
                     <p>{{event.description}}</p>
-                    <div class="center-align">
-                        <a ng-class="{disabled: ctrl.checkDate(event.date)}" class="waves-effect waves-light btn event-btn form-btn white-text" target="_blank" ng-href="{{event.urls.googleForm}}"><i class="material-icons right">description</i>Google form</a>
-                        <a ng-class="{disabled: ctrl.checkDate(event.date)}" class="waves-effect waves-light btn event-btn facebook-btn white-text" target="_blank" ng-href="{{event.urls.facebook}}"><i class="material-icons right">event</i>Evento Facebook</a>
+                    <div layout="column" layout-align="center center">
+                        <md-button layout="row" ng-class="{disabled: ctrl.checkDate(event.date)}" class="gform-btn" target="_blank" ng-href="{{event.urls.googleForm}}">
+                            <i class="material-icons">description</i>
+                            <span>Google Form</span>
+                        </md-button>
+                        <md-button  layout="row" ng-class="{disabled: ctrl.checkDate(event.date)}" class="fb-btn" target="_blank" ng-href="{{event.urls.facebook}}">
+                            <i class="material-icons">event</i>
+                            <span> Evento Facebook</span>
+                        </md-button>
                     </div>
-                </div>
-            </div>
+                </md-card-content>
+            </md-card>
         </div>
 
-        <div class="col m2 l2 hide-on-med-and-down">
-            <div class="line"></div>
+        <div flex layout="column" layout-align="center center"  hide-xs hide-sm >
+            <div class="event-line"></div>
         </div>
 
-        <div class="col s1 m2 l2 valign">
-            <h5 class="thin">
-                {{event.date | date : 'd MMM'}}
-            </h5>
+        <div flex hide-xs hide-sm layout="column" layout-align="center center">
+            <h2>{{event.date | date : 'd MMM'}}</h2>
 
         </div>
     </div>
 
-    <div ng-repeat-end class="row valign-wrapper" ng-hide="ctrl.loading || $even">
+    <div layout="row" style="width: 100%" ng-repeat-end class="row valign-wrapper" ng-hide="ctrl.loading || $even">
 
-        <div class="col s1 m2 l2 offset-s1 offset-m4 offset-l3 valign">
-            <h5 class="thin right">
-                {{event.date | date : 'd MMM'}}
-            </h5>
+        <div flex hide-xs hide-sm layout="column" layout-align="center center">
+            <h2>{{event.date | date : 'd MMM'}}</h2>
 
         </div>
 
 
-        <div class="col m2 l2 hide-on-med-and-down">
-            <div class="line"></div>
+        <div flex layout="column" layout-align="center center"  hide-xs hide-sm >
+            <div class="event-line"></div>
         </div>
 
-        <div class="col s9 m5 l4">
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img ng-class="{old: ctrl.checkDate(event.date)}" class="activator responsive-img" ng-src="/img/povo.png">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">info</i>{{event.title}}</span>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{event.title}}</span>
+        <div flex>
+            <md-card class="card">
+                <img ng-class="{old: ctrl.checkDate(event.date)}" ng-src="/img/povo.png" class="md-card-image" alt="Immagine">
+                <md-card-title>
+                    <md-card-title-text layout="row">
+                        <div flex layout="column">
+                            <span class="md-headline">{{event.title}}</span>
+                            <span class="md-subheader" hide-md hide-lg hide-xl>{{event.date | date : 'd MMM'}}</span>
+                        </div>
+                        <div layout-align="center center" layout="row">
+                            <md-button class="md-icon-button" ng-click="ctrl.toggleDescription($index)">
+                                <i class="material-icons">info</i>
+                            </md-button>
+                        </div>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content ng-show="event.showDescription" class="animate-show double-interline">
                     <p>{{event.description}}</p>
-                    <div class="center-align">
-                        <a ng-class="{disabled: ctrl.checkDate(event.date)}" class="waves-effect waves-light btn event-btn form-btn white-text" target="_blank" ng-href="{{event.urls.googleForm}}"><i class="material-icons right">description</i>Google form</a>
-                        <a ng-class="{disabled: ctrl.checkDate(event.date)}" class="waves-effect waves-light btn event-btn facebook-btn white-text" target="_blank" ng-href="{{event.urls.facebook}}"><i class="material-icons right">event</i>Evento Facebook</a>
+                    <div layout="column" layout-align="center center">
+                        <md-button layout="row" ng-class="{disabled: ctrl.checkDate(event.date)}" class="gform-btn" target="_blank" ng-href="{{event.urls.googleForm}}">
+                            <i class="material-icons">description</i>
+                            <span>Google Form</span>
+                        </md-button>
+                        <md-button  layout="row" ng-class="{disabled: ctrl.checkDate(event.date)}" class="fb-btn" target="_blank" ng-href="{{event.urls.facebook}}">
+                            <i class="material-icons">event</i>
+                            <span> Evento Facebook</span>
+                        </md-button>
                     </div>
-                </div>
-            </div>
+                </md-card-content>
+            </md-card>
         </div>
     </div>
-
-    <div class="central-line hide-on-med-and-down" ng-hide="ctrl.loading"></div>
 </div>

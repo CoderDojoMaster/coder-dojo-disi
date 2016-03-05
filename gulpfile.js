@@ -6,6 +6,7 @@ var gulp = require('gulp');
 var del = require('del');
 var sequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
+var exec = require('child_process').exec;
 
 // 2. FILE PATHS
 // - - - - - - - - - - - - - - -
@@ -22,7 +23,9 @@ var paths = {
     // Sass will check these folders for files when you use @import.
     sass: [
         'client/assets/scss',
-        'node_modules/materialize-css/sass/'
+    ],
+    css: [
+        'node_modules/angular-material/angular-material.css'
     ],
     // These files include Foundation for Apps and its dependencies
     angularJS: [
@@ -30,11 +33,10 @@ var paths = {
         'node_modules/angular/angular.js',
         'node_modules/angular-resource/angular-resource.js',
         'node_modules/angular-route/angular-route.js',
-        'node_modules/materialize-css/dist/js/materialize.js'
-    ],
-    fonts: [
-        'node_modules/materialize-css/dist/font/material-design-icons/*',
-        'node_modules/materialize-css/dist/font/roboto/*'
+        'node_modules/angular-material/angular-material.js',
+        'node_modules/angular-animate/angular-animate.js',
+        'node_modules/angular-aria/angular-aria.js',
+        'node_modules/angular-messages/angular-messages.js',
     ],
     // These files are for your app's JavaScript
     appJS: [
@@ -67,12 +69,12 @@ gulp.task('clean:build', function () {
 });
 
 // Copies everything in the client folder except templates, Sass, and JS
-gulp.task('copy:fonts', function () {
-    return gulp.src(paths.fonts, {base: 'node_modules/materialize-css/dist'})
-        .pipe(gulp.dest(buildDir + "/assets"))
-});
+// gulp.task('copy:fonts', function () {
+//     return gulp.src(paths.fonts, {base: 'node_modules/materialize-css/dist'})
+//         .pipe(gulp.dest(buildDir + "/assets"))
+// });
 
-gulp.task('copy', ['copy:fonts'], function () {
+gulp.task('copy', ['copy:css'], function () {
     return gulp.src(paths.assets, {
             base: './client/'
         })
@@ -87,6 +89,16 @@ gulp.task('copy:templates', function () {
         .pipe(browserSync.stream())
         ;
 });
+
+
+gulp.task('copy:css', function (cb) {
+
+    return gulp.src(paths.css)
+        .pipe(gulp.dest(buildDir + '/assets/css/'))
+        .pipe(browserSync.stream())
+        ;
+});
+
 
 // Compiles Sass
 gulp.task('sass', function () {
@@ -126,6 +138,17 @@ gulp.task('js:app', function () {
 // Builds your entire app once, without starting a server
 gulp.task('build', function (cb) {
     sequence('clean:build', ['copy', 'sass', 'js'], 'copy:templates', cb);
+});
+
+// Execute the script to import sample data in MongoDB
+gulp.task('sample-data', function () {
+    exec('node sample-data/import-samples.js', function (err, stdout, stderr) {
+        console.log(stdout);
+        console.log(stderr);
+        if (err) {
+            console.error("> Error during import sample in databse: " + err.message);
+        }
+    });
 });
 
 // Default task: builds your app, starts a server, and recompiles assets when they change

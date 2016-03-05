@@ -1,23 +1,20 @@
-<div class="con">
-
-    <div class="row">
-        <div class="col s12 m12 l12">
-            <h2 class="center-align">Tutorial</h2>
-        </div>
+<div layout="column" layout-align="center center" layout-padding>
+    <!-- Description -->
+    <div class="separator">
     </div>
+
+    <h1>Tutorial</h1>
 
     <div ng-show="ctrl.loading">
         <!-- loading template -->
         <div tetrominoloading></div>
     </div>
 
-    <div class="row">
-        <div class="col s12 m12 l12 center-align">
-            <img class="work-in-progress" src="/img/WorkInProgess.svg">
-            <h1 class="hide-on-med-and-down">Work in progress</h1>
-            <h3 class="hide-on-large-only">Work in progress</h3>
-        </div>
-    </div>
+    <md-content flex layout-padding ng-hide="ctrl.loading">
+        <img class="work-in-progress" src="/img/WorkInProgess.svg">
+        <h2 style="text-align: center;">Work in progress</h2>
+    </md-content>
+
 
     <div class="row" ng-repeat="tutorial in ctrl.tutorials" ng-hide="ctrl.loading">
         <div class="col s10 m10 l10 offset-l1 offset-m1 offset-s1">

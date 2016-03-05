@@ -1,24 +1,32 @@
 {
-  "name": "coder-dojo-master",
-  "version": "1.0.0",
-  "scripts": {
-    "prestart": "npm install --no-bin-links",
-    "start": "gulp"
-  },
-  "dependencies": {
-    "jquery": "~2.1.4",
-    "angular": "~1.4",
-    "angular-resource": "~1.4",
-    "angular-route": "~1.4",
-    "materialize-css": "~0.97",
-    "del": "~2.0",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.3.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-load-plugins": "1.0.0-rc.1",
-    "gulp-sass": "^2.0.3",
-    "run-sequence": "^1.1.1",
-    "browser-sync": "~2.10"
-  },
-  "private": true
+    "name": "coder-dojo-master",
+    "version": "1.0.0",
+    "scripts": {
+        "prestart": "npm install --no-bin-links",
+        "start": "gulp"
+    },
+    "dependencies": {
+        "jquery": "~2.1.4",
+        "angular": "~1.5",
+        "angular-resource": "~1.5",
+        "angular-route": "~1.5",
+        "angular-material": "1.0.x",
+        "angular-animate": "1.5.x",
+        "angular-aria": "1.5.x",
+        "angular-messages": "1.5.x",
+        "del": "~2.0",
+        "gulp": "^3.9.0",
+        "gulp-autoprefixer": "^2.3.1",
+        "gulp-concat": "^2.6.0",
+        "gulp-load-plugins": "1.0.0-rc.1",
+        "gulp-sass": "^2.0.3",
+        "run-sequence": "^1.1.1",
+        "browser-sync": "~2.10"
+    },
+
+    "devDependencies": {
+        "request": "2.69.x"
+    },
+
+    "private": true
 }

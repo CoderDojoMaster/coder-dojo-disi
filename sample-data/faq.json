@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Cos’è CoderDojo?",
+        "description": "CoderDojo è un movimento senza scopo di lucro che si occupa di organizzare incontri gratuiti per insegnare ai giovani a programmare. La parola nasce dall’unione di “coder”, una parola che in inglese indica colui che si occupa della programmazione e “dojo”, un termine giapponese che definisce il luogo di allenamento per le arti marziali. La filosofia è, quindi, quella di riunirsi insieme per imparare e/o consolidare le proprie conoscenze informatiche in diversi ambiti. I mentor sono i volontari che si mettono a disposizione per tenere gli incontri e affiancare i ragazzi nelle fase di apprendimento. CoderDojoDISI vuole riproporre questa realtà all’interno dell’Università degli studi di Trento, in particolare nel DISI, il Dipartimento di Ingegneria e Scienza dell’Informazione che si trova a Povo (TN). E’ rivolto in particolare a ragazze e ragazzi delle scuole superiori che hanno interesse ad approfondire uno o più degli argomenti fra un’introduzione alla programmazione (Python), l’area di game development e Web development."
+    },
+    {
+        "title": "A chi è rivolto CoderDojo?",
+        "description": "I destinatari sono ragazze e ragazzi delle scuole superiori interessati ad avventurarsi nel mondo della programmazione o ad approfondire le proprie conoscenze. Studenti universitari che non hanno occasione di incontrare la programmazione nel loro percorso di studi sono anch'essi benvenuti."
+    },
+    {
+        "title": "Che competenze sono necessarie per venire agli incontri?",
+        "description": "Il coderdojo è organizzato a sfide di diverso livello adatte a tutti, per cui se siete principanti potrete affrontare sfide che vi insegneranno le basi della programmazione, ma se siete già esperti ci sono sfide più avanzate che vi mostreranno concetti e tecnologie più complicate. Non è necessario essere geni per partecipare!"
+    },
+    {
+        "title": "E' necessario partecipare a tutti gli incontri?",
+        "description": "Assolutamente no! Il coderdojo non è una serie di lezioni, potete partecipare quando potete ed ad ogni incontro continuare il vostro percorso personale. Non ci sono problemi se saltate degli incontri o scoprite il coderdojo ad anno già iniziato."
+    },
+    {
+        "title": "Cosa dobbiamo portare agli incontri?",
+        "description": "La modalità è BYOD (porta il tuo device): portate il vostro portatile e poi ci pensiamo noi. Se volete risparmiare tempo potete installare in anticipo il software di riferimento delle attività che vi piacerebbe seguire.!"
+    },
+    {
+        "title": "Ho già partecipato/conosco il Coderdojo per i ragazzi più piccoli: quali sono le differenze? Che competenze sono necessarie per venire agli incontri?",
+        "description": "Ci sono differenze di contenuti (tecnologie più avanzate e meno didattiche) e di metodi didattici (meno improntata al seguire un tutorial e viene lasciata più liberta agli studenti), ma i principi sono gli stessi di tutti i Coderdojo: un ambiente libero ed amichevole per imparare i principi dell'informatica tutti insieme."
+    }
+]

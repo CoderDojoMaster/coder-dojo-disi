@@ -1,5 +1,64 @@
+.separator {
+    height: 70px;
+}
+
+.fb-btn {
+    background-color: #3b5998 !important;
+    color: white !important;
+    padding: 0.5em 1em 0.5em 1em !important;
+}
+
+.gform-btn {
+    background-color: #774ec1 !important;
+    color: white !important;
+    padding: 0.5em 1em 0.5em 1em !important;
+}
+
+.side-padded {
+    @media screen and (min-width: 1920px) {
+        padding-left: 20em;
+        padding-right: 20em;
+    }
+
+    @media screen and (min-width: 960px) and (max-width: 1919px) {
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+
+
+}
+
+.bigger-font {
+    font-size: 1.2em;
+}
+
+.double-interline {
+    line-height: 1.5em;
+}
+
+
 .page-footer {
     background-color: white;
+}
+
+
+.animate-show.ng-hide {
+    opacity:0;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+    transition: all linear 0.5s;
+}
+
+.card:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: all 0.4s ease-in-out;
+}
+
+.event-line {
+    height: 4px;
+    width: 80%;
+    background-color: #757575;
 }
 
 /*
@@ -90,7 +149,7 @@ Navbar style
 }
 
 /*
-    Every page style
+Every page style
 */
 
 main {
@@ -113,25 +172,25 @@ p {
 
 .event-btn {
 
-	width: 65%;
-	margin: 0.2em;
+    width: 65%;
+    margin: 0.2em;
 }
 
 @media only screen and (max-width: 600px) {
 
-	.event-btn {
-		width: 100%;
-	}
+    .event-btn {
+        width: 100%;
+    }
 }
 
 .facebook-btn {
 
-	background-color: #4E69A2;
+    background-color: #4E69A2;
 }
 
 .form-btn {
 
-	background-color: #61c;
+    background-color: #61c;
 }
 
 .loading-img {
@@ -139,12 +198,13 @@ p {
 }
 
 /*
-    Event page style
+Event page style
 */
 
 .central-line {
     background: linear-gradient(#ffffff 0%, #e0e0e0 10%,#e0e0e0 90%, #ffffff 100%);
     position: absolute;
+    z-index: -1;
     width: 4px;
     top: 240px;
     left: 50%;
@@ -164,7 +224,7 @@ p {
 }
 
 /*
-    Home page style
+Home page style
 */
 
 .slides li img {
@@ -173,7 +233,7 @@ p {
 }
 
 /*
-    cards style
+cards style
 */
 
 .course-logo {
@@ -184,7 +244,7 @@ h4 {
 }
 
 /*
-    profile style
+profile style
 */
 
 .profile_pic {
@@ -202,7 +262,7 @@ h4 {
 }
 
 /*
-    Error page style
+Error page style
 */
 
 .centered {
@@ -229,7 +289,7 @@ h4 {
 }
 
 /*
-    Work in progress image
+Work in progress image
 */
 
 @media only screen and (min-height: 801px) {
@@ -249,7 +309,7 @@ h4 {
 }
 
 /*
-    Loading animation
+Loading animation
 */
 .tetrominos {
     transform: translate(-112px, 30px);
@@ -285,12 +345,12 @@ h4 {
         /* compose logo *//* 1 on 3 *//* L-shape */
         transform: translate(0,0);
     } 50% {
-          /* pre-box */
-          transform: translate(48px,-27px);
-      } 60%, 100% {
-            /* box *//* compose logo */
-            transform: translate(96px,0);
-        }
+        /* pre-box */
+        transform: translate(48px,-27px);
+    } 60%, 100% {
+        /* box *//* compose logo */
+        transform: translate(96px,0);
+    }
 }
 
 @keyframes tetromino2 {
@@ -298,9 +358,9 @@ h4 {
         /* compose logo *//* 1 on 3 */
         transform: translate(96px, 0px);
     } 40%, 100% {
-          /* L-shape *//* box *//* compose logo */
-          transform: translate(144px, 27px);
-      }
+        /* L-shape *//* box *//* compose logo */
+        transform: translate(144px, 27px);
+    }
 }
 
 @keyframes tetromino3 {
@@ -308,12 +368,12 @@ h4 {
         /* compose logo */
         transform: translate(144px, 27px);
     } 20%, 60% {
-          /* 1 on 3 *//* L-shape *//* box */
-          transform: translate(96px, 54px);
-      } 90%, 100% {
-            /* compose logo */
-            transform: translate(48px, 27px);
-        }
+        /* 1 on 3 *//* L-shape *//* box */
+        transform: translate(96px, 54px);
+    } 90%, 100% {
+        /* compose logo */
+        transform: translate(48px, 27px);
+    }
 }
 
 @keyframes tetromino4 {
@@ -321,7 +381,7 @@ h4 {
         /* compose logo *//* 1 on 3 *//* L-shape *//* box */
         transform: translate(48px, 27px);
     } 90%, 100% {
-          /* compose logo */
-          transform: translate(0, 0);
-      }
+        /* compose logo */
+        transform: translate(0, 0);
+    }
 }

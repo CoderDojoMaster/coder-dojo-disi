@@ -1,32 +1,40 @@
-<div class="con">
-
-    <div class="row">
-        <div class="col s12 m12 l12">
-            <h2 class="center-align">Corsi</h2>
-        </div>
+<div layout="column" layout-align="center center" layout-padding>
+    <!-- Description -->
+    <div class="separator">
     </div>
+    <h1>Corsi</h1>
 
     <div ng-show="ctrl.loading">
         <!-- loading template -->
         <div tetrominoloading></div>
     </div>
 
-    <div class="row" ng-repeat="course in ctrl.courses" ng-hide="ctrl.loading">
-        <div class="col s12 m8 l8 offset-m2 offset-l2">
-            <div class="card small hoverable fade">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator responsive-img course-logo" data-ng-src="data:{{course.img.content_type}};base64,{{course.img.file}}">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">info</i>{{course.type}}:</span>
-                    <p>{{course.title}}</p>
-                    <p><a class="btn-flat waves-effect waves-grey right" ng-href="{{course.tutorialUrl}}"><i class="material-icons right">chevron_right</i>Vai al tutorial</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{course.title}}</span>
+    <md-content flex style="width: 100%;" ng-hide="ctrl.loading">
+        <div layout="row" layout-align="space-around center">
+            <md-card class="card" ng-repeat="course in ctrl.courses track by $index" flex>
+                <img data-ng-src="data:{{course.img.content_type}};base64,{{course.img.file}}" class="md-card-image" alt="Immagine">
+                <md-card-title>
+                    <md-card-title-text layout="row">
+                        <div flex layout="column">
+                            <span class="md-headline">{{course.type}}</span>
+                            <span class="md-subhead">{{course.title}}</span>
+                        </div>
+                        <div layout-align="center center" layout="row">
+                            <md-button class="md-icon-button" ng-click="ctrl.toggleDescription($index)">
+                                <i class="material-icons">info</i>
+                            </md-button>
+                        </div>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content ng-show="course.showDescription" class="animate-show double-interline">
                     <p>{{course.description}}</p>
-                </div>
-            </div>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button ng-href="{{course.tutorialUrl}}" layout="row">
+                        <span>Vai al Tutorial</span><i class="material-icons">chevron_right</i>
+                    </md-button>
+                </md-card-actions>
+            </md-card>
         </div>
-    </div>
+    </md-content>
 </div>
