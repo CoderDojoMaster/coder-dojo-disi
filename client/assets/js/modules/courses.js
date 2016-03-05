@@ -23,7 +23,6 @@
 
                 for (var i = 0; i < data._items.length; i++) {
                     data._items[i].showDescription = false;
-                    console.log(i);
                 }
 
                 //success

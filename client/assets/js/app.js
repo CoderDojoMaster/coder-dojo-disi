@@ -150,12 +150,6 @@ tag html: <div tetrominoloading></div>
 .controller('homeController', function () {
 
     clear_navigation();
-    $('.slider').slider();
     var window_height = $(window).height();
-    $('.slider').height(window_height - 96);
-
-    $('.slides').css({
-        height: window_height - 136
-    });
 
 });
