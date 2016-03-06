@@ -12,22 +12,30 @@
 
     <div layout="row" style="width: 100%" ng-repeat-start="event in ctrl.events | orderBy:'-date' track by $index" ng-hide="ctrl.loading || $odd ">
         <div flex>
-            <md-card class="card">
-                <img ng-class="{old: ctrl.checkDate(event.date)}" ng-src="/img/povo.png" class="md-card-image" alt="Immagine">
-                <md-card-title>
-                    <md-card-title-text layout="row">
-                        <div flex layout="column">
-                            <span class="md-headline">{{event.title}}</span>
-                            <span class="md-subheader" hide-md hide-lg hide-xl>{{event.date | date : 'd MMM'}}</span>
-                        </div>
-                        <div layout-align="center center" layout="row">
-                            <md-button class="md-icon-button" ng-click="ctrl.toggleDescription($index)">
-                                <i class="material-icons">info</i>
-                            </md-button>
-                        </div>
-                    </md-card-title-text>
-                </md-card-title>
-                <md-card-content ng-show="event.showDescription" class="animate-show double-interline">
+            <md-card class="card md-whiteframe-8dp">
+                <div ng-hide="event.showDescription">
+                    <img ng-class="{old: ctrl.checkDate(event.date)}" ng-src="/img/povo.png" class="md-card-image" alt="Immagine">
+                    <md-card-title>
+                        <md-card-title-text layout="row">
+                            <div flex layout="column">
+                                <span class="md-headline">{{event.title}}</span>
+                                <span class="md-subheader" hide-md hide-lg hide-xl>{{event.date | date : 'd MMM'}}</span>
+                            </div>
+                            <div layout-align="center center" layout="row">
+                                <md-button class="md-icon-button" ng-click="ctrl.toggleDescription($index)">
+                                    <i class="material-icons">info</i>
+                                </md-button>
+                            </div>
+                        </md-card-title-text>
+                    </md-card-title>
+                </div>
+                <md-card-content ng-show="event.showDescription" class="double-interline">
+                    <div layout="row" layout-align="center center">
+                        <h2>{{event.title}}</h2>
+                        <md-button class="md-icon-button" ng-click="ctrl.toggleDescription($index)">
+                            <i class="material-icons">close</i>
+                        </md-button>
+                    </div>
                     <p>{{event.description}}</p>
                     <div layout="column" layout-align="center center">
                         <md-button layout="row" ng-class="{disabled: ctrl.checkDate(event.date)}" class="gform-btn" target="_blank" ng-href="{{event.urls.googleForm}}">
@@ -66,22 +74,30 @@
         </div>
 
         <div flex>
-            <md-card class="card">
-                <img ng-class="{old: ctrl.checkDate(event.date)}" ng-src="/img/povo.png" class="md-card-image" alt="Immagine">
-                <md-card-title>
-                    <md-card-title-text layout="row">
-                        <div flex layout="column">
-                            <span class="md-headline">{{event.title}}</span>
-                            <span class="md-subheader" hide-md hide-lg hide-xl>{{event.date | date : 'd MMM'}}</span>
-                        </div>
-                        <div layout-align="center center" layout="row">
-                            <md-button class="md-icon-button" ng-click="ctrl.toggleDescription($index)">
-                                <i class="material-icons">info</i>
-                            </md-button>
-                        </div>
-                    </md-card-title-text>
-                </md-card-title>
-                <md-card-content ng-show="event.showDescription" class="animate-show double-interline">
+            <md-card class="card md-whiteframe-8dp">
+                <div ng-hide="event.showDescription">
+                    <img ng-class="{old: ctrl.checkDate(event.date)}" ng-src="/img/povo.png" class="md-card-image" alt="Immagine">
+                    <md-card-title>
+                        <md-card-title-text layout="row">
+                            <div flex layout="column">
+                                <span class="md-headline">{{event.title}}</span>
+                                <span class="md-subheader" hide-md hide-lg hide-xl>{{event.date | date : 'd MMM'}}</span>
+                            </div>
+                            <div layout-align="center center" layout="row">
+                                <md-button class="md-icon-button" ng-click="ctrl.toggleDescription($index)">
+                                    <i class="material-icons">info</i>
+                                </md-button>
+                            </div>
+                        </md-card-title-text>
+                    </md-card-title>
+                </div>
+                <md-card-content ng-show="event.showDescription" class="double-interline">
+                    <div layout="row" layout-align="center center">
+                        <h2>{{event.title}}</h2>
+                        <md-button class="md-icon-button" ng-click="ctrl.toggleDescription($index)">
+                            <i class="material-icons">close</i>
+                        </md-button>
+                    </div>
                     <p>{{event.description}}</p>
                     <div layout="column" layout-align="center center">
                         <md-button layout="row" ng-class="{disabled: ctrl.checkDate(event.date)}" class="gform-btn" target="_blank" ng-href="{{event.urls.googleForm}}">

@@ -54,9 +54,6 @@
         ctrl.courses[index].showDescription = !(ctrl.courses[index].showDescription);
     };
 
-    clear_navigation();
-
-    $('#courses-link').addClass("page-active");
 }]);
 
 })();

@@ -17,8 +17,6 @@
             this.tutorials = [];
             this.loading = true;
 
-
-
             this.loadTutorials = function () {
                 Tutorial.get(function (data) {
                         //success
@@ -45,10 +43,6 @@
             };
 
             this.loadTutorials();
-
-            clear_navigation();
-
-            $('#tutorial-link').addClass("page-active");
         }]);
 
 })();

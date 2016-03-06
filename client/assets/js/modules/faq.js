@@ -43,10 +43,6 @@
             };
 
             this.loadFaqs();
-
-            clear_navigation();
-
-            $('#faq-link').addClass("page-active");
         }]);
 
 })();

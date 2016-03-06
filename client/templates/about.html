@@ -12,23 +12,31 @@
     <md-content style="width: 100%;" ng-hide="ctrl.loading">
         <div layout="row" layout-align="space-around center" layout-wrap>
 
-            <md-card class="card" ng-repeat="mentor in ctrl.mentors track by $index" flex="30" flex-xs="100" flex-sm="100" flex-md="45">
-                <img data-ng-src="data:{{mentor.img.content_type}};base64,{{mentor.img.file}}" class="md-card-image" alt="Foto">
-                <md-card-title>
-                    <md-card-title-text layout="row">
-                        <div flex layout="column">
-                            <span class="md-headline">{{mentor.firstname}} {{mentor.lastname}}</span>
-                            <span class="md-subhead">CoderDojo Mentor</span>
-                            <!-- <span class="md-subhead">{{mentor.role}}</span> -->
-                        </div>
-                        <div layout-align="center center" layout="row">
-                            <md-button class="md-icon-button" ng-click="ctrl.toggleDescription($index)">
-                                <i class="material-icons">info</i>
-                            </md-button>
-                        </div>
-                    </md-card-title-text>
-                </md-card-title>
-                <md-card-content ng-show="mentor.showDescription" class="animate-show double-interline">
+            <md-card class="card md-whiteframe-8dp" ng-repeat="mentor in ctrl.mentors track by $index" flex="30" flex-xs="100" flex-sm="100" flex-md="45" style="margin-bottom: 3em;">
+                <div ng-hide="mentor.showDescription">
+                    <img data-ng-src="data:{{mentor.img.content_type}};base64,{{mentor.img.file}}" class="md-card-image" alt="Foto">
+                    <md-card-title>
+                        <md-card-title-text layout="row">
+                            <div flex layout="column">
+                                <span class="md-headline">{{mentor.firstname}} {{mentor.lastname}}</span>
+                                <span class="md-subhead">CoderDojo Mentor</span>
+                                <!-- <span class="md-subhead">{{mentor.role}}</span> -->
+                            </div>
+                            <div layout-align="center center" layout="row">
+                                <md-button class="md-icon-button" ng-click="ctrl.toggleDescription($index)">
+                                    <i class="material-icons">info</i>
+                                </md-button>
+                            </div>
+                        </md-card-title-text>
+                    </md-card-title>
+                </div>
+                <md-card-content ng-show="mentor.showDescription" class="double-interline">
+                    <div layout="row" layout-align="center center">
+                        <h2 flex>{{mentor.firstname}} {{mentor.lastname}}</h2>
+                        <md-button class="md-icon-button" ng-click="ctrl.toggleDescription($index)">
+                            <i class="material-icons">close</i>
+                        </md-button>
+                    </div>
                     <p>{{mentor.description}}</p>
                 </md-card-content>
             </md-card>

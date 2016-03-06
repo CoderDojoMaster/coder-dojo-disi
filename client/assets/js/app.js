@@ -1,5 +1,5 @@
 /* modulo principale dell'applicazione con relative dipendenze */
-angular.module('coderdojo', ['ngMaterial', 'ngRoute', 'ngResource', 'tutorialsModule', 'eventsModule', 'coursesModule', 'mentorModule', 'faqModule'])
+angular.module('coderdojo', ['ngMaterial', 'ngAnimate', 'ngRoute', 'ngResource', 'tutorialsModule', 'eventsModule', 'coursesModule', 'mentorModule', 'faqModule'])
 
 
 /* routing e navigazione nelle pagine del sito */
@@ -57,13 +57,6 @@ angular.module('coderdojo', ['ngMaterial', 'ngRoute', 'ngResource', 'tutorialsMo
         redirectTo: '/error'
     });
     $locationProvider.html5Mode(true);
-
-    this.clear_navigation = function () {
-        $('.navbar-menu-item').each(function () {
-
-            $(this).removeClass("page-active");
-        });
-    };
 })
 
 .config(function($mdThemingProvider) {
@@ -149,7 +142,6 @@ tag html: <div tetrominoloading></div>
 
 .controller('homeController', function () {
 
-    clear_navigation();
     var window_height = $(window).height();
 
 });

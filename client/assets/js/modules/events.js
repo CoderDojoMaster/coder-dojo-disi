@@ -61,7 +61,6 @@
     this.enableEditing = function () {
 
         ctrl.editing = true;
-        $('.materialize-textarea').trigger('autoresize');
     };
 
     this.disableEditing = function () {
@@ -74,10 +73,6 @@
     this.toggleDescription = function (index) {
         ctrl.events[index].showDescription = !(ctrl.events[index].showDescription);
     };
-
-    clear_navigation();
-
-    $('#events-link').addClass("page-active");
 
 }]);
 

@@ -44,61 +44,29 @@
 
 .animate-show.ng-hide {
     opacity:0;
+    height: 0px;
 }
 
-.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
-    transition: all linear 0.5s;
+.animate-show.ng-hide-add {
+     transition: all linear 1s;
 }
+
+.animate-show.ng-hide-remove {
+    transition: all linear 1s;
+}
+
+
 
 .card:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     transition: all 0.4s ease-in-out;
 }
 
-.event-line {
-    height: 4px;
-    width: 80%;
-    background-color: #757575;
-}
 
-/*
-Navbar style
-*/
-
-.navbar {
-    background-color: transparent;
-    top: 0;
-    height: 96px;
-    width: 100%;
-    display: flex;
-}
-.nav-left {
-    width: 50%;
-    height: 100%;
-    background-color: white;
-}
-.nav-right {
-    width: 50%;
-    height: 100%;
-    background-color: black;
-}
 .coder-dojo-logo {
     position: relative;
 }
-.nav-list {
-    position: absolute;
-    right: 50px;
-    display: flex;
-    flex-direction: row;
-}
-.nav-list li {
-    margin-left: 50px;
-}
-.button-collapse {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-}
+
 .wrap {
     z-index: 999;
     position: absolute;
@@ -106,46 +74,8 @@ Navbar style
     width: 144px;
     left: 50%;
     margin-right: -50%;
+    -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
-}
-@media only screen and (min-width: 993px) {
-    /* Bounce In */
-    .hvr-bounce-in {
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-transition-duration: 0.5s;
-        transition-duration: 0.5s;
-    }
-    .hvr-bounce-in:hover,
-    .hvr-bounce-in:focus,
-    .hvr-bounce-in:active {
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-        -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-        transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-    }
-}
-.navbar-menu {
-    position: relative;
-    left: 100px;
-    display: flex;
-    flex-direction: row;
-}
-.navbar-menu li {
-    margin-right: 2em;
-}
-.navbar-menu li span {
-    font-size: 1.5em;
-}
-.navbar-menu li span:hover {
-    color: #757575;
-}
-.page-active {
-    text-decoration: underline;
-}
-.black-background {
-    background-color: black;
 }
 
 /*
@@ -155,11 +85,7 @@ Every page style
 main {
     z-index: 1;
 }
-.con {
-    margin-top: 50px;
-    height: auto;
-    width: 100%;
-}
+
 p {
     text-align: justify;
 }
@@ -168,29 +94,6 @@ p {
     -webkit-filter: grayscale(75%);
     filter: grayscale(75%);
     opacity: 0.8;
-}
-
-.event-btn {
-
-    width: 65%;
-    margin: 0.2em;
-}
-
-@media only screen and (max-width: 600px) {
-
-    .event-btn {
-        width: 100%;
-    }
-}
-
-.facebook-btn {
-
-    background-color: #4E69A2;
-}
-
-.form-btn {
-
-    background-color: #61c;
 }
 
 .loading-img {
@@ -204,7 +107,7 @@ Event page style
 .central-line {
     background: linear-gradient(#ffffff 0%, #e0e0e0 10%,#e0e0e0 90%, #ffffff 100%);
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     width: 4px;
     top: 240px;
     left: 50%;
@@ -212,16 +115,13 @@ Event page style
     transform: translate(-50%, 0);
 }
 
-.line {
-    z-index: 1;
+.event-line {
+    z-index: 3;
     height: 4px;
-    width: 100%;
+    width: 80%;
     background-color: #757575;
-    position: relative;
-    top: 50%;
-    margin-bottom: -50%;
-    transform: (0, -50%);
 }
+
 
 /*
 Home page style
@@ -236,12 +136,6 @@ Home page style
 cards style
 */
 
-.course-logo {
-    max-height: 150px;
-}
-h4 {
-    text-align: center;
-}
 
 /*
 profile style
@@ -252,28 +146,10 @@ profile style
     max-width: 150px;
     margin: 1.2em;
 }
-#about_back_firs {
-    margin-left: 25px;
-    margin-right: 25px;
-    background: url("../img/povo.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
 
 /*
 Error page style
 */
-
-.centered {
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    margin-bottom: -50%;
-    transform: translate(-50%, -50%);
-}
 
 .error-img {
     border-radius: 50%;
@@ -323,7 +199,7 @@ Loading animation
     transition: all ease .3s;
     background-image: url("/client/img/cubeYing.png");
     background-size: cover;
-    /*background: url('data:image/svg+xml;utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 684"%3E%3Cpath fill="%23010101" d="M305.7 0L0 170.9v342.3L305.7 684 612 513.2V170.9L305.7 0z"/%3E%3Cpath fill="%23fff" d="M305.7 80.1l-233.6 131 233.6 131 234.2-131-234.2-131"/%3E%3C/svg%3E') no-repeat top center;*/
+    background: url('data:image/svg+xml;utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 684"%3E%3Cpath fill="%23010101" d="M305.7 0L0 170.9v342.3L305.7 684 612 513.2V170.9L305.7 0z"/%3E%3Cpath fill="%23fff" d="M305.7 80.1l-233.6 131 233.6 131 234.2-131-234.2-131"/%3E%3C/svg%3E') no-repeat top center;
 }
 
 .box1 {

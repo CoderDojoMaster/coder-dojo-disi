@@ -56,16 +56,10 @@
 
     this.loadMentors(ctrl.page);
 
-
-    clear_navigation();
-
-
     this.toggleDescription = function (index) {
         ctrl.mentors[index].showDescription = !(ctrl.mentors[index].showDescription);
     };
 
-
-    $('#about-link').addClass("page-active");
 }]);
 
 })();
