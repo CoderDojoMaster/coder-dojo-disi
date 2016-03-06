@@ -10,9 +10,9 @@
     </div>
 
     <md-content flex style="width: 100%;" ng-hide="ctrl.loading">
-        <div layout="row" layout-align="space-around center" class="side-padded">
-            <md-card class="card md-whiteframe-8dp" ng-repeat="course in ctrl.courses track by $index" flex>
-                <img data-ng-src="data:{{course.img.content_type}};base64,{{course.img.file}}" class="md-card-image" alt="Immagine">
+        <div layout="row" layout-align="space-around center" class="side-padded" ng-repeat="course in ctrl.courses track by $index" style="margin-bottom: 2em;">
+            <md-card class="card md-whiteframe-8dp" flex>
+                <img data-ng-src="data:{{course.img.content_type}};base64,{{course.img.file}}" class="md-card-image" alt="Immagine" style="max-height: 10em; padding: 1em;">
                 <md-card-title>
                     <md-card-title-text layout="row">
                         <div flex layout="column">
@@ -26,7 +26,7 @@
                         </div>
                     </md-card-title-text>
                 </md-card-title>
-                <md-card-content ng-show="course.showDescription" class="double-interline">
+                <md-card-content ng-show="course.showDescription" class="double-interline" style="background-color: #fafafa; padding-top: 2em; padding-bottom: 2em;">
                     <p>{{course.description}}</p>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="end center">

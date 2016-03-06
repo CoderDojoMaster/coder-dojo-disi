@@ -2,127 +2,127 @@
     {
         "firstname": "Samuel",
         "lastname": "Giacomelli",
-        "roles": ["CoderDojo Mentor", "Website Guru"],
+
         "description": "Sono uno studente di informatica, amante della montagna, degli sport di combattimento e della cucina. Fin da piccolo mi ha affascinato questo mondo e da quando ho iniziato a conoscerlo più approfonditamente il web developing è diventato la mia passione. Sono sempre stato un gran smanettone e quando non so come funziona qualcosa non me ne scollo finché non lo capisco. Per coderdojo sono il responsabile assieme a Michele del sito web.",
-        "img_path": "static/img/Profile_pic/giacomelli_profile.jpg"
+        "img": "../client/img/Profile_pic/giacomelli_profile.jpg"
     },
     {
         "firstname": "Michele",
         "lastname": "Romani",
-        "roles": ["CoderDojo Mentor", "Website Guru"],
+        
         "description": "Sono uno studente di Informatica ed appasionato di tecnologia,in particolare adoro il Web ed i videogames. Come mentor di Corderdojo mi occupo dei corsi di Game Development. Nel tempo libero porto avanti progetti personali di sviluppo software, per lo più siti web e Java, lavoro part-time quando capita e mi dedico ad attività sportive quali kick-boxe e scherma rinascimentale. Trovo ovviamente anche il tempo di uscire con gli amici e di dedicarmi ad attività ludiche, di leggere libri (molti) e di viaggiare. Sono fermamente convinto che il metodo migliore per imparare sia applicarsi con la pratica ed insegnare ad altri, per questo ho deciso di abbracciare la filosofia di knowledge-sharing che è il fondamento di CoderDojo. 'Tell me and I forget, teach me and I may remember, involve me and I learn.'",
-        "img_path": "static/img/Profile_pic/romani_profile.jpg"
+        "img": "../client/img/Profile_pic/romani_profile.jpg"
     },
     {
         "firstname": "Alessio",
         "lastname": "Guerrieri",
-        "roles": ["CoderDojo Master"],
+
         "description": "Alessio ama la pallacanestro, la fantascienza, il fantasy, ed odia parlare in terza persona. Quando non è al computer (o con un buon libro), si diverte con giochi da tavolo in compagnia o con strane serie tv. Trova le astronavi più interessanti dei draghi, soprattutto quando senzienti. Nella vita vera ricerca metodi per utilizzare tanti computer in cluster per trovare connessioni fra persone.",
-        "img_path": "static/img/Profile_pic/guerrieri_profile.jpg"
+        "img": "../client/img/Profile_pic/guerrieri_profile.jpg"
     },
     {
         "firstname": "Alessandro",
         "lastname": "Bacchiega",
-        "roles": ["CoderDojo Mentor"],
+
         "description": "Sono uno studente di Infomatica del terzo anno. La scelta è stata dettata dalla volontà di conoscere un po' più in dettaglio il mondo dei computers e, più in generale, la tecnologia. All'apprendimento dei linguaggi di programmazione affianco l'interesse per argomenti strettamente correlati, come il funzionamento di Internet o il problem solving mediante la formulazione di algoritmi. Mi piace però anche stare all'aria aperta: corro, vado in mountain-bike, faccio Geocaching, etc... Nel poco tempo libero che mi rimane studio per mio conto pianoforte.",
-        "img_path": "static/img/Profile_pic/bacchiega_profile.jpg"
+        "img": "../client/img/Profile_pic/bacchiega_profile.jpg"
     },
     {
         "firstname": "Alessia",
         "lastname": "Tovo",
-        "roles": ["CoderDojo Mentor"],
+
         "description": "Sono una studentessa in Informatica in procinto di laurea. Definisco l'Informatica come la scelta più intelligentemente insensata che io abbia fatto in vita mia (fino ad ora). Ho varie conoscenze informatiche di base, con maggiore predisposizione per il front-end. Nel mio tempo libero mi piace correre, guardare film e leggere libri definiti “mattoni”. Ah, trovo anche il tempo di uscire con gli amici :-)",
-        "img_path": "static/img/Profile_pic/tovo_profile.jpg"
+        "img": "../client/img/Profile_pic/tovo_profile.jpg"
     },
     {
         "firstname": "Paolo",
         "lastname": "Chistè",
-        "roles": ["CoderDojo Mentor"],
+
         "description": "Sono uno studente di informatica, ho appena iniziato il terzo anno di università. Come Mentor mi occupo del corso di Game Development e Python. Oltre alla programmazione, sono appassionato di videogiochi e astronomia. Come sport pratico arrampicata sportiva, con modesti risultati.",
-        "img_path": "static/img/Profile_pic/chiste.jpg"
+        "img": "../client/img/Profile_pic/chiste'_profile.jpg"
     },
     {
         "firstname": "Maria Pia",
         "lastname": "Natale",
-        "roles": ["CoderDojo Mentor"],
+
         "description": "Sono una studentessa di Informatica. Oltre ad essere il mio materiale di studio, l'informatica è la mia passione. Il mio scopo, come Mentor, è quello di provare a trasmettere questa passione anche ad altri ragazzi o ragazze che provano particolare interesse verso la programmazione e a persone che, come me, hanno iniziato il proprio percorso formativo in una scuola di stampo umanistico, come il liceo classico.",
-        "img_path": "static/img/Profile_pic/natale_profile.jpg"
+        "img": "../client/img/Profile_pic/natale_profile.jpg"
     },
     {
         "firstname": "Umberto",
         "lastname": "Peserico",
-        "roles": ["CoderDojo Mentor"],
+
         "description": "Sono uno studente di informatica del secondo anno. Ho cominciato a studiare e approfondire questa materia perché è una mia grande passione e credo che al giorno d'oggi debba essere parte della nostra vita. Per tale motivo penso sia necessario conoscerla a fondo. Sono appassionato di web development, system administration, database. Ho deciso di fare il mentor per trasmettere un po' delle mie conoscenze e passioni anche a persone che non hanno l'informatica come scienza preferita, ma comunque devono sapersi destreggiare con tali strumenti.",
-        "img_path": "static/img/Profile_pic/peserico_profile.jpg"
+        "img": "../client/img/Profile_pic/peserico_profile.jpg"
     },
     {
         "firstname": "Michele 'Jazzinghen'",
         "lastname": "Bianchi",
-        "roles": ["CoderDojo External Collaborator"],
-        "description": "Entrato in contatto con l'informatica da piccolissimo Michele è cresciuto assieme ai videogames. A 16 ha deciso che avrebbe creato una nazione per tutti gli appassionati per i videogame ed i computer abbandonati dalle proprie nazioni, sfruttati come mezzo per fare soldi e gli interessi di potenze grige. Dopotutto 'Cosa potrebbe mai andare storto?'. Dopo aver partecipato alle sue prime missioni a Trento, subito dopo le superiori, arriva a compiere lunghe missioni all'estero, tra cui Danimarca alla DTU e Giappone alla TokyoTech. Ha sempre aiutato gli altri invischiati nell" + "'" + " informatica, in quanto nessuno deve venir lasciato solo. Ora lavora per una forza multinazionale come agente specializzato in C++, GPU computing e GUI design. Porta ancora i segni del suo ultimo lavoro. Nel tempo libero si destreggia tra completare giochi senza uccidere nessuno, leggere 'The Edge', praticare Taiji Quan e, se il tempo permette, guardare Anime. Twitter: @Jazzinghen",
-        "img_path": "static/img/Profile_pic/bianchi_profile.jpg"
+
+        "description": "Entrato in contatto con l'informatica da piccolissimo Michele è cresciuto assieme ai videogames. A 16 ha deciso che avrebbe creato una nazione per tutti gli appassionati per i videogame ed i computer abbandonati dalle proprie nazioni, sfruttati come mezzo per fare soldi e gli interessi di potenze grige. Dopotutto 'Cosa potrebbe mai andare storto?'. Dopo aver partecipato alle sue prime missioni a Trento, subito dopo le superiori, arriva a compiere lunghe missioni all'estero, tra cui Danimarca alla DTU e Giappone alla TokyoTech. Ha sempre aiutato gli altri invischiati nell' informatica, in quanto nessuno deve venir lasciato solo. Ora lavora per una forza multinazionale come agente specializzato in C++, GPU computing e GUI design. Porta ancora i segni del suo ultimo lavoro. Nel tempo libero si destreggia tra completare giochi senza uccidere nessuno, leggere 'The Edge', praticare Taiji Quan e, se il tempo permette, guardare Anime. Twitter: @Jazzinghen",
+        "img": "../client/img/Profile_pic/bianchi_profile.jpg"
     },
     {
         "firstname": "Giovanni",
         "lastname": "De Toni",
-        "roles": ["CoderDojo Mentor"],
+
         "description": "Ho scoperto l'informatica alle superiori, grazie ad un altro gruppo di 'nerd' come me, e da allora non sono più riuscito a smettere.  Amo risolvere problemi e sperimentare nuove soluzioni e tecnologie. Durante il mio tempo libero leggo molto, sono un assiduo frequentatore di Wikipedia (a cui contribuisco leggermente) e, clima permettendo, mi diverto a fare trekking.",
-        "img_path": "static/img/Profile_pic/detoni_profile.jpg"
+        "img": "../client/img/Profile_pic/detoni_profile.jpg"
     },
     {
         "firstname": "Fabio",
         "lastname": "Da Rolt",
-        "roles": ["CoderDojo Mentor"],
+
         "description": "Ho cominciato a studiare informatica perchè sono sempre stato appassionato di videogiochi e volevo capire e comprendere come venissero sviluppati, capire cosa sta dietro l’utilizzo di un computer. Il CoderDojo è una grandissima occasione per insegnare alle persone che l’informatica non è qualcosa da subire e basta, ma è qualcosa su cui avere il controllo. Attraverso il CoderDojo cerco di promuovere valori come l’amicizia e l’aiuto reciproco, cercando di far capire che l’informatica dev’essere qualcosa di utile da poter sfruttare e non qualcosa che sostituisca le relazioni e le emozioni. Non conosco molti linguaggi, a livello base C++, Java e Phyton.",
-        "img_path": "static/img/Profile_pic/fabio_profile.jpg"
+        "img": "../client/img/Profile_pic/fabio_profile.jpg"
     },
     {
         "firstname": "Elda",
         "lastname": "Balliu",
-        "roles": ["CoderDojo Mentor"],
+
         "description": "Uno degli aspetti più importanti di informatica è risolvere i problemi. Ma quello che mi piace ancora di più sono le sfide continue che si incontrano durante il percorso. Io sono solo al secondo anno ma con tanta voglia di assimilare dal mondo di informatica e trovo molto affascinante l’idea di dare uno spunto ai giovani di conoscere e perchè no di diventare parte di questo mondo. Trovo abbastanza motivante il lavoro di gruppo e penso che i risultati migliori provengono dalla collaborazione. Being in a band is always a compromise. Provided that the balance is good, what you loss in compromise, you gain by collaboration.- M.Rutherford",
-        "img_path": "static/img/Profile_pic/balliu_profile.jpg"
+        "img": "../client/img/Profile_pic/balliu_profile.jpg"
     },
     {
         "firstname": "Giacomo",
         "lastname": "Zara",
-        "roles": ["CoderDojo Mentor"],
+
         "description": "Ho avuto il primo contatto con l’informatica alle superiori, attraverso alcuni cenni di programmazione nel corso di matematica ma soprattutto grazie all’amicizia che ancora mi lega con un compagno di classe che mi ha trasmesso personalmente una grande passione. Ora sono al secondo anno del corso di Informatica, e considero quella del CoderDojo un’opportunità importante per approfondire, e allo stesso tempo condividere, le mie conoscenze. Nel progetto mi occupo di Game Development, che è sicuramente uno dei rami della programmazione che più mi affascina.",
-        "img_path": "static/img/Profile_pic/zara_profile.jpg"
+        "img": "../client/img/Profile_pic/zara_profile.jpg"
     },
     {
         "firstname": "Stefano",
         "lastname": "Berlato",
-        "roles": ["CoderDojo Mentor"],
+
         "description": "Il primo approccio all’informatica l’ho avuto in terza superiore quando, di mia iniziativa, ho esordito nel mondo della programmazione con la creazione di una rudimentale versione di 'battaglia navale' nel linguaggio c++. Da allora mi sono sempre più interessato alla materia e adesso sono uno studente di informatica del secondo anno a Trento. Sono molto sportivo (gioco a calcio e alleno una squadra) e mi piacciono i videogame RPG. Come mentor di Corderdojo mi occupo dei corsi di Game Development.",
-        "img_path": "static/img/Profile_pic/berlato_profile.jpg"
+        "img": "../client/img/Profile_pic/berlato_profile.jpg"
     },
     {
         "firstname": "“Perwise” Michael",
         "lastname": "Aidoo",
-        "roles": ["CoderDojo Mentor"],
+
         "description": "Sono uno studente di informatica, che pensa che l’informatica sia la nuova matematica, filosofia e letteratura di questa generazione. E tutto questo è per sottolineare l’importanza di questa nuova scienza, che sembra non aver limiti a livello di ricerca, scoperta e conoscenza. Come mentor di Coderdojo mi occupo dei corsi basi di web e programmi di base come [C++]. La mia vita non solo l’informatica, ma l’informatica è in tutto ciò che faccio; sono un musicista, suono la batteria e ho qualche nozione del basso elettrico. Mi piace leggere e dialogare con persone che non condannano la filosofia, ma che apprezzano anche la sua importanza a livello informatico. Ci sono diversi tipi di informatici e io sono quello che sostiene che l’informatica non è altro che la riflessione dell’essere attraverso la tecnologia. Do what you have to do, because more than thatyou can’t do. -",
-        "img_path": "static/img/Profile_pic/aidoo_profile.jpg"
+        "img": "../client/img/Profile_pic/aidoo_profile.jpg"
     },
     {
         "firstname": "'James' Luca",
         "lastname": "Bosotti",
-        "roles": ["CoderDojo Mentor"],
+
         "description": "Per me la tecnologia deve essere al servizio della creatività, trovo affascinante utilizzare l’informatica in ambiti in cui generalmente non è presente. Sono una persona curiosa e mi piace esplorare e scoprire cose nuove. Ho praticato molti sport in passato, quasi mai in maniera agonistica, passando dai classici come la pallavolo ad altri più curiosi come il golf fino al più recente: rievocazione del tiro con l’arco.",
-        "img_path": "static/img/Profile_pic/bosotti_profile.jpg"
+        "img": "../client/img/Profile_pic/bosotti_profile.jpg"
     },
     {
         "firstname": "Sabina",
         "lastname": "Lorenzi",
-        "roles": ["CoderDojo Mentor"],
+
         "description": "Prima di dedicarmi all’informatica studiavo grafica e arte pubblicitaria. Ho cominciato ad interessarmi al soggetto alle superiori per pura curiosità e ora ne sono diventata dipendente. Adoro risolvere i suoi misteri ed i suoi enigmi logici. Proveniendo da un background così diverso, mi piace cercare di vedere il soggetto sotto un altro approccio e cercare di capire quando il mondo dell’arte e della computazione si sfiorano. Durante il tempo libero mi piace diversificare, leggere libri divulgativi e tenermi informata sul mondo dell’arte, e della tecnologia. “Computer programming is an art, because it applies accumulated knowledge to the world, because it requires skill and ingenuity, and especially because it produces objects of beauty.” Donald Knuth",
-        "img_path": "static/img/Profile_pic/lorenzinew_profile.jpg"
+        "img": "../client/img/Profile_pic/lorenzinew_profile.jpg"
     },
     {
         "firstname": "Sara",
         "lastname": "Kalo",
-        "roles": ["CoderDojo Mentor"],
+
         "description": "Ragazze e computer? L' informatica che inizialmente mi si è presentata come una sfida, è diventata sempre più una passione...curiosa e desiderosa di imparare spero di poter trasmettere ciò che imparo e che questa esperienza possa farmi crescere con voi. Come mentor mi occuperò della programmazione web. Conosci i tuoi limiti...oltrepassali!",
-        "img_path": "static/img/Profile_pic/kalonew_profile.jpg"
+        "img": "../client/img/Profile_pic/kalonew_profile.jpg"
     }
 ]

@@ -14,7 +14,7 @@
 
             <md-card class="card md-whiteframe-8dp" ng-repeat="mentor in ctrl.mentors track by $index" flex="30" flex-xs="100" flex-sm="100" flex-md="45" style="margin-bottom: 3em;">
                 <div ng-hide="mentor.showDescription">
-                    <img data-ng-src="data:{{mentor.img.content_type}};base64,{{mentor.img.file}}" class="md-card-image" alt="Foto">
+                    <img data-ng-src="data:{{mentor.img.content_type}};base64,{{mentor.img.file}}" class="md-card-image profile-photo" alt="Foto">
                     <md-card-title>
                         <md-card-title-text layout="row">
                             <div flex layout="column">

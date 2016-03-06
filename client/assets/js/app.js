@@ -107,7 +107,7 @@ angular.module('coderdojo', ['ngMaterial', 'ngAnimate', 'ngRoute', 'ngResource',
     .accentPalette('accentPalette');
 })
 
-.run(['$rootScope', '$http', '$mdSidenav', function($rootScope,$http, $mdSidenav) {
+.run(['$rootScope', '$http', '$mdSidenav', '$location', function($rootScope, $http, $mdSidenav, $location) {
 
     $http.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
     $http.defaults.headers.common['Authorisation'] = 'Bearer fuffa';
@@ -127,6 +127,12 @@ angular.module('coderdojo', ['ngMaterial', 'ngAnimate', 'ngRoute', 'ngResource',
     $rootScope.toggleSideNav = function() {
         $mdSidenav('sidenav').toggle();
     };
+
+    $rootScope.gotoView = function (path) {
+        $rootScope.closeSideNav();
+        $location.path('/' + path);
+    };
+
 }])
 
 /* template che renderizza l'animazione di caricamento nelle pagine

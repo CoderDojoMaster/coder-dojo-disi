@@ -132,19 +132,16 @@ Home page style
     opacity: 0.30;
 }
 
-/*
-cards style
-*/
-
 
 /*
 profile style
 */
 
-.profile_pic {
-    max-height: 150px;
-    max-width: 150px;
-    margin: 1.2em;
+.profile-photo {
+    max-height: 12em;
+    max-width: 12em;
+    border-radius: 6em !important;
+    margin: 1em;
 }
 
 /*

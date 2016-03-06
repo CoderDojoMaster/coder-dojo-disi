@@ -76,43 +76,43 @@ gulp.task('clean:build', function () {
 
 gulp.task('copy', ['copy:css'], function () {
     return gulp.src(paths.assets, {
-            base: './client/'
-        })
-        .pipe(gulp.dest(buildDir))
-        .pipe(browserSync.stream());
+        base: './client/'
+    })
+    .pipe(gulp.dest(buildDir))
+    .pipe(browserSync.stream());
 });
 
 // Copies app's HTML templates
 gulp.task('copy:templates', function () {
     return gulp.src('./client/templates/**/*.html')
-        .pipe(gulp.dest(buildDir + '/templates'))
-        .pipe(browserSync.stream())
-        ;
+    .pipe(gulp.dest(buildDir + '/templates'))
+    .pipe(browserSync.stream())
+    ;
 });
 
 
 gulp.task('copy:css', function (cb) {
 
     return gulp.src(paths.css)
-        .pipe(gulp.dest(buildDir + '/assets/css/'))
-        .pipe(browserSync.stream())
-        ;
+    .pipe(gulp.dest(buildDir + '/assets/css/'))
+    .pipe(browserSync.stream())
+    ;
 });
 
 
 // Compiles Sass
 gulp.task('sass', function () {
     return gulp.src('client/assets/scss/app.scss')
-        .pipe($.sass({
-            includePaths: paths.sass,
-            errLogToConsole: true
-        }))
-        .pipe($.autoprefixer({
-            browsers: ['last 2 versions', 'ie 10']
-        }))
-        .pipe(gulp.dest(buildDir + '/assets/css/'))
-        .pipe(browserSync.stream())
-        ;
+    .pipe($.sass({
+        includePaths: paths.sass,
+        errLogToConsole: true
+    }))
+    .pipe($.autoprefixer({
+        browsers: ['last 2 versions', 'ie 10']
+    }))
+    .pipe(gulp.dest(buildDir + '/assets/css/'))
+    .pipe(browserSync.stream())
+    ;
 });
 
 // Compiles and copies the Foundation for Apps JavaScript, as well as your app's custom JS
@@ -121,18 +121,18 @@ gulp.task('js', ['js:angular', 'js:app']);
 gulp.task('js:angular', function (cb) {
 
     return gulp.src(paths.angularJS)
-        .pipe($.concat('angular.js'))
-        .pipe(gulp.dest(buildDir + '/assets/js/'))
-        ;
+    .pipe($.concat('angular.js'))
+    .pipe(gulp.dest(buildDir + '/assets/js/'))
+    ;
 });
 
 gulp.task('js:app', function () {
 
     return gulp.src(paths.appJS)
-        .pipe($.concat('app.js'))
-        .pipe(gulp.dest(buildDir + '/assets/js/'))
-        .pipe(browserSync.stream())
-        ;
+    .pipe($.concat('app.js'))
+    .pipe(gulp.dest(buildDir + '/assets/js/'))
+    .pipe(browserSync.stream())
+    ;
 });
 
 // Builds your entire app once, without starting a server
@@ -142,7 +142,8 @@ gulp.task('build', function (cb) {
 
 // Execute the script to import sample data in MongoDB
 gulp.task('sample-data', function () {
-    exec('node sample-data/import-samples.js', function (err, stdout, stderr) {
+    process.chdir('./sample-data');
+    exec('node import-samples.js', function (err, stdout, stderr) {
         console.log(stdout);
         console.log(stderr);
         if (err) {

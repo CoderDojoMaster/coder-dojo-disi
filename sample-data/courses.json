@@ -3,18 +3,18 @@
         "title": "PYTHON",
         "description": "Che le lingue siano importanti ai giorni d’oggi, questo è risaputo da tutti. Ma oltre all’inglese, al tedesco, al giapponese, all’arabo e alle altre lingue parlate in tutto il mondo, ci sono linguaggi che ci permettono di comunicare con i computers e sono davvero tantissimi! C, C++, Java, Ruby, ect, … Con Python vedrete dapprima la programmazione base partendo dall'utilizzo di variabili e strutture di controllo (if, for, while). In seguito si sperimenteranno tecniche più avanzate, utili anche negli altri percorsi come l'utilizzo di librerie, la programmazione ad oggetti e la programmazione multi-threaded.",
         "type": "Development basis",
-        "img_path": "static/img/python-logo-generic.svg"
+        "img": "../client/img/python-logo-generic.svg"
     },
     {
         "title": "HTML5, CSS3 E JAVASCRIPT",
         "description": "In ogni istante vengono visualizzate nel mondo milioni di pagine Web. Ma la maggior parte delle persone che utilizzano Internet conosce davvero come sono realizzate? Qual è la struttura di base di un sito? Cosa c’è dietro ad un link, cosa si utilizza per rendere un sito accattivante? HTML, CSS e JS sono tre linguaggi che consentono di implementare una pagina Web. Con il primo si scrivono le istruzioni che compongono lo scheletro ed il contenuto di un sito, con il CSS è possibile definire a piacere l’aspetto, mentre JavaScript permette di gestire gli effetti dinamici interattivi.",
         "type": "Web development",
-        "img_path": "static/img/html5-css-javascript-logos.svg"
+        "img": "../client/img/html5-css-javascript-logos.svg"
     },
     {
         "title": "CONSTRUCT2 E UNITY",
         "description": "Quante volte, giocando all'ultima versione del nostro videogame preferito, ci capita di pensare a quanto ci piacerebbe poter essere dalla parte di chi il gioco lo crea, piuttosto che di chi si limita a giocarci? Esistono moltissimi strumenti che permettono di vivere questa particolare esperienza, tra cui Unity e Construct. Construct e Unity sono due motori grafici, che ci forniscono strumenti di base per consentirci di sviluppare videogiochi in 2D e in 3D. Vedremo insieme come creare un progetto, gestire comportamenti e fisica di gioco, suono, grafica e tutti i componenti, tutto questo al fine di creare un semplice gioco.",
         "type": "Game Development",
-        "img_path": "static/img/construct2unity.svg"
+        "img": "../client/img/construct2unity.svg"
     }
 ]
