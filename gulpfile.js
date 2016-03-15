@@ -7,6 +7,7 @@ var del = require('del');
 var sequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 var exec = require('child_process').exec;
+var sourcemaps = require('gulp-sourcemaps');
 
 // 2. FILE PATHS
 // - - - - - - - - - - - - - - -
@@ -129,8 +130,10 @@ gulp.task('js:angular', function (cb) {
 gulp.task('js:app', function () {
 
     return gulp.src(paths.appJS)
-    .pipe($.concat('app.js'))
-    .pipe(gulp.dest(buildDir + '/assets/js/'))
+        .pipe(sourcemaps.init())
+        .pipe($.concat('app.js'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(buildDir + '/assets/js/'))
     .pipe(browserSync.stream())
     ;
 });
