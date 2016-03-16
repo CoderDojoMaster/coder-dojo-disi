@@ -6,6 +6,7 @@ var gulp = require('gulp');
 var del = require('del');
 var sequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
+var exec = require('child_process').exec;
 
 // 2. FILE PATHS
 // - - - - - - - - - - - - - - -
@@ -127,6 +128,19 @@ gulp.task('js:app', function () {
 gulp.task('build', function (cb) {
     sequence('clean:build', ['copy', 'sass', 'js'], 'copy:templates', cb);
 });
+
+// Execute the script to import sample data in MongoDB
+gulp.task('sample-data', function () {
+    process.chdir('./sample-data');
+    exec('node import-samples.js', function (err, stdout, stderr) {
+        console.log(stdout);
+        console.log(stderr);
+        if (err) {
+            console.error("> Error during import sample in databse: " + err.message);
+        }
+    });
+});
+
 
 // Default task: builds your app, starts a server, and recompiles assets when they change
 gulp.task('default', ['build'], function () {

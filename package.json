@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "prestart": "npm install --no-bin-links",
-    "start": "gulp"
+    "start": "gulp",
+    "sample-data": "cd sample-data && node import-samples.js"
   },
   "dependencies": {
     "jquery": "~2.1.4",
@@ -20,5 +21,10 @@
     "run-sequence": "^1.1.1",
     "browser-sync": "~2.10"
   },
+
+  "devDependencies": {
+    "request": "2.69.x"
+  },
+
   "private": true
 }
