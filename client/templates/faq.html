@@ -6,8 +6,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="center-align">
-            <a class="btn-large facebook-btn white-text waves-effect waves-light" target="_blank" href="https://www.facebook.com/coderdojodisi">PAGINA FACEBOOK</a>
+        <div class="col s12 m6 l6 center-align">
+            <h4 class="">Contattaci! </h4>
+        </div>
+        <div class="col s12 m6 l6 center-align">
+            <a class="btn-large facebook-btn white-text waves-effect waves-light" style="margin-top: 5px;" target="_blank" href="https://www.facebook.com/coderdojodisi">PAGINA FACEBOOK</a>
         </div>
     </div>
 
@@ -17,8 +20,8 @@
     </div>
 
     <div class="row" ng-repeat="faq in ctrl.faqs" ng-hide="ctrl.loading">
-        <div class="col s10 m10 l10 offset-s1 offset-m1 offset-l1 center-align">
-            <h5>{{faq.title}}
+        <div class="col s10 m10 l10 offset-s1 offset-m1 offset-l1">
+            <h5>{{faq._id + ". " + faq.title}}
             </h5>
             <p>
                 {{faq.description}}
