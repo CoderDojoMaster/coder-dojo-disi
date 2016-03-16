@@ -89,6 +89,20 @@ Navbar style
     background-color: black;
 }
 
+
+.slider-captions {
+    background-color: #fafafa;
+    border-radius: 5px;
+    box-shadow: 5px 5px 50px #212121;
+    padding: 2em;
+}
+
+
+.slider .indicators .indicator-item.active {
+    background-color: black;
+}
+
+
 /*
     Every page style
 */
