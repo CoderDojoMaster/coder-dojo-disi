@@ -64,6 +64,18 @@
 
             $('#events-link').addClass("page-active");
 
-        }]);
+
+        }])
+        .directive('event', function () {
+        return {
+            restrict: 'E',
+            transpire: true,
+            link: function (scope, element) {
+                tinymce.init({
+                    selector: '.editor'
+                });
+            }
+        }
+    });
 
 })();

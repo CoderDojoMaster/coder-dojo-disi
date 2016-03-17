@@ -21,7 +21,11 @@
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{event.title}}</span>
-                    <p>{{event.description}}</p>
+                    <event>
+                        <div class="editor">
+                            {{event.description}}
+                        </div>
+                    </event>
                     <div class="center-align">
                         <a ng-class="{disabled: ctrl.checkDate(event.date)}" class="waves-effect waves-light btn event-btn form-btn white-text" target="_blank" ng-href="{{event.urls.googleForm}}"><i class="material-icons right">description</i>Google form</a>
                         <a ng-class="{disabled: ctrl.checkDate(event.date)}" class="waves-effect waves-light btn event-btn facebook-btn white-text" target="_blank" ng-href="{{event.urls.facebook}}"><i class="material-icons right">event</i>Evento Facebook</a>
