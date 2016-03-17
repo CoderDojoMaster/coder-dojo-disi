@@ -21,9 +21,12 @@
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{event.title}}</span>
-                    <event>
-                        <div class="editor">
-                            {{event.description}}
+                    <event data-description="event.description" data-index="$index">
+                        <button ng-click="ctrl.click()">Edit</button>
+                        <div id="{{'editor'+$index}}">
+                        </div>
+                        <div ng-hide="ctrl.editing">
+                            {{ctrl.description}}
                         </div>
                     </event>
                     <div class="center-align">

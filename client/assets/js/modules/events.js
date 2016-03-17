@@ -67,15 +67,30 @@
 
         }])
         .directive('event', function () {
-        return {
-            restrict: 'E',
-            transpire: true,
-            link: function (scope, element) {
-                tinymce.init({
-                    selector: '.editor'
-                });
+            return {
+                restrict: 'E',
+                bindToController: {
+                    description: "=",
+                    index: "="
+                },
+                controller: function () {
+                    var controller = this;
+                    controller.click = function () {
+                        controller.editing = true;
+                        var tiny = tinymce.init({
+                            selector: '#editor' + controller.index
+                        });
+                        tiny.then(function (editors) {
+                            controller.tinymce = editors[0];
+                            controller.tinymce.setContent(controller.description);
+                        });
+                    };
+
+                },
+                controllerAs: "ctrl",
+                link: function (scope, element, args, controller) {
+                }
             }
-        }
-    });
+        });
 
 })();
