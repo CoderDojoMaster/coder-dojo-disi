@@ -3,21 +3,20 @@
 
 var $ = require('gulp-load-plugins')();
 var gulp = require('gulp');
+var changed = require('gulp-changed');
 var del = require('del');
 var sequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 var exec = require('child_process').exec;
+var sourcemaps = require('gulp-sourcemaps');
 
 // 2. FILE PATHS
 // - - - - - - - - - - - - - - -
 var buildDir = "./build";
 
-var testDir = "./test";
-
 var paths = {
     assets: [
         './client/**/*.*',
-        '!./client/templates/**/*.*',
         '!./client/assets/{scss,js}/**/*.*'
     ],
     // Sass will check these folders for files when you use @import.
@@ -40,19 +39,6 @@ var paths = {
     // These files are for your app's JavaScript
     appJS: [
         'client/assets/js/**/*.js'
-    ],
-    appTest: [
-        'client/assets/js/**/*.js',
-        '!client/assets/js/app.js'
-    ],
-    angularTest: [
-        'node_modules/jasmine-core/lib/jasmine-core/jasmine.js',
-        'node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js',
-        'node_modules/jasmine-core/lib/jasmine-core/boot.js',
-        'node_modules/angular/angular.js',
-        'node_modules/angular-mocks/angular-mocks.js',
-        'node_modules/angular-resource/angular-resource.js',
-        'spec/mocks/*.js'
     ]
 };
 
@@ -67,38 +53,31 @@ gulp.task('clean:build', function () {
     ])
 });
 
-// Copies everything in the client folder except templates, Sass, and JS
 gulp.task('copy:fonts', function () {
-    return gulp.src(paths.fonts, {base: 'node_modules/materialize-css/dist'})
+    return gulp.src(paths.fonts, {
+            base: 'node_modules/materialize-css/dist'
+        })
+        .pipe(changed(buildDir + "/assets"))
         .pipe(gulp.dest(buildDir + "/assets"))
 });
 
-gulp.task('copy', ['copy:fonts'], function () {
+gulp.task('copy', function () {
     return gulp.src(paths.assets, {
             base: './client/'
         })
+        .pipe(changed(buildDir))
         .pipe(gulp.dest(buildDir))
         .pipe(browserSync.stream());
-});
-
-// Copies app's HTML templates
-gulp.task('copy:templates', function () {
-    return gulp.src('./client/templates/**/*.html')
-        .pipe(gulp.dest(buildDir + '/templates'))
-        .pipe(browserSync.stream())
-        ;
 });
 
 // Compiles Sass
 gulp.task('sass', function () {
     return gulp.src('client/assets/scss/app.scss')
+        .pipe(sourcemaps.init())
         .pipe($.sass({
-            includePaths: paths.sass,
-            errLogToConsole: true
-        }))
-        .pipe($.autoprefixer({
-            browsers: ['last 2 versions', 'ie 10']
-        }))
+            includePaths: paths.sass
+        }).on('error', $.sass.logError))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(buildDir + '/assets/css/'))
         .pipe(browserSync.stream())
         ;
@@ -118,7 +97,9 @@ gulp.task('js:angular', function (cb) {
 gulp.task('js:app', function () {
 
     return gulp.src(paths.appJS)
+        .pipe(sourcemaps.init())
         .pipe($.concat('app.js'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(buildDir + '/assets/js/'))
         .pipe(browserSync.stream())
         ;
@@ -126,7 +107,7 @@ gulp.task('js:app', function () {
 
 // Builds your entire app once, without starting a server
 gulp.task('build', function (cb) {
-    sequence('clean:build', ['copy', 'sass', 'js'], 'copy:templates', cb);
+    sequence('clean:build', ['copy', 'sass', 'js', 'copy:fonts'], cb);
 });
 
 // Execute the script to import sample data in MongoDB
@@ -145,19 +126,15 @@ gulp.task('sample-data', function () {
 // Default task: builds your app, starts a server, and recompiles assets when they change
 gulp.task('default', ['build'], function () {
     //Watch Sass
-    //Watch the quick brown fox
-    gulp.watch(['./client/assets/scss/**/*', './scss/**/*'], ['sass']);
+    gulp.watch(['./client/assets/scss/**/*'], ['sass']);
 
     // Watch JavaScript
-    gulp.watch(['./client/assets/js/**/*', './js/**/*'], ['js:app']);
+    gulp.watch(paths.appJS, ['js:app']);
 
     // Watch static files
-    gulp.watch(['./client/**/*.*', '!./client/templates/**/*.*', '!./client/assets/{scss,js}/**/*.*'], ['copy']);
-
-    // Watch app templates
-    gulp.watch(['./client/templates/**/*.html'], ['copy:templates']);
+    gulp.watch(paths.assets, ['copy']);
 
     browserSync.init({
-        proxy: "coderdojodisi_nginx_1:8000"
+        proxy: "nginx:8000"
     });
 });
