@@ -17,7 +17,7 @@ services:
       - mongoDB:/data/db
 
   backend:
-    image: coderdojomaster/backend
+    image: coderdojomaster/backend:latest
     environment:
       MONGO_HOST: "mongo"
       MONGO_USERNAME: ""
