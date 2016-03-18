@@ -2,12 +2,12 @@
     'use strict';
 
     /* modulo per la comunicazione con il server dei dati relativi agli eventi */
-    angular.module('eventsModule', ['ngResource'])
+    angular.module('eventsModule', ['ngResource', 'ngSanitize'])
 
         .factory('Events', ['$resource', function ($resource) {
 
             return $resource('/api/events/:eid', {}, {
-                query: {method:'GET', isArray:true}
+                query: {method: 'GET', isArray: true}
             });
         }])
 
@@ -28,7 +28,7 @@
             };
 
             this.loadEvents = function () {
-                Events.get( function (data) {
+                Events.get(function (data) {
                         //success
                         ctrl.events = data._items;
                         ctrl.loading = false;
@@ -73,23 +73,35 @@
                     description: "=",
                     index: "="
                 },
-                controller: function () {
+                controller: function ($sce) {
                     var controller = this;
                     controller.click = function () {
-                        controller.editing = true;
-                        var tiny = tinymce.init({
-                            selector: '#editor' + controller.index
-                        });
-                        tiny.then(function (editors) {
-                            controller.tinymce = editors[0];
-                            controller.tinymce.setContent(controller.description);
-                        });
+                        if (!controller.editing) {
+                            controller.editing = true;
+                            var tiny = tinymce.init({
+                                selector: '#editor' + controller.index,
+                                plugins: "save",
+                                toolbar: "save cancel",
+                                save_oncancelcallback: function (editor) {
+                                    editor.setContent(controller.description);
+                                },
+                                save_onsavecallback: function (editor) {
+                                    var text = $sce.trustAsHtml(editor.getContent({format: 'html'}));
+                                    controller.description = text;
+                                }
+                            });
+                            tiny.then(function (editors) {
+                                controller.tinymce = editors[0];
+                                controller.tinymce.setContent(controller.description);
+                            });
+                        } else {
+                            tinymce.remove(controller.tinymce);
+                            controller.editing = false;
+                        }
                     };
 
                 },
-                controllerAs: "ctrl",
-                link: function (scope, element, args, controller) {
-                }
+                controllerAs: "ctrl"
             }
         });
 

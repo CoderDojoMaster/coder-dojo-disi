@@ -31,7 +31,8 @@ var paths = {
         'node_modules/angular/angular.js',
         'node_modules/angular-resource/angular-resource.js',
         'node_modules/angular-route/angular-route.js',
-        'node_modules/materialize-css/dist/js/materialize.js'
+        'node_modules/materialize-css/dist/js/materialize.js',
+        'node_modules/angular-sanitize/angular-sanitize.js'
     ],
     fonts: [
         'node_modules/materialize-css/dist/font/material-design-icons/*',
