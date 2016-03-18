@@ -76,28 +76,33 @@
                 controller: function ($sce) {
                     var controller = this;
                     controller.click = function () {
-                        if (!controller.editing) {
-                            controller.editing = true;
-                            var tiny = tinymce.init({
-                                selector: '#editor' + controller.index,
-                                plugins: "save",
-                                toolbar: "save cancel",
-                                save_oncancelcallback: function (editor) {
-                                    editor.setContent(controller.description);
-                                },
-                                save_onsavecallback: function (editor) {
-                                    var text = $sce.trustAsHtml(editor.getContent({format: 'html'}));
-                                    controller.description = text;
-                                }
-                            });
-                            tiny.then(function (editors) {
-                                controller.tinymce = editors[0];
-                                controller.tinymce.setContent(controller.description);
-                            });
-                        } else {
-                            tinymce.remove(controller.tinymce);
-                            controller.editing = false;
-                        }
+                        $('#modal' + controller.index).openModal({
+                            dismissible: false
+                        });
+                        var tiny = tinymce.init({
+                            selector: '#editor' + controller.index,
+                            plugins: [
+                                'advlist autolink lists link image charmap print preview anchor',
+                                'searchreplace visualblocks code fullscreen',
+                                'insertdatetime media table contextmenu paste code save'
+                            ],
+                            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | save cancel',
+                            save_oncancelcallback: function (editor) {
+                                editor.setContent(controller.description.toString());
+                                tinymce.remove(controller.tinymce);
+                                $('#modal' + controller.index).closeModal();
+                            },
+                            save_onsavecallback: function (editor) {
+                                controller.description = $sce.trustAsHtml(editor.getContent());
+                                tinymce.remove(controller.tinymce);
+                                $('#modal' + controller.index).closeModal();
+                            }
+                        });
+                        tiny.then(function (editors) {
+                            controller.tinymce = editors[0];
+                            controller.tinymce.setContent(controller.description.toString());
+                        });
+
                     };
 
                 },

@@ -22,9 +22,9 @@
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{event.title}}</span>
                     <event data-description="event.description" data-index="$index">
-                        <button ng-click="ctrl.click()">Edit</button>
-                        <div ng-show="ctrl.editing" id="{{'editor'+$index}}">
-                        </div>
+                        <a class="btn-floating btn-large waves-effect waves-light red" ng-click="ctrl.click()">
+                            <i class="material-icons">edit</i>
+                        </a>
                         <div ng-bind-html="ctrl.description">
                         </div>
                     </event>
@@ -44,6 +44,15 @@
             <h5 class="thin">
                 {{event.date | date : 'd MMM'}}
             </h5>
+
+        </div>
+        <div id="{{'modal'+$index}}" class="modal">
+            <div class="modal-content">
+                <event data-description="event.description" data-index="$index" style="height: 100%;">
+                    <div id="{{'editor'+$index}}">
+                    </div>
+                </event>
+            </div>
 
         </div>
     </div>
