@@ -1,6 +1,13 @@
 /* modulo principale dell'applicazione con relative dipendenze */
-angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'eventsModule', 'coursesModule', 'mentorModule', 'faqModule'])
+var $ = require('jquery');
+var angular = require('angular');
+require('angular-route');
+require('angular-resource');
+require('materialize-js');
+require('./modules');
+require('menu');
 
+angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'eventsModule', 'coursesModule', 'mentorModule', 'faqModule'])
 
 /* routing e navigazione nelle pagine del sito */
 .config(function ($routeProvider, $locationProvider) {

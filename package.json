@@ -7,11 +7,12 @@
     "sample-data": "cd sample-data && node import-samples.js"
   },
   "dependencies": {
-    "jquery": "~2.1.4",
     "angular": "~1.4",
     "angular-resource": "~1.4",
     "angular-route": "~1.4",
-    "materialize-css": "~0.97",
+      "browser-sync": "~2.10",
+      "browserify": "^13.0.0",
+      "browserify-shim": "^3.8.12",
     "del": "~2.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
@@ -20,13 +21,40 @@
     "gulp-load-plugins": "1.0.0-rc.1",
     "gulp-sass": "^2.0.3",
     "gulp-sourcemaps": "^1.5.2",
+      "jquery": "~2.1.4",
+      "materialize-css": "~0.97",
     "run-sequence": "^1.1.1",
-    "browser-sync": "~2.10"
+      "vinyl-buffer": "^1.0.0",
+      "vinyl-source-stream": "^1.1.0",
+      "watchify": "^3.7.0",
+      "gulp-util": "latest"
   },
-
   "devDependencies": {
     "request": "2.69.x"
   },
-
-  "private": true
+    "private": true,
+    "browser": {
+        "materialize-js": "./node_modules/materialize-css/bin/materialize.js",
+        "jquery": "./node_modules/jquery/dist/jquery.min.js",
+        "menu": "./client/assets/js/menu.js"
+    },
+    "browserify": {
+        "transform": [
+            "browserify-shim"
+        ]
+    },
+    "browserify-shim": {
+        "jquery": "$",
+        "menu": {
+            "depends": [
+                "jquery:jQuery"
+            ]
+        },
+        "materialize-js": {
+            "exports": "Materialize",
+            "depends": [
+                "jquery:$"
+            ]
+        }
+    }
 }
