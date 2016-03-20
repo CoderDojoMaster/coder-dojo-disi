@@ -3,14 +3,6 @@
 }
 
 /*
-FAQ
-*/
-.darker-white {
-    background-color: #fafafa;
-    padding: 1em !important;
-}
-
-/*
 Navbar style
 */
 
@@ -21,33 +13,40 @@ Navbar style
     width: 100%;
     display: flex;
 }
+
 .nav-left {
     width: 50%;
     height: 100%;
     background-color: #fafafa;
 }
+
 .nav-right {
     width: 50%;
     height: 100%;
     background-color: #212121;
 }
+
 .coder-dojo-logo {
     position: relative;
 }
+
 .nav-list {
     position: absolute;
     right: 50px;
     display: flex;
     flex-direction: row;
 }
+
 .nav-list li {
     margin-left: 50px;
 }
+
 .button-collapse {
     position: absolute;
     right: 20px;
     top: 20px;
 }
+
 .wrap {
     z-index: 999;
     position: absolute;
@@ -57,6 +56,7 @@ Navbar style
     margin-right: -50%;
     transform: translate(-50%, 0);
 }
+
 @media only screen and (min-width: 993px) {
     /* Bounce In */
     .hvr-bounce-in {
@@ -75,28 +75,58 @@ Navbar style
         transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
     }
 }
+
 .navbar-menu {
-    position: relative;
-    left: 100px;
+    position: absolute;
+    top: 0.6em;
+    right: 0.8em;
     display: flex;
     flex-direction: row;
 }
+
 .navbar-menu li {
     margin-right: 2em;
 }
+
 .navbar-menu li span {
     font-size: 1.5em;
 }
+
 .navbar-menu li span:hover {
     color: #757575;
 }
+
+.nav-fb-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 25px;
+    justify-content: center;
+}
+
+.nav-fb-button:hover {
+    background-color: #4E69A2;
+    transition: background-color ease 1s;
+}
+
+.nav-fb-button > a {
+    width: 24px;
+    height: 24px;
+}
+
+/*.mobile-nav-fb-button {
+    background-color: #212121;
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 25px;
+}*/
+
 .page-active {
     text-decoration: underline;
 }
+
 .black-background {
     background-color: black;
 }
-
 
 .slider-captions {
     background-color: #fafafa;
@@ -105,11 +135,37 @@ Navbar style
     padding: 2em;
 }
 
-
 .slider .indicators .indicator-item.active {
     background-color: black;
 }
 
+.indicators {
+    padding-bottom: 0.5em !important;
+}
+
+.caption > h1 {
+    @media only screen and (max-width: 600px) {
+        font-size: 2.5em;
+    }
+}
+
+.caption > h3 {
+    @media only screen and (max-width: 600px) {
+        font-size: 2em;
+    }
+}
+
+.caption > h4 {
+    @media only screen and (max-width: 600px) {
+        font-size: 2em;
+    }
+}
+
+.caption > h5 {
+    @media only screen and (max-width: 600px) {
+        font-size: 1.5em;
+    }
+}
 
 /*
     Every page style
@@ -118,11 +174,13 @@ Navbar style
 main {
     z-index: 1;
 }
+
 .con {
     margin-top: 50px;
     height: auto;
     width: 100%;
 }
+
 p {
     text-align: justify;
 }
@@ -135,25 +193,25 @@ p {
 
 .event-btn {
 
-	width: 65%;
-	margin: 0.2em;
+    width: 65%;
+    margin: 0.2em;
 }
 
 @media only screen and (max-width: 600px) {
 
-	.event-btn {
-		width: 100%;
-	}
+    .event-btn {
+        width: 100%;
+    }
 }
 
 .facebook-btn {
 
-	background-color: #4E69A2;
+    background-color: #4E69A2;
 }
 
 .form-btn {
 
-	background-color: #61c;
+    background-color: #61c;
 }
 
 .loading-img {
@@ -165,13 +223,21 @@ p {
 */
 
 .central-line {
-    background: linear-gradient(#ffffff 0%, #e0e0e0 10%,#e0e0e0 90%, #ffffff 100%);
+    background: linear-gradient(#ffffff 0%, #e0e0e0 10%, #e0e0e0 90%, #ffffff 100%);
     position: absolute;
-    width: 4px;
+    width: 0.5%;
     top: 240px;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, 0);
+    left: 49.75%;
+}
+
+.timeline-item-container {
+    margin: 2em !important;
+    padding: 0px !important;
+    text-align: center;
+
+    @media only screen and (max-width: 600px) {
+        margin: 1em !important;
+    }
 }
 
 .line {
@@ -180,9 +246,6 @@ p {
     width: 100%;
     background-color: #757575;
     position: relative;
-    top: 50%;
-    margin-bottom: -50%;
-    transform: (0, -50%);
 }
 
 /*
@@ -201,6 +264,7 @@ p {
 .course-logo {
     max-height: 150px;
 }
+
 h4 {
     text-align: center;
 }
@@ -214,6 +278,7 @@ h4 {
     max-width: 150px;
     margin: 1.2em;
 }
+
 #about_back_firs {
     margin-left: 25px;
     margin-right: 25px;
@@ -248,6 +313,16 @@ h4 {
         width: 150px;
         height: auto;
     }
+}
+
+/*
+    FAQ style
+*/
+.darker-white {
+    background-color: #fafafa;
+    padding: 1em !important;
+    border-radius: 5px;
+    box-shadow: #aaaaaa 0px 5px 10px 0px;
 }
 
 /*
@@ -291,13 +366,16 @@ h4 {
 .box1 {
     animation: tetromino1 1.5s ease-out infinite;
 }
+
 .box2 {
     animation: tetromino2 1.5s ease-out infinite;
 }
+
 .box3 {
     animation: tetromino3 1.5s ease-out infinite;
     z-index: 2;
 }
+
 .box4 {
     animation: tetromino4 1.5s ease-out infinite;
 }
@@ -305,45 +383,51 @@ h4 {
 @keyframes tetromino1 {
     0%, 40% {
         /* compose logo *//* 1 on 3 *//* L-shape */
-        transform: translate(0,0);
-    } 50% {
-          /* pre-box */
-          transform: translate(48px,-27px);
-      } 60%, 100% {
-            /* box *//* compose logo */
-            transform: translate(96px,0);
-        }
+        transform: translate(0, 0);
+    }
+    50% {
+        /* pre-box */
+        transform: translate(48px, -27px);
+    }
+    60%, 100% {
+        /* box *//* compose logo */
+        transform: translate(96px, 0);
+    }
 }
 
 @keyframes tetromino2 {
     0%, 20% {
         /* compose logo *//* 1 on 3 */
         transform: translate(96px, 0px);
-    } 40%, 100% {
-          /* L-shape *//* box *//* compose logo */
-          transform: translate(144px, 27px);
-      }
+    }
+    40%, 100% {
+        /* L-shape *//* box *//* compose logo */
+        transform: translate(144px, 27px);
+    }
 }
 
 @keyframes tetromino3 {
     0% {
         /* compose logo */
         transform: translate(144px, 27px);
-    } 20%, 60% {
-          /* 1 on 3 *//* L-shape *//* box */
-          transform: translate(96px, 54px);
-      } 90%, 100% {
-            /* compose logo */
-            transform: translate(48px, 27px);
-        }
+    }
+    20%, 60% {
+        /* 1 on 3 *//* L-shape *//* box */
+        transform: translate(96px, 54px);
+    }
+    90%, 100% {
+        /* compose logo */
+        transform: translate(48px, 27px);
+    }
 }
 
 @keyframes tetromino4 {
     0%, 60% {
         /* compose logo *//* 1 on 3 *//* L-shape *//* box */
         transform: translate(48px, 27px);
-    } 90%, 100% {
-          /* compose logo */
-          transform: translate(0, 0);
-      }
+    }
+    90%, 100% {
+        /* compose logo */
+        transform: translate(0, 0);
+    }
 }

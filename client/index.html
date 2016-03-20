@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="rXZvCLY-omG-_dU46aq1kWfm6ZAx4CBTwZA7KhQ8Dkk" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="google-site-verification" content="rXZvCLY-omG-_dU46aq1kWfm6ZAx4CBTwZA7KhQ8Dkk"/>
     <base href="/">
     <title ng-bind="title">CoderDojoMaster</title>
     <link rel="shortcut icon" type="image/png" href="/img/favicon.png"/>
@@ -19,54 +19,58 @@
 </head>
 
 <body>
-    <div class="col s12 m12 l12">
+<div class="col s12 m12 l12">
 
-        <div class="navbar">
-            <div class="nav-left valign-wrapper">
-                <h5 class="left-align hide-on-med-and-down valign" style="padding-left: 1em;">CoderDojo Master</h5>
-            </div>
-            <div class="wrap">
-                <a class="coder-dojo-logo-a" href="/">
-                    <img class="coder-dojo-logo hvr-bounce-in" src="/img/cubeYang3.svg">
-                </a>
-            </div>
-            <div class="nav-right valign-wrapper">
-                <a href="" class="button-collapse white-text valign hide-on-large-only" id="cd-cart-trigger"><i class="material-icons medium">menu</i></a>
-                <ul class="navbar-menu hide-on-med-and-down">
-                    <li><a class="white-text navbar-menu-item" id="courses-link" href="courses"><span>Corsi</span></a></li>
-                    <li><a class="white-text navbar-menu-item" id="events-link" href="events"><span>Eventi</span></a></li>
-                    <li><a class="white-text navbar-menu-item" id="tutorial-link" href="tutorials"><span>Tutorial</span></a></li>
-                    <li><a class="white-text navbar-menu-item" id="about-link" href="about"><span>Team</span></a></li>
-                    <li><a class="white-text navbar-menu-item" id="faq-link" href="faq"><span>FAQ</span></a></li>
-                    <li><a class="white-text navbar-menu-item" id="facebook" target="_blank" href="https://www.facebook.com/coderdojodisi"><img src="./img/facebook.svg" alt="f"></a></li>
-                </ul>
-            </div>
+    <div class="navbar">
+        <div class="nav-left valign-wrapper">
+            <h5 class="left-align hide-on-med-and-down valign" style="padding-left: 1em;">CoderDojo Master</h5>
         </div>
-
+        <div class="wrap">
+            <a class="coder-dojo-logo-a" href="/">
+                <img class="coder-dojo-logo hvr-bounce-in" src="/img/cubeYang3.svg">
+            </a>
+        </div>
+        <div class="nav-right valign-wrapper">
+            <a href="" class="button-collapse white-text valign hide-on-large-only" id="cd-cart-trigger"><i
+                class="material-icons medium">menu</i></a>
+            <ul class="navbar-menu hide-on-med-and-down">
+                <li class="valign-wrapper"><a class="white-text navbar-menu-item valign" id="courses-link" href="courses"><span>Corsi</span></a></li>
+                <li class="valign-wrapper"><a class="white-text navbar-menu-item valign" id="events-link" href="events"><span>Eventi</span></a></li>
+                <li class="valign-wrapper"><a class="white-text navbar-menu-item valign" id="tutorial-link" href="tutorials"><span>Tutorial</span></a></li>
+                <li class="valign-wrapper"><a class="white-text navbar-menu-item valign" id="about-link" href="about"><span>Team</span></a></li>
+                <li class="valign-wrapper"><a class="white-text navbar-menu-item valign" id="faq-link" href="faq"><span>FAQ</span></a></li>
+                <li class="nav-fb-button valign-wrapper center-align"><a class="white-text navbar-menu-item valign" id="facebook" target="_blank"
+                       href="https://www.facebook.com/coderdojodisi"><img src="./img/facebook.svg" alt="f"></a></li>
+            </ul>
+        </div>
     </div>
 
+</div>
 
-    <!-- PAGE MAIN CONTENT -->
-    <main>
-        <div ng-view></div>
-    </main>
 
-    <div id="cd-shadow-layer"></div>
+<!-- PAGE MAIN CONTENT -->
+<main>
+    <div ng-view></div>
+</main>
 
-    <div id="cd-cart">
-        <div class="mobile-menu-row">
-            <a href="" class="black-text" id="close-menu-button"><i class="material-icons medium">close</i></a>
-        </div>
-        <h2 class="center-align thin">Menu</h2>
-        <ul class="center-align menu-list">
-            <li><a class="mobile-menu-link black-text" href="courses"><h3>Corsi</h3></a></li>
-            <li><a class="mobile-menu-link black-text" href="events"><h3>Eventi</h3></a></li>
-            <li><a class="mobile-menu-link black-text" href="tutorials"><h3>Tutorial</h3></a></li>
-            <li><a class="mobile-menu-link black-text" href="about"><h3>Team</h3></a></li>
-            <li><a class="mobile-menu-link black-text" href="faq"><h3>FAQ</h3></a></li>
-        </ul>
+<div id="cd-shadow-layer"></div>
+
+<div id="cd-cart">
+    <div class="mobile-menu-row">
+        <a href="" class="black-text" id="close-menu-button"><i class="material-icons medium">close</i></a>
     </div>
-    <!-- footer -->
+    <h2 class="center-align thin">Menu</h2>
+    <ul class="center-align menu-list">
+        <li><a class="mobile-menu-link black-text" href="courses"><h3>Corsi</h3></a></li>
+        <li><a class="mobile-menu-link black-text" href="events"><h3>Eventi</h3></a></li>
+        <li><a class="mobile-menu-link black-text" href="tutorials"><h3>Tutorial</h3></a></li>
+        <li><a class="mobile-menu-link black-text" href="about"><h3>Team</h3></a></li>
+        <li><a class="mobile-menu-link black-text" href="faq"><h3>FAQ</h3></a></li>
+      <!--  <li><a class="mobile-menu-link black-text"  target="_blank"
+               href="https://www.facebook.com/coderdojodisi"><h4>Pagina Facebook</h4></a></li>-->
+    </ul>
+</div>
+<!-- footer -->
 
 
 </body>
