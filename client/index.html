@@ -9,6 +9,10 @@
     <title ng-bind="title">CoderDojoMaster</title>
     <link rel="shortcut icon" type="image/png" href="/img/favicon.png"/>
 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!--<script src="https://apis.google.com/js/client.js"></script>-->
+    <meta name="google-signin-client_id"
+          content="677126808428-2on1af090mietusog4f5t2amh0m8gqvq.apps.googleusercontent.com">
     <!-- JAVASCRIPT -->
     <script src="/assets/js/bundle.js"></script>
 
@@ -18,7 +22,7 @@
 
 </head>
 
-<body>
+<body ng-controller="UserController as ctrl">
     <div class="col s12 m12 l12">
 
         <div class="navbar">
@@ -39,12 +43,20 @@
                     <li><a class="white-text navbar-menu-item" id="about-link" href="about"><span>Team</span></a></li>
                     <li><a class="white-text navbar-menu-item" id="faq-link" href="faq"><span>FAQ</span></a></li>
                     <li><a class="white-text navbar-menu-item" id="facebook" target="_blank" href="https://www.facebook.com/coderdojodisi"><img src="./img/facebook.svg" alt="f"></a></li>
+                    <li><a class="white-text navbar-menu-item" href="#" ng-click="ctrl.modal()"><span>Login</span></a>
+                    </li>
                 </ul>
             </div>
         </div>
 
     </div>
 
+    <div id="login" class="modal">
+        <div class="modal-content">
+            <div id="g-signin2"></div>
+            <a class="waves-effect waves-light btn" ng-click="ctrl.logout()">Logout</a>
+        </div>
+    </div>
 
     <!-- PAGE MAIN CONTENT -->
     <main>

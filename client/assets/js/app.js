@@ -108,3 +108,5 @@ angular.module('coderdojo', ['ngRoute', 'ngResource', 'tutorialsModule', 'events
         height: window_height - 136
     });
 });
+
+require('./controllers');

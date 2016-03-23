@@ -92,7 +92,7 @@ function bundle() {
     return b.bundle()
         // log errors if they happen
         .on('error', function (err) {
-            gutil.log(err.message);
+            gutil.log("browserify: " + err.message);
             browserSync.notify(err.message, 3000);
             this.emit('end');
         })
