@@ -1,4 +1,4 @@
-FROM library/nginx:1.9.6
+FROM library/nginx:alpine
 
 COPY ./nginx/nginx.prod.conf /etc/nginx/nginx.conf
 
